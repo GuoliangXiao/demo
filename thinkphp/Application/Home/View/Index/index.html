@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hello</title>
+</head>
+<css href="__PUBLIC__/Css/Home/index.css"/>
+<js href="__PUBLIC__/Js/jquery-2.1.0.min.js"/>
+<script type="text/javascript">
+	var editTableAction="{$editTableAction}";
+	//alert(editTableAction);
+</script>
+<body>
+	<div class="main">
+		<li>{$dbFields[0]}</li>
+		<span>
+			<li>{$dbFields[1]}</li>
+			<li>{$dbFields[2]}</li>
+			<li>{$dbFields[3]}</li>
+			<li>{$dbFields[4]}</li>
+		</span>
+		<li>success</li>
+		<br/>
+		<volist name="data" id="vo">
+			<li>{$vo.id}</li>
+			<span id="{$vo.id}">
+				<li><input type="text" name="{$dbFields[1]}" value="{$vo.name}" /></li>
+				<li><input type="text" name="{$dbFields[2]}" value="{$vo.picture}"/></li>
+				<li>{$vo.created_at}</li>
+				<li>{$vo.updated_at}</li>
+			</span>
+			<li>
+				<button class="edit" value="{$vo.id}">提交</button>
+				<button class="delete" value="{$vo.id}">删除</button>
+			</li>
+			<br/>
+	    </volist>
+	    <li>{$vo['id']+1}</li>
+			<span id="{$vo[id]+1}">
+				<li><input type="text" name="{$dbFields[1]}" value="" /></li>
+				<li><input type="text" name="{$dbFields[2]}" value=""/></li>
+				<li id="{$dbFields[3]}">{$date|date="Y-m-d H:i:s",###}</li>
+				<li id="{$dbFields[4]}">{$date|date="Y-m-d H:i:s",###}</li>
+			</span>
+			<li>
+				<button class="add" value="{$vo['id']+1}">添加</button>
+			</li>
+			<br/>
+	</div>
+	<js href="__PUBLIC__/Js/Home/index.js"/>
+</body>
+</html>
