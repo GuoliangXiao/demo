@@ -4,6 +4,7 @@
 	<title>xhust</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="/xhust/thinkphp/Public/Apps/xhust.ico">
 </head>
 
 
@@ -25,16 +26,14 @@
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Slippry/slippry.css" />
 <script type="text/javascript" src="/xhust/thinkphp/Public/Slippry/slippry.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jquery.particleground.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/Letter/jquery.hoverwords.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/Letter/jquery.lettering.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/Letter/jquery.easing.1.3.js"></script>
+
 
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Calendar/simple-calendar.css" />
 <script type="text/javascript" src="/xhust/thinkphp/Public/Calendar/simple-calendar.js"></script>
 
 <script type="text/javascript" src="/xhust/thinkphp/Public/Js/Home/index.js"></script>
 
-<body style="background: #107987;">
+<body style="background: #eeeeee;">
 	<style type="text/css">
 	.mynavdiv{
 		padding: 0;
@@ -103,8 +102,6 @@
 						<a href="#" id="example6" >WORLD!</a>
 					</li>
 					<li class="slippry-two"></li>
-					<li>4</li>
-					<li>5</li>
 				</ul>
 			</div>
 			<div class="col-md-4">

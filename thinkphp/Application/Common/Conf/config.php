@@ -9,27 +9,19 @@ return array(
 	//'TMPL_L_DELIM'=>'<{',
 	//'TMPL_R_DELIM'=>'}>',
 	//'VIEW_PATH'=>'./Public/',
-	/*
-	'SHOW_PAGE_TRACE' =>true,
+	
+	/*'SHOW_PAGE_TRACE' =>true,
 	'DB_TYPE'=>'mysql',
 	'DB_USER'=>'root',
 	'DB_PWD'=>'root',
 	'DB_PREFIX'=>'x_',
-	'DB_DSN'=>'mysql:host=localhost;dbname=sweat;charset=UTF8',
-	*/
-	'SHOW_PAGE_TRACE' =>true,
+	'DB_DSN'=>'mysql:host=localhost;dbname=sweat;charset=UTF8',*/
+	
+	'SHOW_PAGE_TRACE' =>false,
 	'DB_TYPE'=>'mysql',
 	'DB_USER'=>'admin',
 	'DB_PWD'=>'admin',
 	'DB_PREFIX'=>'x_',
 	'DB_DSN'=>'mysql:host=172.30.214.187;dbname=sweat;charset=UTF8',
-	/*'LAYOUT_ON'=>true,
-    'LAYOUT_NAME'=>'layout',
-	'DB_TYPE'=>'mysqli',
-	'DB_HOST'=>'localhost',
-	'DB_NAME'=>'student',
-	'DB_USER'=>'root',
-	'DB_PWD'=>'root',
-	'DB_PORT'=>3306,
-	'DB_PREFIX'=>'',*/
+	
 );
