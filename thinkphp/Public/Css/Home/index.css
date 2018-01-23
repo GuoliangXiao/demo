@@ -1,22 +1,100 @@
 body{
-	margin: 0 auto;
-	text-align: center;
-	font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Helvetica, Arial, Verdana, sans-serif;
+	
 }
-li{
-	background-color: none;
+ul,ol,li{
+	list-style: none;
 	display: inline-block;
-	padding: 0.6em;
-	margin: 0;
-	width: 10em;
-    /*border: 0.01em solid red;*/
 }
-button{
-	font-size:0.01em; 
+.test{
+	background: green;
+	height: 200px;
+	width: 100%;
 }
 .main{
-	background-color: #f1f1f1;
-	width: 90%;
-	margin: 0 auto;
+	padding-top:5em;
+	background: #eeeeee;
+}
+.slippry-ppt>li{
+	height: 22em;
+	background: yellow;
+}
+.c-date{
+	background:#f1f1f1;
+	height: 25em;
+}
+.my-apps{
+	background: transparent;
+	padding: 0.5em 1em 0.5em 1em;
+
+}
+.my-apps li{
+	width: 9em;
+	height: 11em;
+	background: #F7F7F9;
+	display: inline-block;
+	text-decoration: none;
+	margin:0.6em;
+}
+.my-apps li img{
+	margin-left:1em;
+	margin-top:0.5em;
+	width: 7em;
+}
+.my-apps li span{
+	width: 100%;
+	margin-top:1em;
+	font-size: 1.1em;
+	font-weight: bold;
+	display: inline-block;
 	text-align: center;
+	
+}
+.my-apps li a{
+	color:black;
+}
+.my-apps li a:hover{
+	color:blue;
+}
+.love_rec{
+	font-weight: bold;
+	font-size: 1.2em;
+	display: inline-block;
+	padding: 1em;
+}
+.loved-apps{
+	width: 100%;
+	padding-left:1em;
+}
+.loved-apps li{
+	width: 85%;
+	background:#F7F7F9;
+	font-size: 1.1em;
+	margin:0.2em;
+	padding:0.5em;
+}
+.love-apps li strong{
+	display: inline-block;
+}
+.loved-apps li a{
+	margin-left: 0.5em;
+	padding-left: 0.5em;
+	
+	text-decoration: none;
+	color:black;
+}
+.loved-apps li a:hover{
+	font-weight: bold;
+	color:blue;
+}
+.loved-apps li span{
+	float: right;
+	display: inline-block;
+	margin-right: 0.5em;
+	font-weight: bold;
+}
+.my-heart{
+	color:#FB9FA4;
+}
+.my-heart:hover{
+	color:#FC434D;
 }

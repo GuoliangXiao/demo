@@ -5,23 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
-
+<css href="__PUBLIC__/Css/Home/index.css"/>
 
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
-<!--
-<css href="__PUBLIC__/font-awesome-4.7.0/css/font-awesome.min.css"/>
 <js href="__PUBLIC__/Js/jquery-2.1.0.min.js"/>
--->
-<css href="__PUBLIC__/Css/Home/index.css"/>
 <css href="__PUBLIC__/Slippry/slippry.css"/>
 <js href="__PUBLIC__/Slippry/slippry.min.js"/>
 <js href="__PUBLIC__/jquery.particleground.js"/>
@@ -62,49 +53,19 @@
 		</div>
 		<div class="row">
 			<div class="col-md-8">
-				<h3><i class="fa fa-th-large fa-lg"></i>&nbsp;应用&nbsp;|&nbsp;Apps</h3>
 				<ul class="my-apps">
 					<volist name="apps" id="vo">
 						<li>
-							<a href="#">
-								<img src="__PUBLIC__/Apps/Icon/{$vo.name}.gif"/>
-								<span>{$vo.name}</span>
-							</a>
+							{$vo.name}
 						</li>
 					</volist>
 				</ul>
 			</div>
-			<div class="col-md-4">
-				<h3><i class="fa fa-thumbs-up fa-lg"></i>&nbsp;点赞排行</h3>
-				<ul class="loved-apps">
-					<volist name="loves" id="vo">
-						<li>
-							<strong>{$i}.</strong>
-							<a href="#">{$vo.name}</a>
-							<span>
-								<a href="javascript:void(0);"><i id="{$vo.id}" class="my-heart fa fa-heart fa-lg"></i></a>&nbsp;
-								<span id="{$vo.id}" class="love_times">{$vo.love_times}</span>
-							</span>
-						</li>
-					</volist>
-				</ul>
-			</div>
+			<div class="col-md-4"></div>
 		</div>
 	</div>
-	<include file="Public/footer"/>
 </body>
 <script type="text/javascript">
-	$('.my-heart').click(function(event) {
-		/* Act on the event */
-		//alert($(this).attr('id'));
-		var url='{:U("Home/Index/addHeart")}';
-		var appid=$(this).attr('id');
-		$.post(url, {id: appid}, function(data, textStatus, xhr) {
-			/*optional stuff to do after success */
-			if(data['status']==1){
-				$(".love_times[id="+appid+"]").text(data['data']);
-			}
-		});
-	});
+	
 </script>
 </html>
