@@ -32,18 +32,25 @@
 	}
 	.mynav>li>a:focus{
 		background:transparent;
-		color: black;
+		color: white;
 	}
-	.active1{
-		background:transparent;
+	#li-x{
+		width: 4em;
+	}
+	#li-x:hover{
+		background: transparent;
+	}
+	#li-x a img{
+		height: 1.2em;
 	}
 </style>
 <nav class="navbar navbar-fixed-top mynavdiv">
 	<div class="container">
 		<ul class="nav nav-tabs mynav">
-		  <li role="presentation"><a href="{$home}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
-		  <li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
-		  <li role="presentation"><a href="{$Think.config.contact.cnblog}" target="_blank"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li>
+		  	<li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="__PUBLIC__/Apps/xhust.ico"/></a></li>
+	   		<li role="presentation"><a href="{$home}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
+		  	<li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
+		  	<li role="presentation"><a href="{$Think.config.contact.cnblog}" target="_blank"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li>
 		</ul>
 	</div>
 </nav>
