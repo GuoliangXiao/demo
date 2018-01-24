@@ -16,6 +16,7 @@ ul,ol,li{
 }
 .slippry-ppt>li{
 	height: 22em;
+	width: 100%;
 	background: yellow;
 }
 .c-date{
@@ -97,3 +98,4 @@ ul,ol,li{
 .my-heart:hover{
 	color:#FC434D;
 }
+
