@@ -7,7 +7,6 @@
 	<link rel="shortcut icon" href="__PUBLIC__/Apps/xhust.ico">
 </head>
 
-
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -23,6 +22,12 @@
 <css href="__PUBLIC__/font-awesome-4.7.0/css/font-awesome.min.css"/>
 <js href="__PUBLIC__/Js/jquery-2.1.0.min.js"/>
 -->
+<css href="__PUBLIC__/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css"/>
+<css href="__PUBLIC__/jQuery-emoji/dist/css/jquery.emoji.css"/>
+<js href="__PUBLIC__/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"/>
+<js href="__PUBLIC__/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"/>
+<js href="__PUBLIC__/jQuery-emoji/dist/js/jquery.emoji.min.js"/>
+
 <css href="__PUBLIC__/Css/Home/index.css"/>
 <css href="__PUBLIC__/Slippry/slippry.css"/>
 <js href="__PUBLIC__/Slippry/slippry.min.js"/>
@@ -35,8 +40,8 @@
 <js href="__PUBLIC__/Js/Home/index.js"/>
 
 <body style="background: #eeeeee;">
-	<include file="Public/header"/>
-	<div class="container main">
+	<include file="./Public/html/header.html"/>
+	<div class="container my-container">
 		<div class="row">
 			<div class="col-md-8">
 				<ul class="slippry-ppt">
@@ -58,8 +63,8 @@
 				<ul class="my-apps">
 					<volist name="apps" id="vo">
 						<li>
-							<a href="#">
-								<img src="__PUBLIC__/Apps/Icon/{$vo.name}.gif"/>
+							<a href={:generate_url($vo['url'],$vo['id'])} target="_blank">
+								<img src="__PUBLIC__/Apps/Icon/{$vo.icon}.gif"/>
 								<span>{$vo.name}</span>
 							</a>
 						</li>
@@ -72,7 +77,7 @@
 					<volist name="loves" id="vo">
 						<li>
 							<strong>{$i}.</strong>
-							<a href="#">{$vo.name}</a>
+							<a href={:generate_url($vo['url'],$vo['id'])} target="_blank">{$vo.name}</a>
 							<span>
 								<a href="javascript:void(0);"><i id="{$vo.id}" class="my-heart fa fa-heart fa-lg"></i></a>&nbsp;
 								<span id="{$vo.id}" class="love_times">{$vo.love_times}</span>
@@ -81,11 +86,19 @@
 					</volist>
 				</ul>
 			</div>
-		</div>
+		</div>		
 	</div>
-	<include file="Public/footer"/>
+	<div class="comment">
+		
+	</div>	
+	<include file="./Public/html/footer.html"/>
 </body>
 <script type="text/javascript">
+	jQuery(document).ready(function($) {
+		var url="{:U('Home/Page/index')}";
+		$('.comment').load(url);
+	});
+	
 	$('.my-heart').click(function(event) {
 		/* Act on the event */
 		//alert($(this).attr('id'));
@@ -96,7 +109,19 @@
 			if(data['status']==1){
 				$(".love_times[id="+appid+"]").text(data['data']);
 			}
-		});
+		});		
 	});
+
+	var pt=$(".mynavdiv").height();
+		$('.my-container').css('padding-top',pt);
+		jQuery(document).ready(function($) {
+			$(window).resize(function(event) {
+				/* Act on the event */
+				var pt=$(".mynavdiv").height();
+				///alert(pt);
+				$('.my-container').css('padding-top',pt);
+			});
+	
+		});
 </script>
 </html>

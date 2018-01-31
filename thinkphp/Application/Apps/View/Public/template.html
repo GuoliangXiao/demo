@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>xhust</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="__PUBLIC__/Apps/xhust.ico">
+</head>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<style type="text/css">
+	.my-container{
+		padding-top:5em;
+		background: #eeeeee;
+	}
+	body{
+		background: #eeeeee;
+	}
+</style>
+<body>
+	<include file="./Public/html/header.html"/>
+	{__CONTENT__}
+	<include file="./Public/html/footer.html"/>
+	<script type="text/javascript">
+		var pt=$(".mynavdiv").height();
+		$('.my-container').css('padding-top',pt);
+		jQuery(document).ready(function($) {
+			$(window).resize(function(event) {
+				/* Act on the event */
+				var pt=$(".mynavdiv").height();
+				///alert(pt);
+				$('.my-container').css('padding-top',pt);
+			});
+	
+		});
+	</script>
+</body>
+</html>

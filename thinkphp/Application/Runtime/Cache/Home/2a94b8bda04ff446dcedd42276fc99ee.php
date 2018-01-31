@@ -7,7 +7,6 @@
 	<link rel="shortcut icon" href="/xhust/thinkphp/Public/Apps/xhust.ico">
 </head>
 
-
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -23,6 +22,12 @@
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/font-awesome-4.7.0/css/font-awesome.min.css" />
 <script type="text/javascript" src="/xhust/thinkphp/Public/Js/jquery-2.1.0.min.js"></script>
 -->
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Css/Home/index.css" />
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Slippry/slippry.css" />
 <script type="text/javascript" src="/xhust/thinkphp/Public/Slippry/slippry.min.js"></script>
@@ -85,7 +90,7 @@
 	<div class="container">
 		<ul class="nav nav-tabs mynav">
 		  	<li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li>
-	   		<li role="presentation"><a href="<?php echo ($home); ?>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
+	   		<li role="presentation"><a href='/xhust/thinkphp/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
 		  	<li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
 		  	<li role="presentation"><a href="<?php echo (C("contact.cnblog")); ?>" target="_blank"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li>
 		</ul>
@@ -96,7 +101,7 @@
 		
 	});
 </script>
-	<div class="container main">
+	<div class="container my-container">
 		<div class="row">
 			<div class="col-md-8">
 				<ul class="slippry-ppt">
@@ -208,8 +213,8 @@
 				<h3><i class="fa fa-th-large fa-lg"></i>&nbsp;应用&nbsp;|&nbsp;Apps</h3>
 				<ul class="my-apps">
 					<?php if(is_array($apps)): $i = 0; $__LIST__ = $apps;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-							<a href="#">
-								<img src="/xhust/thinkphp/Public/Apps/Icon/<?php echo ($vo["name"]); ?>.gif"/>
+							<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank">
+								<img src="/xhust/thinkphp/Public/Apps/Icon/<?php echo ($vo["icon"]); ?>.gif"/>
 								<span><?php echo ($vo["name"]); ?></span>
 							</a>
 						</li><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -220,7 +225,7 @@
 				<ul class="loved-apps">
 					<?php if(is_array($loves)): $i = 0; $__LIST__ = $loves;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
 							<strong><?php echo ($i); ?>.</strong>
-							<a href="#"><?php echo ($vo["name"]); ?></a>
+							<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank"><?php echo ($vo["name"]); ?></a>
 							<span>
 								<a href="javascript:void(0);"><i id="<?php echo ($vo["id"]); ?>" class="my-heart fa fa-heart fa-lg"></i></a>&nbsp;
 								<span id="<?php echo ($vo["id"]); ?>" class="love_times"><?php echo ($vo["love_times"]); ?></span>
@@ -228,9 +233,17 @@
 						</li><?php endforeach; endif; else: echo "" ;endif; ?>
 				</ul>
 			</div>
-		</div>
+		</div>		
 	</div>
-	<style type="text/css">
+	<div class="comment">
+		
+	</div>	
+	
+<style type="text/css">
+	li,ul,ol{
+		list-style: none;
+		display: inline-block;
+	}
 	.my-footer{
 		background: #eeeeee;		
 	}
@@ -273,7 +286,12 @@
 	}
 
 </style>
+
 <div class="container my-footer">
+	<div class="hashover">
+		<script type="text/javascript" src="/xhust/thinkphp/hashover.php"></script>
+		<noscript>你的浏览器需要支持JS才能加载此评论.</noscript>
+	</div>
 	<div class="row copyright">
 		<div class="col-md-8">
 			<div class="row">
@@ -306,8 +324,8 @@
 		</div>
 		<div class="col-md-4 about">
 			<h4><i class="fa fa-info-circle fa-lg"></i>&nbsp;关于&nbsp;|&nbsp;About</h4>
-			<div><?php echo (C("about")); ?></div>
-			<div class="copyright-toast"><?php echo (C("copyright")); ?></div>
+			<div><?php echo (C("contact.about")); ?></div>
+			<div class="copyright-toast"><?php echo (C("contact.copyright")); ?></div>
 		</div>
 	</div>
 </div>
@@ -318,6 +336,11 @@
 </script>
 </body>
 <script type="text/javascript">
+	jQuery(document).ready(function($) {
+		var url="<?php echo U('Home/Page/index');?>";
+		$('.comment').load(url);
+	});
+	
 	$('.my-heart').click(function(event) {
 		/* Act on the event */
 		//alert($(this).attr('id'));
@@ -328,7 +351,19 @@
 			if(data['status']==1){
 				$(".love_times[id="+appid+"]").text(data['data']);
 			}
-		});
+		});		
 	});
+
+	var pt=$(".mynavdiv").height();
+		$('.my-container').css('padding-top',pt);
+		jQuery(document).ready(function($) {
+			$(window).resize(function(event) {
+				/* Act on the event */
+				var pt=$(".mynavdiv").height();
+				///alert(pt);
+				$('.my-container').css('padding-top',pt);
+			});
+	
+		});
 </script>
 </html>

@@ -6,7 +6,7 @@ class IndexController extends Controller {
     public function index(){
     	//echo THINK_VERSION;
     	$user=new Model('apps'); 
-    	$apps=$user->where('status=1')->select(); 
+    	$apps=$user->where('status=1')->select();       
         $this->assign('apps',$apps); 
         $loves=$user->where('status=1')->order('love_times desc')->limit(5)->select();
         $this->assign('loves',$loves);
@@ -14,12 +14,16 @@ class IndexController extends Controller {
         //$this->assign('dbFields',$dbFields);
     	
         
-        $home=U('index');
        // echo $home;
         $this->assign('home',$home);
+
+        //$comment=$this->CommentList($pid=0,$commentList=array(),$spac=0,$pauthor=NULL);
+        //var_dump($comment);
+       // $this->assign('commentList',$comment);
+
     	$this->display();
     	//var_dump($this->fetch());
-    	
+    	//$d = $_SERVER['DOCUMENT_ROOT'];echo $d;
     }
     public function addHeart(){
         
@@ -37,4 +41,5 @@ class IndexController extends Controller {
         }
         $this->ajaxReturn($r);
     }
+
 }

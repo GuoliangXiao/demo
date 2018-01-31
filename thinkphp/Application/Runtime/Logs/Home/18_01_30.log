@@ -1,0 +1,3 @@
+[ 2018-01-30T18:06:16+08:00 ] ::1 /xhust/thinkphp/index.php
+ERR: Call to undefined function reFace()
+

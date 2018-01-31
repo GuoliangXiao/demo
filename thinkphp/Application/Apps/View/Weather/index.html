@@ -1,0 +1,69 @@
+<layout name="Public/template"/>
+<style type="text/css">
+	h3{
+		margin: 0;
+		padding: 0.2em;
+	}
+	.weather-info{
+		padding: 0;
+		margin: 0em;
+		background: red;
+		width: 100%;
+	}
+	.weather-info>div{
+		background: green;
+		height: 10em;
+	}
+	.weather-info>div>img {
+		height: 100%;
+	}
+	.weather-info>div span{
+		padding-top: 0.4em;
+		display: inline-block;
+		font-size: 1em;
+	}
+</style>
+<div class="container my-container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row weather-info">
+				<div class="col-md-4">
+					<img src="__PUBLIC__/Apps/Weather/img/中雪.gif">
+				</div>
+				<div class="col-md-4">
+					<h3>中雪</h3>
+					<span>东北风</span><br>
+					<span>高温6低温-2</span><br>
+					<span>2018.1.23星期三</span>
+				</div>
+				<div class="col-md-4" style="max-width: 33%;">
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span>天冷空气湿度大天冷空气湿度大天冷空气湿度大</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<ul>
+				{$info}
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6"></div>
+		<div class="col-md-6"></div>
+	</div>
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		
+	});
+	function postCity(){
+		var url='{:U("Apps/Weather/getWeather")}';
+		var city="武汉";
+		$.post(url, {city: city}, function(data, textStatus, xhr) {
+			/*optional stuff to do after success */
+			alert(data);
+		});	
+	}
+</script>
