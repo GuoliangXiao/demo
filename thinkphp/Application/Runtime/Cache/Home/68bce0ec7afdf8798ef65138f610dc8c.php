@@ -17,7 +17,7 @@
 		
 			</div>
 			<div class="mybutton">
-				<?php $__FOR_START_22191__=0;$__FOR_END_22191__=$page;for($i=$__FOR_START_22191__;$i < $__FOR_END_22191__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+				<?php $__FOR_START_21393__=0;$__FOR_END_21393__=$page;for($i=$__FOR_START_21393__;$i < $__FOR_END_21393__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
 			</div>
 		</div>
 		<div class="col-md-4">

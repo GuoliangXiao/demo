@@ -12,17 +12,8 @@ class IndexController extends Controller {
         $this->assign('loves',$loves);
         //$dbFields=$user->getDbFields();
         //$this->assign('dbFields',$dbFields);
-    	
-        
-       // echo $home;
-        $this->assign('home',$home);
-
-        //$comment=$this->CommentList($pid=0,$commentList=array(),$spac=0,$pauthor=NULL);
-        //var_dump($comment);
-       // $this->assign('commentList',$comment);
 
     	$this->display();
-    	//var_dump($this->fetch());
     	//$d = $_SERVER['DOCUMENT_ROOT'];echo $d;
     }
     public function addHeart(){
