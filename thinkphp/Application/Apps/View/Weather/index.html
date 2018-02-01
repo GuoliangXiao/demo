@@ -1,69 +1,63 @@
 <layout name="Public/template"/>
 <style type="text/css">
-	h3{
-		margin: 0;
-		padding: 0.2em;
-	}
-	.weather-info{
-		padding: 0;
-		margin: 0em;
-		background: red;
-		width: 100%;
-	}
-	.weather-info>div{
-		background: green;
-		height: 10em;
-	}
-	.weather-info>div>img {
-		height: 100%;
-	}
-	.weather-info>div span{
-		padding-top: 0.4em;
-		display: inline-block;
-		font-size: 1em;
-	}
+.my-weather{
+	padding-bottom: 1em;
+}
+.app-title{
+	
+}
+.search-weather{
+	padding: 0.5em;
+}
+.search-s{
+	float: right;
+}
+
 </style>
 <div class="container my-container">
-	<div class="row">
-		<div class="col-md-6">
-			<div class="row weather-info">
-				<div class="col-md-4">
-					<img src="__PUBLIC__/Apps/Weather/img/中雪.gif">
-				</div>
-				<div class="col-md-4">
-					<h3>中雪</h3>
-					<span>东北风</span><br>
-					<span>高温6低温-2</span><br>
-					<span>2018.1.23星期三</span>
-				</div>
-				<div class="col-md-4" style="max-width: 33%;">
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<span>天冷空气湿度大天冷空气湿度大天冷空气湿度大</span>
-					</p>
-				</div>
+	<div  class="app-container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3 class="app-title"><i class="fa fa-snowflake-o fa-lg"></i>&nbsp;天气预报&nbsp;|&nbsp;Weather Forecast</h3>
+			</div>
+			<div class="col-md-6">
+				<div class="form-inline search-weather">
+				<input type="text" class="form-control input-city"  placeholder="请输入城市查询">
+				<button class="btn-s btn btn-default">&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i>&nbsp;&nbsp;</button>
+			</div>
 			</div>
 		</div>
-		<div class="col-md-6">
-			<ul>
-				{$info}
-			</ul>
+		<div class="my-weather">
+			
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-6"></div>
-		<div class="col-md-6"></div>
-	</div>
 </div>
+<script src="https://cdn.bootcss.com/flot/0.8.3/jquery.flot.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
-		
-	});
-	function postCity(){
-		var url='{:U("Apps/Weather/getWeather")}';
 		var city="武汉";
+		postCity(city);
+		$(".btn-s").click(function(event) {
+			/* Act on the event */
+			var city=$(".input-city").val();
+			if(city!=""){
+				postCity(city);
+			}else{
+				alert("请输入城市名称查询");
+			}
+			//alert(city);
+		});
+	});
+	function postCity(city){
+		var url='{:U("Apps/Weather/getWeather")}';	
 		$.post(url, {city: city}, function(data, textStatus, xhr) {
 			/*optional stuff to do after success */
-			alert(data);
+			if(data['status']==1){
+				//alert(data['info']);
+				$('.my-weather').html(data['info']);
+			}else{
+				alert("请输入正确的城市名称再次查询");
+			}
 		});	
 	}
 </script>

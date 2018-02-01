@@ -17,10 +17,24 @@
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<css href="__PUBLIC__/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css"/>
+<css href="__PUBLIC__/jQuery-emoji/dist/css/jquery.emoji.css"/>
+<js href="__PUBLIC__/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"/>
+<js href="__PUBLIC__/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"/>
+<js href="__PUBLIC__/jQuery-emoji/dist/js/jquery.emoji.min.js"/>
 <style type="text/css">
 	.my-container{
 		padding-top:5em;
 		background: #eeeeee;
+	}
+	
+	.app-container{
+		
+	}
+	.app-title{
+		display: inline-block;
+		margin: 0.5em 0 0.5em 0;
+		background: transparent;
 	}
 	body{
 		background: #eeeeee;
@@ -29,11 +43,19 @@
 <body>
 	<include file="./Public/Html/header.html"/>
 	{__CONTENT__}
+	<div class="comment">
+	</div>
 	<include file="./Public/Html/footer.html"/>
+	
 	<script type="text/javascript">
 		var pt=$(".mynavdiv").height();
 		$('.my-container').css('padding-top',pt);
 		jQuery(document).ready(function($) {
+
+			var url="{:get_app_url($app_id)}";
+			//alert(url);
+			$('.comment').load(url);
+
 			$(window).resize(function(event) {
 				/* Act on the event */
 				var pt=$(".mynavdiv").height();

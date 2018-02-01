@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="/xhust/thinkphp/Public/Apps/xhust.ico">
 </head>
-
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -18,28 +17,30 @@
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<!--
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/font-awesome-4.7.0/css/font-awesome.min.css" />
-<script type="text/javascript" src="/xhust/thinkphp/Public/Js/jquery-2.1.0.min.js"></script>
--->
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Css/Home/index.css" />
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Slippry/slippry.css" />
-<script type="text/javascript" src="/xhust/thinkphp/Public/Slippry/slippry.min.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/jquery.particleground.js"></script>
-
-
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Calendar/simple-calendar.css" />
-<script type="text/javascript" src="/xhust/thinkphp/Public/Calendar/simple-calendar.js"></script>
-
-<script type="text/javascript" src="/xhust/thinkphp/Public/Js/Home/index.js"></script>
-
-<body style="background: #eeeeee;">
+<style type="text/css">
+	.my-container{
+		padding-top:5em;
+		background: #eeeeee;
+	}
+	
+	.app-container{
+		
+	}
+	.app-title{
+		display: inline-block;
+		margin: 0.5em 0 0.5em 0;
+		background: transparent;
+	}
+	body{
+		background: #eeeeee;
+	}
+</style>
+<body>
 	<style type="text/css">
 	.mynavdiv{
 		padding: 0;
@@ -101,143 +102,71 @@
 		
 	});
 </script>
-	<div class="container my-container">
-		<div class="row">
-			<div class="col-md-8">
-				<ul class="slippry-ppt">
-					<li class="slippry-one">
-						<svg width="900" height="500"></svg>
-<style>
-
-.links {
-  stroke: #000;
-  stroke-opacity: 0.2;
+	
+<style type="text/css">
+.my-weather{
+	padding-bottom: 1em;
+}
+.app-title{
+	
+}
+.search-weather{
+	padding: 0.5em;
+}
+.search-s{
+	float: right;
 }
 
-.polygons {
-  fill: none;
-  stroke: #000;
-}
-
-.polygons :first-child {
-  fill: #f00;
-}
-
-.sites {
-  fill: #000;
-  stroke: #fff;
-}
-
-.sites :first-child {
-  fill: #fff;
-}
 </style>
-<script>
-	var svg = d3.select("svg").on("touchmove mousemove", moved);
-    var width = +svg.attr("width");
-	var height = +svg.attr("height");
-
-	var sites = d3.range(100)
-	    .map(function(d) { return [Math.random() * width, Math.random() * height]; });
-
-	var voronoi = d3.voronoi()
-	    .extent([[-1, -1], [width + 1, height + 1]]);
-
-	var polygon = svg.append("g")
-	    .attr("class", "polygons")
-	  .selectAll("path")
-	  .data(voronoi.polygons(sites))
-	  .enter().append("path")
-	    .call(redrawPolygon);
-
-	var link = svg.append("g")
-	    .attr("class", "links")
-	  .selectAll("line")
-	  .data(voronoi.links(sites))
-	  .enter().append("line")
-	    .call(redrawLink);
-
-	var site = svg.append("g")
-	    .attr("class", "sites")
-	  .selectAll("circle")
-	  .data(sites)
-	  .enter().append("circle")
-	    .attr("r", 2.5)
-	    .call(redrawSite);
-
-	function moved() {
-	  sites[0] = d3.mouse(this);
-	  redraw();
-	}
-
-	function redraw() {
-	  var diagram = voronoi(sites);
-	  polygon = polygon.data(diagram.polygons()).call(redrawPolygon);
-	  link = link.data(diagram.links()), link.exit().remove();
-	  link = link.enter().append("line").merge(link).call(redrawLink);
-	  site = site.data(sites).call(redrawSite);
-	}
-
-	function redrawPolygon(polygon) {
-	  polygon
-	      .attr("d", function(d) { return d ? "M" + d.join("L") + "Z" : null; });
-	}
-
-	function redrawLink(link) {
-	  link
-	      .attr("x1", function(d) { return d.source[0]; })
-	      .attr("y1", function(d) { return d.source[1]; })
-	      .attr("x2", function(d) { return d.target[0]; })
-	      .attr("y2", function(d) { return d.target[1]; });
-	}
-
-	function redrawSite(site) {
-	  site
-	      .attr("cx", function(d) { return d[0]; })
-	      .attr("cy", function(d) { return d[1]; });
-	}
-
-</script>
-					</li>
-					<li class="slippry-two"></li>
-				</ul>
+<div class="container my-container">
+	<div  class="app-container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3 class="app-title"><i class="fa fa-snowflake-o fa-lg"></i>&nbsp;天气预报&nbsp;|&nbsp;Weather Forecast</h3>
 			</div>
-			<div class="col-md-4">
-				<div class="c-date">
-					<div class="my-date"></div>
-				</div>
+			<div class="col-md-6">
+				<div class="form-inline search-weather">
+				<input type="text" class="form-control input-city"  placeholder="请输入城市查询">
+				<button class="btn-s btn btn-default">&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i>&nbsp;&nbsp;</button>
+			</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-8">
-				<h3><i class="fa fa-th-large fa-lg"></i>&nbsp;应用&nbsp;|&nbsp;Apps</h3>
-				<ul class="my-apps">
-					<?php if(is_array($apps)): $i = 0; $__LIST__ = $apps;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-							<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank">
-								<img src="/xhust/thinkphp/Public/Apps/Icon/<?php echo ($vo["icon"]); ?>.gif"/>
-								<span><?php echo ($vo["name"]); ?></span>
-							</a>
-						</li><?php endforeach; endif; else: echo "" ;endif; ?>
-				</ul>
-			</div>
-			<div class="col-md-4">
-				<h3><i class="fa fa-thumbs-up fa-lg"></i>&nbsp;点赞排行</h3>
-				<ul class="loved-apps">
-					<?php if(is_array($loves)): $i = 0; $__LIST__ = $loves;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-							<strong><?php echo ($i); ?>.</strong>
-							<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank"><?php echo ($vo["name"]); ?></a>
-							<span>
-								<a href="javascript:void(0);"><i id="<?php echo ($vo["id"]); ?>" class="my-heart fa fa-heart fa-lg"></i></a>&nbsp;
-								<span id="<?php echo ($vo["id"]); ?>" class="love_times"><?php echo ($vo["love_times"]); ?></span>
-							</span>
-						</li><?php endforeach; endif; else: echo "" ;endif; ?>
-				</ul>
-			</div>
-		</div>		
+		<div class="my-weather">
+			
+		</div>
 	</div>
+</div>
+<script src="https://cdn.bootcss.com/flot/0.8.3/jquery.flot.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		var city="武汉";
+		postCity(city);
+		$(".btn-s").click(function(event) {
+			/* Act on the event */
+			var city=$(".input-city").val();
+			if(city!=""){
+				postCity(city);
+			}else{
+				alert("请输入城市名称查询");
+			}
+			//alert(city);
+		});
+	});
+	function postCity(city){
+		var url='<?php echo U("Apps/Weather/getWeather");?>';	
+		$.post(url, {city: city}, function(data, textStatus, xhr) {
+			/*optional stuff to do after success */
+			if(data['status']==1){
+				//alert(data['info']);
+				$('.my-weather').html(data['info']);
+			}else{
+				alert("请输入正确的城市名称再次查询");
+			}
+		});	
+	}
+</script>
 	<div class="comment">
-		
-	</div>	
+	</div>
 	
 <style type="text/css">
 	li,ul,ol{
@@ -330,29 +259,16 @@
 		
 	});
 </script>
-</body>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		var url="<?php echo U('Home/Page/index?app_id=0');?>";
-		$('.comment').load(url);
-	});
 	
-	$('.my-heart').click(function(event) {
-		/* Act on the event */
-		//alert($(this).attr('id'));
-		var url='<?php echo U("Home/Index/addHeart");?>';
-		var appid=$(this).attr('id');
-		$.post(url, {id: appid}, function(data, textStatus, xhr) {
-			/*optional stuff to do after success */
-			if(data['status']==1){
-				$(".love_times[id="+appid+"]").text(data['data']);
-			}
-		});		
-	});
-
-	var pt=$(".mynavdiv").height();
+	<script type="text/javascript">
+		var pt=$(".mynavdiv").height();
 		$('.my-container').css('padding-top',pt);
 		jQuery(document).ready(function($) {
+
+			var url="<?php echo get_app_url($app_id);?>";
+			//alert(url);
+			$('.comment').load(url);
+
 			$(window).resize(function(event) {
 				/* Act on the event */
 				var pt=$(".mynavdiv").height();
@@ -361,5 +277,6 @@
 			});
 	
 		});
-</script>
+	</script>
+</body>
 </html>

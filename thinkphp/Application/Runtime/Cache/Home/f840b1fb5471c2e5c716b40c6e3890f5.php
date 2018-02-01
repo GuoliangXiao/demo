@@ -3,6 +3,9 @@
 		width: 100%;
 		background: #f7f7f7;
 	}
+	.comment-div{
+		background: #EEEEEE;
+	}
 	.myrow{
 		width: 100%;
 		padding:1em 0 1em 0;
@@ -194,7 +197,7 @@
 </script>
 <div>
 	<h3><i class="fa fa-commenting fa-lg"></i>&nbsp;评论&nbsp;|&nbsp;Comment</h3>
-	<div class="">
+	<div class="comment-div">
 		<div class="pinglun ">
 	        <div class="div-form">
 	            <form action="<?php echo U('Home/Page/addComment');?>" method="post">
@@ -202,6 +205,7 @@
 	                    <label for="username"><i class="fa fa-user-o fa-lg"></i>&nbsp;昵称&nbsp;|&nbsp;Name</label>
 	                    <input id="username" class="form-control" type="text" placeholder="昵称" name="username">
 	                    <input type="hidden" placeholder="" name="pid" value="0">
+	                    <input type="hidden" placeholder="" name="app_id" value="<?php echo ($app_id_p); ?>">
 	                </div>
 	                <div class="form-group">
 	                    <label for="mail"><i class="fa fa-envelope-o fa-lg"></i>&nbsp;邮箱&nbsp;|&nbsp;Email</label>
@@ -220,43 +224,45 @@
 	            </form>
 	        </div>
 	    </div>
-	    <div class="mycomment">
-	        <h2></h2>
-	        <?php if(is_array($commentList)): $i = 0; $__LIST__ = $commentList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="myrow" style="padding-left:<?php echo comment_level($vo['level']);?>cm">
-	        		<div class="div-img">
-	        			<img class="author-img" src="/xhust/thinkphp/Public/Comment/img/author.png"/>
-	        		</div>
-	        		<div>
-	        			<div>
-	                    	<span class="user">
-	                        <?php if(($vo["pauthor"] == NULL)): ?><a href="javascript:void(0)" class="author"><?php echo ($vo["author"]); ?></a>
-	                            <?php else: ?>                            
-	                            <a href="javascript:void(0)" class="author"><?php echo ($vo["author"]); ?></a>
-	                            <span class="black" style="color: #000101">&nbsp;回复&nbsp;</span>
-	                            <a href="javascript:void(0)" class="author"><?php echo ($vo["pauthor"]); ?></a><?php endif; ?>
-	                    	</span>
-	                    	<span class="span-right">
-	                    		<a class="hf" href="javascript:void(0)" id="<?php echo ($vo["id"]); ?>">回复</a>
-	                    		
-	                    		<span>
-	                    			<span class="comment-up-times" id="<?php echo ($vo["id"]); ?>"><?php echo ($vo['love_times']); ?></span>
-	                    			<a id="<?php echo ($vo["id"]); ?>" class="comment-up" href="javascript:void(0)">
-	                    				<i class="fa fa-thumbs-o-up fa-lg"></i>
-	                    			</a>
-	                    		</span>
-	                    		
-	                    		<span  class="hftime"><?php echo (date("Y-m-d",$vo["time"])); ?></span>
-	                    	</span>
-	            		</div>
-	                	<div class="content"><?php echo ($vo["content"]); ?></div>
-	        		</div>
-	        	</div>
-	        	<?php if(($vo["pid"]) == "0"): ?><div class="solidline"></div>
-					<?php else: ?>
-					<div class="dottedline"></div><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-	    </div>
+
+	    <?php if(($comment_len) > "0"): ?><div class="mycomment">
+		        <h2></h2>
+		        <?php if(is_array($commentList)): $i = 0; $__LIST__ = $commentList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="myrow" style="padding-left:<?php echo comment_level($vo['level']);?>cm">
+		        		<div class="div-img">
+		        			<img class="author-img" src="/xhust/thinkphp/Public/Comment/img/author.png"/>
+		        		</div>
+		        		<div>
+		        			<div>
+		                    	<span class="user">
+		                        <?php if(($vo["pauthor"] == NULL)): ?><a href="javascript:void(0)" class="author"><?php echo ($vo["author"]); ?></a>
+		                            <?php else: ?>                            
+		                            <a href="javascript:void(0)" class="author"><?php echo ($vo["author"]); ?></a>
+		                            <span class="black" style="color: #000101">&nbsp;回复&nbsp;</span>
+		                            <a href="javascript:void(0)" class="author"><?php echo ($vo["pauthor"]); ?></a><?php endif; ?>
+		                    	</span>
+		                    	<span class="span-right">
+		                    		<a class="hf" href="javascript:void(0)" id="<?php echo ($vo["id"]); ?>">回复</a>
+		                    		
+		                    		<span>
+		                    			<span class="comment-up-times" id="<?php echo ($vo["id"]); ?>"><?php echo ($vo['love_times']); ?></span>
+		                    			<a id="<?php echo ($vo["id"]); ?>" class="comment-up" href="javascript:void(0)">
+		                    				<i class="fa fa-thumbs-o-up fa-lg"></i>
+		                    			</a>
+		                    		</span>
+		                    		
+		                    		<span  class="hftime"><?php echo (date("Y-m-d",$vo["time"])); ?></span>
+		                    	</span>
+		            		</div>
+		                	<div class="content"><?php echo ($vo["content"]); ?></div>
+		        		</div>
+		        	</div>
+		        	<?php if(($vo["pid"]) == "0"): ?><div class="solidline"></div>
+						<?php else: ?>
+						<div class="dottedline"></div><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+	    	</div>
+	    	<div class="solidline"></div><?php endif; ?>
 	</div>
-	<div class="solidline"></div>
+	
 </div>
 <script type="text/javascript">
 	function emojiInit(s,b){

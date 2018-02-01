@@ -5,7 +5,9 @@ use Think\Model;
 class PageController extends Controller {
     public function index(){
     	//echo THINK_VERSION;
-        $count=M('comment')-> where(array('pid'=>0,'status'=>1,'app_id'=>0))->count();
+        $app_id=I('get.app_id');
+        $this->assign('app_id',$app_id);
+        $count=M('comment')-> where(array('pid'=>0,'status'=>1,'app_id'=>$app_id))->count();
         $num=4;
         $page=ceil($count/$num);
         $this->assign('comment_count',$count);
@@ -27,6 +29,7 @@ class PageController extends Controller {
             'pid'=>I('post.pid'),
             'author'=>I('post.username'),
             'email'=>I('post.mail'),
+            'app_id'=>I('post.app_id'),
         );
 
         $comment = M("comment"); // 实例化User对象
@@ -49,9 +52,9 @@ class PageController extends Controller {
         $pauthor=$pauthor;
         $List;
         if($pid==0){
-            $List=M('comment')->limit($start,$num)-> where(array('pid'=>$pid,'status'=>1))->select();
+            $List=M('comment')->limit($start,$num)-> where(array('pid'=>$pid,'status'=>1,'app_id'=>$app_id))->select();
         }else{
-            $List=M('comment')-> where(array('pid'=>$pid,'status'=>1))->select();
+            $List=M('comment')-> where(array('pid'=>$pid,'status'=>1,'app_id'=>$app_id))->select();
         }       
         foreach($List as $k=>$v){
             $commentList[$i]['level']=$spac;//评论层级
@@ -71,9 +74,11 @@ class PageController extends Controller {
     function pageNext(){
         $start=I('post.start');
         $num=I('post.num');
-        $app_id=0;
+        $app_id=I('post.app_id');
         $comment=$this->CommentList($pid=0,$app_id,$commentList=array(),$spac=0,$pauthor=NULL,$start,$num);
+        $this->assign('comment_len',count($comment));
         $this->assign('commentList',$comment);
+        $this->assign('app_id_p',$app_id);
         layout(false);
         $htmls=$this->fetch('page');
         $this->ajaxReturn(array('status'=>1,'info'=>$htmls));

@@ -9,10 +9,6 @@ function generate_url($url,$id){
 function comment_level($level){
 	return ($level-1);
 }
-function reFace($str){
-    for($i=1;$i<76;$i++){
-
-        //$str = str_replace("[em_$i]","<img src='../../../../comment/Public/Face/$i.gif'/>",$str);
-    }
-    return $str;
+function get_app_url($app_id){
+	return U('Home/Page/index?app_id='.$app_id);
 }
