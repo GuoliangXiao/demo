@@ -63,6 +63,8 @@ class PageController extends Controller {
             $commentList[$i]['pid']=$v['pid'];//此条评论的父id
             $commentList[$i]['content']=$v['content'];
             $commentList[$i]['time']=$v['add_time'];
+            $p=taobaoIP($v['ip']);
+            $commentList[$i]['place']=$p['province'].$p['city'];
             $commentList[$i]['love_times']=$v['love_times'];
             $commentList[$i]['app_id']=$v['app_id'];
             $commentList[$i]['pauthor']=$pauthor;

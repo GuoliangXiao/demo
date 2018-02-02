@@ -49,7 +49,7 @@
 	}
 	.span-right>a,.span-right>span{
 		float: right;
-		margin-right: 1em;
+		margin-right: 0.5em;
 	}
 	.hf{
 	}
@@ -244,13 +244,16 @@
 		                    		<a class="hf" href="javascript:void(0)" id="<?php echo ($vo["id"]); ?>">回复</a>
 		                    		
 		                    		<span>
+		                    			<span  class="hfplace"><?php echo ($vo["place"]); ?></span>
+		                    			<span  class="hftime"><?php echo (date("Y-m-d",$vo["time"])); ?></span>
+		                    			
+		                    		</span>
+		                    		<span>
 		                    			<span class="comment-up-times" id="<?php echo ($vo["id"]); ?>"><?php echo ($vo['love_times']); ?></span>
 		                    			<a id="<?php echo ($vo["id"]); ?>" class="comment-up" href="javascript:void(0)">
 		                    				<i class="fa fa-thumbs-o-up fa-lg"></i>
 		                    			</a>
 		                    		</span>
-		                    		
-		                    		<span  class="hftime"><?php echo (date("Y-m-d",$vo["time"])); ?></span>
 		                    	</span>
 		            		</div>
 		                	<div class="content"><?php echo ($vo["content"]); ?></div>

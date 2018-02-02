@@ -49,7 +49,7 @@
 	}
 	.span-right>a,.span-right>span{
 		float: right;
-		margin-right: 1em;
+		margin-right: 0.5em;
 	}
 	.hf{
 	}
@@ -250,13 +250,16 @@
 		                    		<a class="hf" href="javascript:void(0)" id="{$vo.id}">回复</a>
 		                    		
 		                    		<span>
+		                    			<span  class="hfplace">{$vo.place}</span>
+		                    			<span  class="hftime">{$vo.time|date="Y-m-d",###}</span>
+		                    			
+		                    		</span>
+		                    		<span>
 		                    			<span class="comment-up-times" id="{$vo.id}">{$vo['love_times']}</span>
 		                    			<a id="{$vo.id}" class="comment-up" href="javascript:void(0)">
 		                    				<i class="fa fa-thumbs-o-up fa-lg"></i>
 		                    			</a>
 		                    		</span>
-		                    		
-		                    		<span  class="hftime">{$vo.time|date="Y-m-d",###}</span>
 		                    	</span>
 		            		</div>
 		                	<div class="content">{$vo.content}</div>
