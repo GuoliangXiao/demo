@@ -104,20 +104,26 @@
 </script>
 	
 <style type="text/css">
-.my-weather{
-	padding-bottom: 1em;
-}
-.app-title{
-	
-}
-.search-weather{
-	padding: 0.5em;
-}
-.search-s{
-	float: right;
-}
-
+	.my-weather{
+		padding-bottom: 1em;
+	}
+	.app-title{
+		
+	}
+	.search-weather{
+		padding: 0.5em;
+	}
+	.search-s{
+		float: right;
+	}
+	#city-picker{
+		width: 25em;
+		overflow: hidden;
+	}
 </style>
+<script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.data.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/citypicker/css/city-picker.css" />
 <div class="container my-container">
 	<div  class="app-container">
 		<div class="row">
@@ -125,25 +131,35 @@
 				<h3 class="app-title"><i class="fa fa-snowflake-o fa-lg"></i>&nbsp;天气预报&nbsp;|&nbsp;Weather Forecast</h3>
 			</div>
 			<div class="col-md-6">
+
 				<div class="form-inline search-weather">
-				<input type="text" class="form-control input-city"  placeholder="请输入城市查询">
-				<button class="btn-s btn btn-default">&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i>&nbsp;&nbsp;</button>
+					<div class="form-group">
+                    	<div style="position: relative;">
+                        	<input  id="city-picker" class="form-control" readonly type="text" value="湖北省/武汉市/洪山区" data-toggle="city-picker"/>
+                    	</div>
+                	</div>
+					<div class="form-group">
+						<button class="btn-s btn btn-default">&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i>&nbsp;&nbsp;</button>
+					</div>
+					
 			</div>
 			</div>
 		</div>
 		<div class="my-weather">
 			
 		</div>
+		
 	</div>
 </div>
 <script src="https://cdn.bootcss.com/flot/0.8.3/jquery.flot.js"></script>
+
+
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
-		var city="武汉";
-		postCity(city);
 		$(".btn-s").click(function(event) {
 			/* Act on the event */
-			var city=$(".input-city").val();
+			var city=$("#city-picker").val();
+			//alert(city);
 			if(city!=""){
 				postCity(city);
 			}else{
@@ -151,11 +167,13 @@
 			}
 			//alert(city);
 		});
+		$(".btn-s").click();
 	});
 	function postCity(city){
 		var url='<?php echo U("Apps/Weather/getWeather");?>';	
 		$.post(url, {city: city}, function(data, textStatus, xhr) {
 			/*optional stuff to do after success */
+			//alert(data);
 			if(data['status']==1){
 				//alert(data['info']);
 				$('.my-weather').html(data['info']);

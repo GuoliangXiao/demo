@@ -155,7 +155,7 @@
 
 		<div class="weather-next">
 			<ul>
-				<?php $__FOR_START_221__=1;$__FOR_END_221__=5;for($i=$__FOR_START_221__;$i < $__FOR_END_221__;$i+=1){ ?><li class="weather-forecast-info">
+				<?php $__FOR_START_30170__=1;$__FOR_END_30170__=5;for($i=$__FOR_START_30170__;$i < $__FOR_END_30170__;$i+=1){ ?><li class="weather-forecast-info">
 						<div><?php echo ($info['data']['forecast'][$i]['date']); ?></div>
 						<div><?php echo ($info['data']['forecast'][$i]['type']); ?></div>
 						<div>
@@ -179,7 +179,7 @@
 						<div class="aqi-content-2"></div>
 					</div>
 					<div class="aqi-standart">
-						<?php $__FOR_START_25682__=0;$__FOR_END_25682__=6;for($i=$__FOR_START_25682__;$i < $__FOR_END_25682__;$i+=1){ ?><div style="display:inline-block; width: 16.66%;height: 1.5em;text-align: center;line-height: 1.5em;color: white;"></div><?php } ?>
+						<?php $__FOR_START_18955__=0;$__FOR_END_18955__=6;for($i=$__FOR_START_18955__;$i < $__FOR_END_18955__;$i+=1){ ?><div style="display:inline-block; width: 16.66%;height: 1.5em;text-align: center;line-height: 1.5em;color: white;"></div><?php } ?>
 					</div>
 				</div>
 			</div>
@@ -272,7 +272,7 @@
 	        return 5;
 	    }
 	}
-	var AQI = new Array(["优","#72B963","空气质量令人满意，基本无空气污染，可以正常活动。"], ["良","#E1C556","空气质量可以接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响，一般可以正常活动，极少数异常敏感人群应减少户外活动。"], ["轻度污染","#E6855C","易感人群症状有轻度加剧，健康人群出现刺激症状，心脏病和呼吸系统疾病患者应减少体力消耗和户外活动。"], ["中度污染","#BE5156","易感人群症状有所加剧，运动耐受力降低，可能对健康人群心脏和呼吸系统有影响，儿童，老年人和心肝病、肺病患者应减少体力活动。"], ["重度污染","#A24975","心脏病和肺病患者症状显著加剧，运动耐受力降低，健康人群普遍出现症状，儿童，老年人和心肝病、肺病患者应停止户外活动，一般人也应减少户外活动。"], ["有毒","#823D47","健康人运动耐受力降低，有明显强烈症状，提前出现某些疾病 ，老年人和病人应当留在室内，避免体力消耗，一般人群应尽量避免户外活动。"]);
+	var AQI = new Array(["优","#72B963","空气质量令人满意，基本无空气污染，可以正常活动。","11.1%"], ["良","#E1C556","空气质量可以接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响，一般可以正常活动，极少数异常敏感人群应减少户外活动。","11.1%"], ["轻度污染","#E6855C","易感人群症状有轻度加剧，健康人群出现刺激症状，心脏病和呼吸系统疾病患者应减少体力消耗和户外活动。","22.2%"], ["中度污染","#BE5156","易感人群症状有所加剧，运动耐受力降低，可能对健康人群心脏和呼吸系统有影响，儿童，老年人和心肝病、肺病患者应减少体力活动。","22.2%"], ["重度污染","#A24975","心脏病和肺病患者症状显著加剧，运动耐受力降低，健康人群普遍出现症状，儿童，老年人和心肝病、肺病患者应停止户外活动，一般人也应减少户外活动。","22.2%"], ["有毒","#823D47","健康人运动耐受力降低，有明显强烈症状，提前出现某些疾病 ，老年人和病人应当留在室内，避免体力消耗，一般人群应尽量避免户外活动。","11.1%"]);
 	jQuery(document).ready(function($) {
 		var obj=$.parseJSON('<?php echo ($json_info); ?>');
 		plot_temp(obj);
@@ -286,6 +286,7 @@
 		$(".aqi-standart>div").each(function(index, el) {
 			$(this).css('background',AQI[index][1]);
 			$(this).text(AQI[index][0]);
+			$(this).width(AQI[index][3])
 		});
 	});
 

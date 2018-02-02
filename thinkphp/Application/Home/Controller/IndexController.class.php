@@ -12,7 +12,22 @@ class IndexController extends Controller {
         $this->assign('loves',$loves);
         //$dbFields=$user->getDbFields();
         //$this->assign('dbFields',$dbFields);
-
+        $ip=get_client_ip();
+        if($ip=='0.0.0.0'){
+            $ip='218.197.229.17';
+        }
+        $place=taobaoIP($ip);
+        $city=$place['city'];
+        $sc=new \Apps\Controller\WeatherController();
+        $weather_info=$sc->getW($city);
+        $this->assign('weather_info',$weather_info);
+        $browser=get_broswer();
+        $os=get_os();
+        $user_info['ip']=$ip;
+        $user_info['browser']=$browser;
+        $user_info['os']=$os;
+        $user_info['place']=$place['province'].$place['city'];
+        $this->assign('user_info',$user_info);
     	$this->display();
     	//$d = $_SERVER['DOCUMENT_ROOT'];echo $d;
     }

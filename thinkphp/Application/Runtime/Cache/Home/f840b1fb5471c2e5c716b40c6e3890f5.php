@@ -15,11 +15,11 @@
 	}
 	.div-img{
 		float: left;
-		width: 5.5em;
+		width: 4em;
 	}
 	.author-img{
 		height: 3em;
-		margin-left: 1em;
+		margin-left: 0.5em;
 	}
 	.author{
 		text-decoration: none;
@@ -227,7 +227,7 @@
 
 	    <?php if(($comment_len) > "0"): ?><div class="mycomment">
 		        <h2></h2>
-		        <?php if(is_array($commentList)): $i = 0; $__LIST__ = $commentList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="myrow" style="padding-left:<?php echo comment_level($vo['level']);?>cm">
+		        <?php if(is_array($commentList)): $i = 0; $__LIST__ = $commentList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="myrow" style="padding-left:<?php echo comment_level($vo['level']);?>em">
 		        		<div class="div-img">
 		        			<img class="author-img" src="/xhust/thinkphp/Public/Comment/img/author.png"/>
 		        		</div>
