@@ -105,7 +105,7 @@ function getBrowser() {
  * @return string 
  */
 function get_os(){
-$agent = $_SERVER['HTTP_USER_AGENT'];
+    $agent = $_SERVER['HTTP_USER_AGENT'];
     $os = false;
  
     if (preg_match('/win/i', $agent) && strpos($agent, '95'))
@@ -218,9 +218,25 @@ $agent = $_SERVER['HTTP_USER_AGENT'];
     {
       $os = 'offline';
     }
-    else
-    {
-      $os = '未知操作系统';
+    else{
+        $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
+        if(strpos($agent, 'macintosh')) {
+            $os = 'mac';
+        } else if(strpos($agent, 'ipod')) {
+          $os = 'ipod';
+        } else if(strpos($agent, 'ipad')) {
+          $os = 'ipad';
+        } else if(strpos($agent, 'iphone')) {
+          $os = 'iphone';
+        } else if (strpos($agent, 'android')) {
+          $os = 'android';
+        } else if(strpos($agent, 'unix')) {
+          $os = 'unix';
+        } else if(strpos($agent, 'linux')) {
+          $os = 'linux';
+        } else {
+          $os = '其他操作系统';
+      }
     }
     return $os;  
 }
