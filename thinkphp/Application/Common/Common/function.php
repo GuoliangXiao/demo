@@ -90,9 +90,11 @@ function getBrowser() {
         $visitor_browser = "Mozilla";
     } elseif (strpos($user_OSagent, "Firefox")) {
         $visitor_browser = "Firefox";
+    } elseif (strpos($user_OSagent, "Safari")) {
+        $visitor_browser = "Safari";
     } elseif (strpos($user_OSagent, "U")) {
         $visitor_browser = "Firefox";
-    } else {
+    }else {
         $visitor_browser = "其它";
     }
     return $visitor_browser;
