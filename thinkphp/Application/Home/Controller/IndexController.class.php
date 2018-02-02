@@ -21,7 +21,7 @@ class IndexController extends Controller {
         $sc=new \Apps\Controller\WeatherController();
         $weather_info=$sc->getW($city);
         $this->assign('weather_info',$weather_info);
-        $browser=get_broswer();
+        $browser=getBrowser();
         $os=get_os();
         $user_info['ip']=$ip;
         $user_info['browser']=$browser;

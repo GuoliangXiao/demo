@@ -9,8 +9,8 @@ return array(
 	//'TMPL_L_DELIM'=>'<{',
 	//'TMPL_R_DELIM'=>'}>',
 	//'VIEW_PATH'=>'./Public/',
-	
-	/*'SHOW_PAGE_TRACE' =>true,
+	/*
+	'SHOW_PAGE_TRACE' =>true,
 	'DB_TYPE'=>'mysql',
 	'DB_USER'=>'root',
 	'DB_PWD'=>'root',
