@@ -14,7 +14,7 @@ class IndexController extends Controller {
         //$this->assign('dbFields',$dbFields);
         $ip=get_client_ip();
         if($ip=='0.0.0.0'){
-            $ip='218.197.229.17';
+            $ip='218.197.20.20';
         }
         $place=taobaoIP($ip);
         $city=$place['city'];
