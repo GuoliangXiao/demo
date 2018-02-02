@@ -9,21 +9,28 @@
 		margin: 0.1em;
 		display: inline-block;
 	}
+	.app-recommend{
+		
+	}
+	
 </style>
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-12 comment-div">
 
 			<div class="comment-info">
 		    
 			</div>
 
 			<?php if(($comment_count) > "0"): ?><div class="mybutton">
-					<?php $__FOR_START_26162__=0;$__FOR_END_26162__=$page;for($i=$__FOR_START_26162__;$i < $__FOR_END_26162__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+					<?php $__FOR_START_22730__=0;$__FOR_END_22730__=$page;for($i=$__FOR_START_22730__;$i < $__FOR_END_22730__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
 				</div><?php endif; ?>
 		</div>
-		<div class="col-md-4">
-			
+		<div class="col-md-0">
+			<div class="app-recommend">
+				
+				
+			</div>
 		</div>
 	</div>
 	
@@ -51,6 +58,8 @@
 			//alert(data.info);
 			$(".comment-info").empty();
 			$(".comment-info").html(data.info);
+			//$(".app-recommend").height($(".comment-div").height());
+			//alert($(".comment-div").height());
 		});
 	}
 </script>

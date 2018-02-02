@@ -33,10 +33,6 @@
 <script type="text/javascript" src="/xhust/thinkphp/Public/Slippry/slippry.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jquery.particleground.js"></script>
 
-
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Calendar/simple-calendar.css" />
-<script type="text/javascript" src="/xhust/thinkphp/Public/Calendar/simple-calendar.js"></script>
-
 <script type="text/javascript" src="/xhust/thinkphp/Public/Js/Home/index.js"></script>
 
 <body style="background: #eeeeee;">
@@ -317,12 +313,13 @@
 	}
 	.about div{
 		padding-left:0.5em;
+		line-height: 2em;
 	}
 	
-	.copyright-toast {
+/*	.copyright-toast {
 		position: absolute;
 		bottom: 0;
-	}
+	}*/
 
 </style>
 
@@ -360,6 +357,8 @@
 		<div class="col-md-4 about">
 			<h4><i class="fa fa-info-circle fa-lg"></i>&nbsp;关于&nbsp;|&nbsp;About</h4>
 			<div><?php echo (C("contact.about")); ?></div>
+			<div>Gratitude for Thinkphp, Github, Bootstarp, Fontawesome, jQuery.</div>
+			<div>Designed for a girl@magua</div>
 			<div class="copyright-toast"><?php echo (C("contact.copyright")); ?></div>
 		</div>
 	</div>

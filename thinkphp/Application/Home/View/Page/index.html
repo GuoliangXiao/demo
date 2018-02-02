@@ -9,10 +9,14 @@
 		margin: 0.1em;
 		display: inline-block;
 	}
+	.app-recommend{
+		
+	}
+	
 </style>
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-12 comment-div">
 
 			<div class="comment-info">
 		    
@@ -26,8 +30,11 @@
 				</div>
 			</gt>
 		</div>
-		<div class="col-md-4">
-			
+		<div class="col-md-0">
+			<div class="app-recommend">
+				
+				
+			</div>
 		</div>
 	</div>
 	
@@ -55,6 +62,8 @@
 			//alert(data.info);
 			$(".comment-info").empty();
 			$(".comment-info").html(data.info);
+			//$(".app-recommend").height($(".comment-div").height());
+			//alert($(".comment-div").height());
 		});
 	}
 </script>
