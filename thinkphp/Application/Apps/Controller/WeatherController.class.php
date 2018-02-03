@@ -1,7 +1,6 @@
 <?php
 namespace Apps\Controller;
 use Think\Controller;
-use Think\Model;
 class WeatherController extends Controller {
     public function index(){ 
     	$id=I('get.id');

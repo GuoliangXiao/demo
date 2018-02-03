@@ -1,0 +1,119 @@
+<layout name="Public/template"/>
+<?php
+	$seal_fonts=array('隶书','方正姚体','仿宋','黑体','华文仿宋 ','华文宋体','华文细黑','华文中宋 ','楷体','微软雅黑','微软雅黑(粗)','幼圆','华康少女 ','华文楷体','华文琥珀','华文彩云','华文行楷','华文隶书','华文新魏','方正小篆体','金文大篆体','方正启体简体','方正水柱_GBK','汉仪篆书繁','迷你简娃娃篆 ','经典繁方篆','方正剪紙繁體 ','方正细珊瑚繁体','方正准圆繁体','方正行楷繁体');
+?>
+
+<style type="text/css">
+	.seal-generate{
+		padding-top:0.5em;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+	}
+	.seal-img{
+		height: 9em;
+		margin-top:1.5em;
+	}
+	.seal-img>div{
+		margin: 0 1em 0 1em;
+	}
+	.seal-img img{
+		
+		height: 7em;
+		width: 7em;
+		display: inline-block;
+	}
+	.seal-img>span{
+		display: inline-block;
+		width: 9em;
+		line-height: 2em;
+		text-align: center;
+		font-weight: bold;
+	}
+</style>
+<div class="app-container">
+	<div class="row">
+		<div class="col-md-6">
+			<h3 class="app-title"><i class="fa fa-fonticons fa-lg"></i>&nbsp;方形印章&nbsp;|&nbsp;Seal</h3>
+		</div>
+		<div class="col-md-6">
+			<div class="form-inline seal-generate">
+				<div class="form-group">
+                	<input placeholder="请输入2-4个汉字" type="text" name="input_text" class="form-control">
+            	</div>
+            	<div class="form-group">
+            		<select name="seal_kind" class="form-control">
+					  <option value="-1">随机</option>
+					  <option value="0">阳文</option>
+					  <option value="1">阴文</option>
+					</select>
+            	</div>
+				<div class="form-group">
+					<button class="btn-s btn btn-default">&nbsp;&nbsp;生成印章&nbsp;&nbsp;</button>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="seal-content">
+		<ul>
+			<for start="0" end="30">
+				<li>
+					<div class="seal-img">
+						<div><img class="img-result" src="http://hbh-hbh.7e14.starter-us-west-2.openshiftapps.com/Seal/php/get_img.php?font={$i}"></div>
+						<span>{$seal_fonts[$i]}</span>
+					</div>
+				</li>
+			</for>
+		</ul>
+	</div>
+	<div style="margin-top:1em;"></div>
+</div>
+<script type="text/javascript">
+	function getKind() {
+	    var k = $("select[name='seal_kind']").val();
+	    if (k == 1 || k == 0) {
+	        return k;
+	    } else {
+	        var r = Math.random();
+	        if (r < 0.5) {
+	            return 0;
+	        } else {
+	            return 1;
+	        }
+	    }
+	}
+
+	function chinestTest(s) {
+	    for (var i = 0; i < s.length; i++)
+	        if (s.charCodeAt(i) < 0x4E00 || s.charCodeAt(i) > 0x9FA5) {
+	            return false;
+	        }
+	    return true;
+	}
+	jQuery(document).ready(function($) {
+		$(".btn-s").click(function(event) {
+			/* Act on the event */
+			var name = $("input[name='input_text']").val();
+		    if (name != "") {
+		        if (chinestTest(name)) {
+		            if(name.length<2||name.length>4){
+		                alert("请输入2-4个汉字！");
+		            }else{
+		            	//alert(getKind());
+		                $(".img-result").each(function(index) {		     
+			                var kind = getKind();
+			                var url = "http://hbh-hbh.7e14.starter-us-west-2.openshiftapps.com/Seal/php/get_img.php?font=" + index + "&kind=" + kind + "&name=" + name;
+			                $(this).attr("src", url);
+		           		});
+		            }
+		        }else{
+		            alert("请输入汉字!");
+		        }
+		    }else{
+		        alert("输入为空！");
+		    }
+		});
+	});
+</script>

@@ -1,0 +1,353 @@
+<layout name="Public/template"/>
+<style type="text/css">
+	.my-table{
+	}
+	td{
+		height: 4em;
+		text-align: center;
+		font-size: 1.1em;
+	}
+	.my-row{
+		margin: 0 0.5em 0 0.5em;
+	}
+	.td-result{
+		font-weight: bold;
+	}
+	.cal-about{
+		margin-left: 1em;
+		font-size: 1.1em;
+		line-height: 2em;
+	}
+</style>
+<div class="app-container">
+	<div class="row">
+		<div class="col-md-6">
+			<h3 class="app-title"><i class="fa fa-calculator fa-lg"></i>&nbsp;进制转换&nbsp;|&nbsp;SysConvert</h3>
+		</div>
+		<div class="col-md-6">
+		</div>
+	</div>
+	<div class="row my-row">
+		<div class="col-md-6">
+			<?php 
+				$speacial_sys=array(
+					0=>array(
+						0=>2,
+						1=>'2进制'
+					),
+					1=>array(
+						0=>8,
+						1=>'8进制'
+					),
+					2=>array(
+						0=>10,
+						1=>'10进制'
+					),
+					3=>array(
+						0=>16,
+						1=>'16进制'
+					),
+					4=>array(
+						0=>32,
+						1=>'32进制'
+					),
+					5=>array(
+						0=>0,
+						1=>'其他'
+					),
+				);
+
+			?>
+			
+			<form class="form-inline">
+				<div class="form-group">
+					<for start="0" end="6">
+						<label class="radio-inline">
+						    <input type="radio" name="speacial_num" value="{$speacial_sys[$i][0]}"
+						    <?php if($i==2) echo 'checked'?>
+						    >
+						   	{$speacial_sys[$i][1]}
+						</label>
+						<if condition="$i neq 5">
+							<span style="margin-left:0.8em;"></span>
+							<else/>
+						</if>
+					</for>
+				</div>
+		  		<div class="form-group" >
+            		<select name="normal_num" id="select-sys" class="form-control" disabled>
+						<for start="2" end="65">
+							<?php 
+								if($i!=2&&$i!=8&&$i!=10&&$i!=16){
+								echo '<option>';
+								echo $i.'进制';
+								echo '</option>';
+							}
+							?>
+						</for>
+					</select>
+            	</div>
+			</form>
+		</div>
+		<div class="col-md-6">
+			<div class="form-inline">
+				<div class="form-group">
+                	<input class="form-control" value="" type="" name="input_num" placeholder="请输入待转换数字" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" onafterpaste="this.value=this.value.replace(/\D/g,'');">
+            	</div>
+				<div class="form-group">
+					<button class="btn btn-default btn-convert">&nbsp;&nbsp;转换&nbsp;&nbsp;</button>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div style="height: 1.5em;">
+		
+	</div>
+	<div class="row my-row" >
+		<div class="col-md-6 my-table">
+			<table class="table">
+				
+				<for start="0" end="3">
+					<tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+					>
+						<td style="vertical-align: middle;" width="30%">
+							{$speacial_sys[$i][1]}
+						</td>
+						<td class="td-result" style="vertical-align: middle;" class="{$speacial_sys[$i][0]} td-result"></td>
+					</tr>
+				</for>
+			</table>
+		</div>
+		<div class="col-md-6 my-table">
+			<table class="table">
+				
+				<for start="3" end="6">
+					<tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+					>
+						<td style="vertical-align: middle;" width="30%">
+							
+							<if condition="$i eq 5">
+								<div class="form-group" style="margin: 0;">
+				            		<select name="normal_result" id="select-sys" class="form-control">
+										<for start="2" end="65">
+											<?php 
+												if($i!=2&&$i!=8&&$i!=10&&$i!=16){
+												echo '<option>';
+												echo $i.'进制';
+												echo '</option>';
+											}
+											?>
+										</for>
+									</select>
+			            		</div>
+			            		<else/>{$speacial_sys[$i][1]}
+			            	</if>
+						</td>
+						<td style="vertical-align: middle;" class="{$speacial_sys[$i][0]} td-result"></td>
+					</tr>
+				</for>
+			</table>
+		</div>
+	</div>
+	<div class="row my-row">
+		<p class="cal-about">
+			进制转换是将一个数据以不同形式展现出来,进制转换由一组数码符号和两个基本因素("基"与"权")构成,其中本工具中64进制中64个字符分别用
+			<strong style="color:red;">0-9,A-Z,a-z,&lt;,&gt;</strong>表示。大小写字母有着不同的权,所以转换前一定注意!
+		</p>
+	</div>
+</div>
+<script type="text/javascript">
+	function showResult(r){
+		$(".td-result").each(function(index) {
+			$(this).text(r[index]);
+		});
+	}
+
+	function ten2m(from, kto) {
+		var error = -1;
+		var numm=new Array();
+		var r="";
+		if (kto < 2 || kto > 64) {
+			error = 20;
+		} else {
+			while(from){
+				var m=from%kto;
+				numm.push(m);
+				from=parseInt(from/kto);
+			}
+			for(var i=numm.length-1;i>=0;i--){
+				if(numm[i]>=0&&numm[i]<10){
+					r+=""+numm[i];
+				}else if(numm[i]>=10&&numm[i]<36){
+					r+=""+String.fromCharCode(55+numm[i]);
+				}else if(numm[i]>=36&&numm[i]<62){
+					r+=""+String.fromCharCode(61+numm[i]);
+				}else if(numm[i]==62){
+					r+=mark2[0];
+				}else if(numm[i]==63){
+					r+=mark2[1];
+				}else {
+					error=10;
+				}
+			}
+		}
+		//alert(r);
+		return {"error":error,"result":r};
+	}
+
+	function m2ten(from, kfrom) {
+		var num10 = 0;
+		var error = -1;
+		if (kfrom < 2 || kfrom > 64) {
+			error = 20;
+		} else {
+			for (var i = 0; i < from.length; i++) {
+				var m = from.charCodeAt(i);
+				if (m >= 48 && m <= 57) {
+					if (m - 48 >= kfrom) {
+						error = 1;
+						break;
+					}
+					num10 += (m - 48) * Math.pow(kfrom, from.length - i - 1);
+				} else if (m >= 65 && m <= 90) {
+					if (m - 55 >= kfrom) {
+						error = 2;
+						break;
+					}
+					num10 += (m - 55) * Math.pow(kfrom, from.length - i - 1);
+				} else if (m >= 97 && m <= 122) {
+					var t = m - 97 + 36;
+					if (t >= kfrom) {
+						error = 3;
+						break;
+					}
+					num10 += (t) * Math.pow(kfrom, from.length - i - 1);
+				} else if (m == mark1[0]) {
+					if (kfrom <= 62) {
+						error = 4;
+						break;
+					}
+					num10 += 62 * Math.pow(kfrom, from.length - i - 1);
+				} else if (m == mark1[1]) {
+					if (kfrom <= 63) {
+						error = 5;
+						break;
+					}
+					num10 += 63 * Math.pow(kfrom, from.length - i - 1);
+				} else {
+					error = 10;
+				}
+			}
+		}
+		return {
+			"error" : error,
+			"result" : num10
+		};
+	}
+	function transform(from, kfrom, kto) {
+		var t=from;
+		if(from<0){
+			t=0-from;
+		}
+		var r = m2ten(t+"", kfrom);
+		var r2 = 0;
+		var result=0;
+		var error=-1;
+		//alert(r.result);
+		if (r.error < 0) {
+			r2 = ten2m(r.result+"", kto);
+			if(r2.error<0){
+				result=r2.result;
+			}else{
+				error=2;
+			}
+		}else {
+			error=1;
+		}
+		if(from<0){
+			result=0-result;
+		}
+		//alert(result+"error:"+error);
+		return {"error":error,"result":result};
+	}
+	function getResult(kind, num) {
+		var tk = $("select[name='normal_result'] option:selected").val();
+		tk=tk.substring(0,tk.length-2);
+		var s=[2,8,10,16,32,tk];
+		var r=[];
+		for(var i=0;i<s.length;i++){
+			var t=transform(num,kind,s[i]);
+			if(t.error<0){
+				r[i]=t.result;
+
+			}else{
+				r[i]="convert failed!";
+			}
+		}
+		return r;
+	}
+
+	function getKind() {
+		var kind = $("input[name='speacial_num']:checked").val();
+		if (kind == 0) {
+			kind = $("select[name='normal_num']").val();
+			kind=kind.substring(0,kind.length-2);
+		}
+		return kind;
+	}
+	function changeInputRule() {
+		$("input[name='input_num']").val('');
+		var k = getKind();
+		//alert(k);
+		var reg = "";
+		if (k > 1 && k <= 10) {
+			reg = "/[^0-" + (k - 1) + "]/g";
+		} else if (k <= 36) {
+			var m = k - 10;
+			m += 64;
+			var s = String.fromCharCode(m);
+			reg = "/[^0-9A-" + s + "]/g";
+		} else if (k <= 62) {
+			var m = k - 36;
+			m += 97;
+			var s = String.fromCharCode(m);
+			alert(s);
+			reg = "/[^0-9A-Za-" + s + "]/g";
+		} else if (k == 63) {
+			reg = "/[^0-9A-Za-z<]/g";
+		} else if (k == 64) {
+			reg = "/[^0-9A-Za-z<>]/g";
+		}
+		var js = "this.value=this.value.replace(" + reg + ",'');";
+		$("input[name='input_num']").attr("onkeyup", js);
+		$("input[name='input_num']").attr("onafterpaste", js);
+	}
+	jQuery(document).ready(function($) {
+		$("input[name='speacial_num']").change(function(event) {
+			/* Act on the event */
+			var v=$("input[name='speacial_num']:checked").val();
+			if(v==0){
+				$("select[name='normal_num']").attr('disabled',false);
+			}else{
+				$("select[name='normal_num']").attr('disabled',true);
+			}
+			changeInputRule();
+		});
+		$(".btn-convert").click(function(event) {
+			/* Act on the event */
+			var v=$("input[name='input_num']").val();
+			if(v!=""){
+				var kind = getKind();
+				//alert(kind);
+				var result = getResult(kind, v);
+				showResult(result);
+			}else{
+				alert('请输入待转换数字转换');
+			}
+		});
+		$("select[name='normal_result']").change(function(event) {
+			/* Act on the event */
+			$(".btn-convert").click();
+		});
+	});
+</script>

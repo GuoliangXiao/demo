@@ -102,7 +102,8 @@
 		
 	});
 </script>
-	
+	<div class="container my-container">
+		
 <style type="text/css">
 	.my-weather{
 		padding-bottom: 1em;
@@ -124,32 +125,29 @@
 <script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.data.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/citypicker/css/city-picker.css" />
-<div class="container my-container">
-	<div  class="app-container">
-		<div class="row">
-			<div class="col-md-6">
-				<h3 class="app-title"><i class="fa fa-snowflake-o fa-lg"></i>&nbsp;天气预报&nbsp;|&nbsp;Weather Forecast</h3>
-			</div>
-			<div class="col-md-6">
+<div  class="app-container">
+	<div class="row">
+		<div class="col-md-6">
+			<h3 class="app-title"><i class="fa fa-snowflake-o fa-lg"></i>&nbsp;天气预报&nbsp;|&nbsp;Weather Forecast</h3>
+		</div>
+		<div class="col-md-6">
 
-				<div class="form-inline search-weather">
-					<div class="form-group">
-                    	<div style="position: relative;">
-                        	<input  id="city-picker" class="form-control" readonly type="text" value="湖北省/武汉市/洪山区" data-toggle="city-picker"/>
-                    	</div>
+			<div class="form-inline search-weather">
+				<div class="form-group">
+                	<div style="position: relative;">
+                    	<input  id="city-picker" class="form-control" readonly type="text" value="湖北省/武汉市/洪山区" data-toggle="city-picker"/>
                 	</div>
-					<div class="form-group">
-						<button class="btn-s btn btn-default">&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i>&nbsp;&nbsp;</button>
-					</div>
-					
-			</div>
+            	</div>
+				<div class="form-group">
+					<button class="btn-s btn btn-default">&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i>&nbsp;&nbsp;</button>
+				</div>	
 			</div>
 		</div>
-		<div class="my-weather">
-			
-		</div>
+	</div>
+	<div class="my-weather">
 		
 	</div>
+	
 </div>
 <script src="https://cdn.bootcss.com/flot/0.8.3/jquery.flot.js"></script>
 
@@ -183,6 +181,7 @@
 		});	
 	}
 </script>
+	</div>
 	<div class="comment">
 	</div>
 	
