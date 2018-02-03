@@ -20,7 +20,6 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <!--
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/font-awesome-4.7.0/css/font-awesome.min.css" />
-<script type="text/javascript" src="/xhust/thinkphp/Public/Js/jquery-2.1.0.min.js"></script>
 -->
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
@@ -371,8 +370,12 @@
 </body>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
+		$(".slippry-ppt").slippry();
+		$(".slippry-two").particleground();
+		$(".slippry-ppt>li").css("display","block");
 		var url="<?php echo U('Home/Page/index?app_id=0');?>";
 		$('.comment').load(url);
+
 	});
 	
 	$('.my-heart').click(function(event) {

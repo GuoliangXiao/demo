@@ -1,11 +1,9 @@
 <?php
 namespace Apps\Controller;
 use Think\Controller;
-class WeatherController extends Controller {
+class WeatherController extends XController {
     public function index(){ 
-    	$id=I('get.id');
-        $app_id=$id;
-    	$this->assign('app_id',$id);
+    	parent::index();
     	$city_num='101010100';
     	//$url="http://wthrcdn.etouch.cn/weather_mini?citykey=".$city_num;
     	//$info=file_get_contents("compress.zlib://".$url);

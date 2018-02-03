@@ -36,6 +36,10 @@
 		margin: 0.5em 0 0.5em 0;
 		background: transparent;
 	}
+	.thumb-up{
+		font-size: 1.2em;
+		margin: 0em 1em 0 1em;
+	}
 	body{
 		background: #eeeeee;
 	}
@@ -162,7 +166,7 @@
 	</div>
 	<div class="seal-content">
 		<ul>
-			<?php $__FOR_START_25777__=0;$__FOR_END_25777__=30;for($i=$__FOR_START_25777__;$i < $__FOR_END_25777__;$i+=1){ ?><li>
+			<?php $__FOR_START_26099__=0;$__FOR_END_26099__=30;for($i=$__FOR_START_26099__;$i < $__FOR_END_26099__;$i+=1){ ?><li>
 					<div class="seal-img">
 						<div><img class="img-result" src="http://hbh-hbh.7e14.starter-us-west-2.openshiftapps.com/Seal/php/get_img.php?font=<?php echo ($i); ?>"></div>
 						<span><?php echo ($seal_fonts[$i]); ?></span>
@@ -219,6 +223,11 @@
 		});
 	});
 </script>
+	</div>
+	<div class="container">
+		<button class="btn btn-success thumb-up"> 
+			&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
+		</button>
 	</div>
 	<div class="comment">
 	</div>
@@ -333,7 +342,17 @@
 				///alert(pt);
 				$('.my-container').css('padding-top',pt);
 			});
-	
+			$(".thumb-up").click(function(event) {
+				/* Act on the event */
+				var url='<?php echo U("Home/Index/addHeart");?>';
+				var appid='<?php echo ($app_id); ?>';
+				$.post(url, {id: appid}, function(data, textStatus, xhr) {
+					/*optional stuff to do after success */
+					if(data['status']==1){
+						$(".love_times").text(data['data']);
+					}
+				});	
+			});
 		});
 	</script>
 </body>

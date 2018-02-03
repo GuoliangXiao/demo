@@ -36,6 +36,10 @@
 		margin: 0.5em 0 0.5em 0;
 		background: transparent;
 	}
+	.thumb-up{
+		font-size: 1.2em;
+		margin: 0em 1em 0 1em;
+	}
 	body{
 		background: #eeeeee;
 	}
@@ -107,6 +111,7 @@
 <style type="text/css">
 	.my-weather{
 		padding-bottom: 1em;
+		margin: 0 0.5em 0 0.5em;
 	}
 	.app-title{
 		
@@ -144,7 +149,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="my-weather">
+	<div class="row my-weather">
 		
 	</div>
 	
@@ -181,6 +186,11 @@
 		});	
 	}
 </script>
+	</div>
+	<div class="container">
+		<button class="btn btn-success thumb-up"> 
+			&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
+		</button>
 	</div>
 	<div class="comment">
 	</div>
@@ -295,7 +305,17 @@
 				///alert(pt);
 				$('.my-container').css('padding-top',pt);
 			});
-	
+			$(".thumb-up").click(function(event) {
+				/* Act on the event */
+				var url='<?php echo U("Home/Index/addHeart");?>';
+				var appid='<?php echo ($app_id); ?>';
+				$.post(url, {id: appid}, function(data, textStatus, xhr) {
+					/*optional stuff to do after success */
+					if(data['status']==1){
+						$(".love_times").text(data['data']);
+					}
+				});	
+			});
 		});
 	</script>
 </body>

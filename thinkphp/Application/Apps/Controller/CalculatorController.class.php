@@ -2,11 +2,9 @@
 namespace Apps\Controller;
 use Think\Controller;
 use Think\Model;
-class CalculatorController extends Controller {
+class CalculatorController extends XController {
     public function index(){ 
-    	$id=I('get.id');
-        $app_id=$id;
-    	$this->assign('app_id',$id);
+    	parent::index();
     	$this->display();    	
     }
 }

@@ -20,7 +20,6 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <!--
 <css href="__PUBLIC__/font-awesome-4.7.0/css/font-awesome.min.css"/>
-<js href="__PUBLIC__/Js/jquery-2.1.0.min.js"/>
 -->
 <css href="__PUBLIC__/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css"/>
 <css href="__PUBLIC__/jQuery-emoji/dist/css/jquery.emoji.css"/>
@@ -133,8 +132,12 @@
 </body>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
+		$(".slippry-ppt").slippry();
+		$(".slippry-two").particleground();
+		$(".slippry-ppt>li").css("display","block");
 		var url="{:U('Home/Page/index?app_id=0')}";
 		$('.comment').load(url);
+
 	});
 	
 	$('.my-heart').click(function(event) {

@@ -37,7 +37,7 @@ class IndexController extends Controller {
         $id=I('post.id');
         $wh['id']=$id;
         $wh['status']=1;
-        $love_times=$user->where('status=1')->where($wh)->getField('love_times');
+        $love_times=$user->where($wh)->getField('love_times');
         $d=$love_times+1;
         $user->love_times=$d;
         if($user->where($wh)->save())
