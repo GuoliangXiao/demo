@@ -237,7 +237,7 @@
 		                        <?php if(($vo["pauthor"] == NULL)): ?><a href="javascript:void(0)" class="author"><?php echo ($vo["author"]); ?></a>
 		                            <?php else: ?>                            
 		                            <a href="javascript:void(0)" class="author"><?php echo ($vo["author"]); ?></a>
-		                            <span class="black" style="color: #000101">&nbsp;回复&nbsp;</span>
+		                            <span class="black" style="color: #000101">回复</span>
 		                            <a href="javascript:void(0)" class="author"><?php echo ($vo["pauthor"]); ?></a><?php endif; ?>
 		                    	</span>
 		                    	<span class="span-right">

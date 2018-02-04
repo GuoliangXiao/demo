@@ -30,6 +30,6 @@ return array(
 		'cnblog'=>'http://www.cnblogs.com/xglove/',
 		'github'=>'https://github.com/GuoliangXiao',
 		'about'=>"百无一用是柔情，不屑一顾最相思。",
-		'copyright'=>"Copyrights@xhust.tk",
+		'copyright'=>"Copyrights&copy;xhust.tk",
 	),
 );

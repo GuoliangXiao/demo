@@ -23,7 +23,7 @@
 			</div>
 
 			<?php if(($comment_count) > "0"): ?><div class="mybutton">
-					<?php $__FOR_START_24291__=0;$__FOR_END_24291__=$page;for($i=$__FOR_START_24291__;$i < $__FOR_END_24291__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+					<?php $__FOR_START_3157__=0;$__FOR_END_3157__=$page;for($i=$__FOR_START_3157__;$i < $__FOR_END_3157__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
 				</div><?php endif; ?>
 		</div>
 		<div class="col-md-0">

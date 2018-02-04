@@ -32,7 +32,6 @@
 <script type="text/javascript" src="/xhust/thinkphp/Public/Slippry/slippry.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jquery.particleground.js"></script>
 
-<script type="text/javascript" src="/xhust/thinkphp/Public/Js/Home/index.js"></script>
 
 <body style="background: #eeeeee;">	
 	<style type="text/css">
