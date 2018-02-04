@@ -6,22 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="/xhust/thinkphp/Public/Apps/xhust.ico">
 </head>
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
-<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
 <style type="text/css">
 	.my-container{
 		padding-top:5em;
@@ -44,7 +28,40 @@
 		background: #eeeeee;
 	}
 </style>
-<body>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
+
+
+
+<script type="text/javascript" src="/xhust/thinkphp/Public/xcConfirm/js/xcConfirm.js"></script>
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/xcConfirm/css/xcConfirm.css" />
+<script type="text/javascript">
+	function alert_alt(txt,callback){
+		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info,{
+			onOk:callback
+		});
+	}
+	function confirm_alt(txt,callback){
+		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{
+			onOk:callback
+		});
+	}
+</script>
+<body style="background: #eeeeee;">
 	<style type="text/css">
 	.mynavdiv{
 		padding: 0;
@@ -92,7 +109,7 @@
 	}
 </style>
 <nav class="navbar navbar-fixed-top mynavdiv">
-	<div class="container">
+	<div <?php echo choose_class();?>>
 		<ul class="nav nav-tabs mynav">
 		  	<li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li>
 	   		<li role="presentation"><a href='/xhust/thinkphp/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
@@ -101,13 +118,11 @@
 		</ul>
 	</div>
 </nav>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		
-	});
-</script>
-	<div class="container my-container">
-		
+	
+	<div <?php echo choose_class();?>>
+		<div class="my-container">
+			
+			
 <style type="text/css">
 	.my-table{
 	}
@@ -142,7 +157,7 @@
 			
 			<form class="form-inline">
 				<div class="form-group">
-					<?php $__FOR_START_27504__=0;$__FOR_END_27504__=6;for($i=$__FOR_START_27504__;$i < $__FOR_END_27504__;$i+=1){ ?><label class="radio-inline">
+					<?php $__FOR_START_5473__=0;$__FOR_END_5473__=6;for($i=$__FOR_START_5473__;$i < $__FOR_END_5473__;$i+=1){ ?><label class="radio-inline">
 						    <input type="radio" name="speacial_num" value="<?php echo ($speacial_sys[$i][0]); ?>"
 						    <?php if($i==2) echo 'checked'?>
 						    >
@@ -153,7 +168,7 @@
 				</div>
 		  		<div class="form-group" >
             		<select name="normal_num" id="select-sys" class="form-control" disabled>
-						<?php $__FOR_START_3817__=2;$__FOR_END_3817__=65;for($i=$__FOR_START_3817__;$i < $__FOR_END_3817__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+						<?php $__FOR_START_22662__=2;$__FOR_END_22662__=65;for($i=$__FOR_START_22662__;$i < $__FOR_END_22662__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 					</select>
             	</div>
 			</form>
@@ -176,7 +191,7 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_1902__=0;$__FOR_END_1902__=3;for($i=$__FOR_START_1902__;$i < $__FOR_END_1902__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_13639__=0;$__FOR_END_13639__=3;for($i=$__FOR_START_13639__;$i < $__FOR_END_13639__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
 						<td style="vertical-align: middle;" width="30%">
 							<?php echo ($speacial_sys[$i][1]); ?>
@@ -188,13 +203,13 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_24079__=3;$__FOR_END_24079__=6;for($i=$__FOR_START_24079__;$i < $__FOR_END_24079__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_372__=3;$__FOR_END_372__=6;for($i=$__FOR_START_372__;$i < $__FOR_END_372__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
 						<td style="vertical-align: middle;" width="30%">
 							
 							<?php if($i == 5): ?><div class="form-group" style="margin: 0;">
 				            		<select name="normal_result" id="select-sys" class="form-control">
-										<?php $__FOR_START_20124__=2;$__FOR_END_20124__=65;for($i=$__FOR_START_20124__;$i < $__FOR_END_20124__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+										<?php $__FOR_START_9885__=2;$__FOR_END_9885__=65;for($i=$__FOR_START_9885__;$i < $__FOR_END_9885__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 									</select>
 			            		</div>
 			            		<?php else: echo ($speacial_sys[$i][1]); endif; ?>
@@ -366,7 +381,7 @@
 			var m = k - 36;
 			m += 97;
 			var s = String.fromCharCode(m);
-			alert(s);
+			//alert(s);
 			reg = "/[^0-9A-Za-" + s + "]/g";
 		} else if (k == 63) {
 			reg = "/[^0-9A-Za-z<]/g";
@@ -397,7 +412,7 @@
 				var result = getResult(kind, v);
 				showResult(result);
 			}else{
-				alert('请输入待转换数字转换');
+				alert_alt('请输入待转换数字转换');
 			}
 		});
 		$("select[name='normal_result']").change(function(event) {
@@ -406,15 +421,14 @@
 		});
 	});
 </script>
-	</div>
-	<div class="container">
-		<button class="btn btn-success thumb-up"> 
-			&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i>(<?php echo ($love_times); ?>)&nbsp;
-		</button>
-	</div>
-	<div class="comment">
-	</div>
-	
+			<?php if(($app_id) != "0"): ?><div>
+					<button class="btn btn-success thumb-up"> 
+						&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
+					</button>
+				</div><?php endif; ?>
+			<div class="comment">
+			</div>
+			
 <style type="text/css">
 	li,ul,ol{
 		list-style: none;
@@ -464,7 +478,7 @@
 
 </style>
 
-<div class="container my-footer">
+<div class="my-footer">
 	<div class="row copyright">
 		<div class="col-md-8">
 			<div class="row">
@@ -509,7 +523,10 @@
 		
 	});
 </script>
+			</div>
+	</div>
 	
+</body>	
 	<script type="text/javascript">
 		var pt=$(".mynavdiv").height();
 		$('.my-container').css('padding-top',pt);
@@ -525,8 +542,17 @@
 				///alert(pt);
 				$('.my-container').css('padding-top',pt);
 			});
-	
+			$(".thumb-up").click(function(event) {
+				/* Act on the event */
+				var url='<?php echo U("Home/Index/addHeart");?>';
+				var appid='<?php echo ($app_id); ?>';
+				$.post(url, {id: appid}, function(data, textStatus, xhr) {
+					/*optional stuff to do after success */
+					if(data['status']==1){
+						$(".love_times").text(data['data']);
+					}
+				});	
+			});
 		});
 	</script>
-</body>
 </html>

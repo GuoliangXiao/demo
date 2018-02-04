@@ -6,22 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="__PUBLIC__/Apps/xhust.ico">
 </head>
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<css href="__PUBLIC__/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css"/>
-<css href="__PUBLIC__/jQuery-emoji/dist/css/jquery.emoji.css"/>
-<js href="__PUBLIC__/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"/>
-<js href="__PUBLIC__/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"/>
-<js href="__PUBLIC__/jQuery-emoji/dist/js/jquery.emoji.min.js"/>
 <style type="text/css">
 	.my-container{
 		padding-top:5em;
@@ -44,20 +28,27 @@
 		background: #eeeeee;
 	}
 </style>
-<body>
-	<include file="./Public/Html/header.html"/>
-	<div class="container my-container">
-		{__CONTENT__}
+<include file="./Public/Html/function.html"/>
+<body style="background: #eeeeee;">
+	<include file="./Public/Html/header.html"/>	
+	<div {:choose_class()}>
+		<div class="my-container">
+			
+			{__CONTENT__}
+			<neq name="app_id" value="0">
+				<div>
+					<button class="btn btn-success thumb-up"> 
+						&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times">{$love_times}</span>&nbsp;
+					</button>
+				</div>
+			</neq>
+			<div class="comment">
+			</div>
+			<include file="./Public/Html/footer.html"/>
+			</div>
 	</div>
-	<div class="container">
-		<button class="btn btn-success thumb-up"> 
-			&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times">{$love_times}</span>&nbsp;
-		</button>
-	</div>
-	<div class="comment">
-	</div>
-	<include file="./Public/Html/footer.html"/>
 	
+</body>	
 	<script type="text/javascript">
 		var pt=$(".mynavdiv").height();
 		$('.my-container').css('padding-top',pt);
@@ -86,5 +77,4 @@
 			});
 		});
 	</script>
-</body>
 </html>

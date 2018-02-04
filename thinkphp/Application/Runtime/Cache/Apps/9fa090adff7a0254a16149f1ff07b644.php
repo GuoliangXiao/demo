@@ -6,22 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="/xhust/thinkphp/Public/Apps/xhust.ico">
 </head>
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
-<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
 <style type="text/css">
 	.my-container{
 		padding-top:5em;
@@ -44,7 +28,40 @@
 		background: #eeeeee;
 	}
 </style>
-<body>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
+
+
+
+<script type="text/javascript" src="/xhust/thinkphp/Public/xcConfirm/js/xcConfirm.js"></script>
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/xcConfirm/css/xcConfirm.css" />
+<script type="text/javascript">
+	function alert_alt(txt,callback){
+		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info,{
+			onOk:callback
+		});
+	}
+	function confirm_alt(txt,callback){
+		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{
+			onOk:callback
+		});
+	}
+</script>
+<body style="background: #eeeeee;">
 	<style type="text/css">
 	.mynavdiv{
 		padding: 0;
@@ -92,7 +109,7 @@
 	}
 </style>
 <nav class="navbar navbar-fixed-top mynavdiv">
-	<div class="container">
+	<div <?php echo choose_class();?>>
 		<ul class="nav nav-tabs mynav">
 		  	<li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li>
 	   		<li role="presentation"><a href='/xhust/thinkphp/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
@@ -101,13 +118,11 @@
 		</ul>
 	</div>
 </nav>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		
-	});
-</script>
-	<div class="container my-container">
-		
+	
+	<div <?php echo choose_class();?>>
+		<div class="my-container">
+			
+			
 <?php
  $seal_fonts=array('隶书','方正姚体','仿宋','黑体','华文仿宋 ','华文宋体','华文细黑','华文中宋 ','楷体','微软雅黑','微软雅黑(粗)','幼圆','华康少女 ','华文楷体','华文琥珀','华文彩云','华文行楷','华文隶书','华文新魏','方正小篆体','金文大篆体','方正启体简体','方正水柱_GBK','汉仪篆书繁','迷你简娃娃篆 ','经典繁方篆','方正剪紙繁體 ','方正细珊瑚繁体','方正准圆繁体','方正行楷繁体'); ?>
 
@@ -166,7 +181,7 @@
 	</div>
 	<div class="seal-content">
 		<ul>
-			<?php $__FOR_START_26099__=0;$__FOR_END_26099__=30;for($i=$__FOR_START_26099__;$i < $__FOR_END_26099__;$i+=1){ ?><li>
+			<?php $__FOR_START_13020__=0;$__FOR_END_13020__=30;for($i=$__FOR_START_13020__;$i < $__FOR_END_13020__;$i+=1){ ?><li>
 					<div class="seal-img">
 						<div><img class="img-result" src="http://hbh-hbh.7e14.starter-us-west-2.openshiftapps.com/Seal/php/get_img.php?font=<?php echo ($i); ?>"></div>
 						<span><?php echo ($seal_fonts[$i]); ?></span>
@@ -205,7 +220,7 @@
 		    if (name != "") {
 		        if (chinestTest(name)) {
 		            if(name.length<2||name.length>4){
-		                alert("请输入2-4个汉字！");
+		                alert_alt("请输入2-4个汉字！");
 		            }else{
 		            	//alert(getKind());
 		                $(".img-result").each(function(index) {		     
@@ -215,23 +230,25 @@
 		           		});
 		            }
 		        }else{
-		            alert("请输入汉字!");
+		            alert_alt("含有非汉字字符，请输入2-4个汉字字符!",function(){
+		            	$("input[name='input_text']").val('');
+		            });
 		        }
 		    }else{
-		        alert("输入为空！");
+		        alert_alt("输入为空！");
 		    }
 		});
 	});
+
 </script>
-	</div>
-	<div class="container">
-		<button class="btn btn-success thumb-up"> 
-			&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
-		</button>
-	</div>
-	<div class="comment">
-	</div>
-	
+			<?php if(($app_id) != "0"): ?><div>
+					<button class="btn btn-success thumb-up"> 
+						&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
+					</button>
+				</div><?php endif; ?>
+			<div class="comment">
+			</div>
+			
 <style type="text/css">
 	li,ul,ol{
 		list-style: none;
@@ -281,7 +298,7 @@
 
 </style>
 
-<div class="container my-footer">
+<div class="my-footer">
 	<div class="row copyright">
 		<div class="col-md-8">
 			<div class="row">
@@ -326,7 +343,10 @@
 		
 	});
 </script>
+			</div>
+	</div>
 	
+</body>	
 	<script type="text/javascript">
 		var pt=$(".mynavdiv").height();
 		$('.my-container').css('padding-top',pt);
@@ -355,5 +375,4 @@
 			});
 		});
 	</script>
-</body>
 </html>

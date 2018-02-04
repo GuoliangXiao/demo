@@ -311,7 +311,7 @@
 			var m = k - 36;
 			m += 97;
 			var s = String.fromCharCode(m);
-			alert(s);
+			//alert(s);
 			reg = "/[^0-9A-Za-" + s + "]/g";
 		} else if (k == 63) {
 			reg = "/[^0-9A-Za-z<]/g";
@@ -342,7 +342,7 @@
 				var result = getResult(kind, v);
 				showResult(result);
 			}else{
-				alert('请输入待转换数字转换');
+				alert_alt('请输入待转换数字转换');
 			}
 		});
 		$("select[name='normal_result']").change(function(event) {

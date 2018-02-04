@@ -14,7 +14,7 @@
 	}
 	
 </style>
-<div class="container">
+<div>
 	<div class="row">
 		<div class="col-md-12 comment-div">
 
@@ -23,7 +23,7 @@
 			</div>
 
 			<?php if(($comment_count) > "0"): ?><div class="mybutton">
-					<?php $__FOR_START_18568__=0;$__FOR_END_18568__=$page;for($i=$__FOR_START_18568__;$i < $__FOR_END_18568__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+					<?php $__FOR_START_24291__=0;$__FOR_END_24291__=$page;for($i=$__FOR_START_24291__;$i < $__FOR_END_24291__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
 				</div><?php endif; ?>
 		</div>
 		<div class="col-md-0">

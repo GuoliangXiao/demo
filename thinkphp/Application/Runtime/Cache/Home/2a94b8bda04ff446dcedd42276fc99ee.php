@@ -34,7 +34,7 @@
 
 <script type="text/javascript" src="/xhust/thinkphp/Public/Js/Home/index.js"></script>
 
-<body style="background: #eeeeee;">
+<body style="background: #eeeeee;">	
 	<style type="text/css">
 	.mynavdiv{
 		padding: 0;
@@ -82,7 +82,7 @@
 	}
 </style>
 <nav class="navbar navbar-fixed-top mynavdiv">
-	<div class="container">
+	<div <?php echo choose_class();?>>
 		<ul class="nav nav-tabs mynav">
 		  	<li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li>
 	   		<li role="presentation"><a href='/xhust/thinkphp/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
@@ -91,17 +91,14 @@
 		</ul>
 	</div>
 </nav>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		
-	});
-</script>
-	<div class="container my-container">
-		<div class="row">
-			<div class="col-md-8">
-				<ul class="slippry-ppt">
-					<li class="slippry-one">
-						<svg width="900" height="500"></svg>
+
+	<div <?php echo choose_class();?>>
+		<div class="my-container">			
+			<div class="row">
+				<div class="col-md-8">
+					<ul class="slippry-ppt">
+						<li class="slippry-one">
+							<svg width="900" height="500"></svg>
 <style>
 
 .links {
@@ -193,86 +190,85 @@
 	}
 
 </script>
-					</li>
-					<li class="slippry-two"></li>
-				</ul>
-			</div>
-			<div class="col-md-4">
-				<div class="c-date">
-					<div class="home-weater">
-						<ul>
-							<li>
-								<img src="/xhust/thinkphp/Public/Apps/Weather/img/<?php echo ($weather_info['data']['forecast'][0]['type']); ?>.gif">
-							</li>
-							<li>
-								<div>
-									<h3 class="h3-title"><?php echo ($weather_info['data']['city']); ?></h3><br/>
-									<h3 class="h3-title"><?php echo ($weather_info['data']['forecast'][0]['type']); ?></h3>
+						</li>
+						<li class="slippry-two"></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<div class="c-date">
+						<div class="home-weater">
+							<ul>
+								<li>
+									<img src="/xhust/thinkphp/Public/Apps/Weather/img/<?php echo ($weather_info['data']['forecast'][0]['type']); ?>.gif">
+								</li>
+								<li>
+									<div>
+										<h3 class="h3-title"><?php echo ($weather_info['data']['city']); ?></h3><br/>
+										<h3 class="h3-title"><?php echo ($weather_info['data']['forecast'][0]['type']); ?></h3>
 
-									<span style="font-size: 1.2em;margin-left: 0.8em;"><?php echo ($weather_info['data']['forecast'][0]['fengxiang']); ?></span>
-									<br/>
-									<span><?php echo ($weather_info['data']['forecast'][0]['high']); ?>&nbsp;&nbsp;
-									<?php echo ($weather_info['data']['forecast'][0]['low']); ?></span><br>
-									<span>
-										<?php  date_default_timezone_set("PRC"); echo (date("Y年m").'月'.$weather_info['data']['forecast'][0]['date']); ?>
+										<span style="font-size: 1.2em;margin-left: 0.8em;"><?php echo ($weather_info['data']['forecast'][0]['fengxiang']); ?></span>
+										<br/>
+										<span><?php echo ($weather_info['data']['forecast'][0]['high']); ?>&nbsp;&nbsp;
+										<?php echo ($weather_info['data']['forecast'][0]['low']); ?></span><br>
+										<span>
+											<?php  date_default_timezone_set("PRC"); echo (date("Y年m").'月'.$weather_info['data']['forecast'][0]['date']); ?>
+											
+										</span>
+										<br>
 										
-									</span>
-									<br>
-									
-									
-								</div>
-							</li>
-						</ul>
+										
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="home-ip">
+							<div>
+								<span>您的IP地址是&nbsp;</span><span class="ip-info"><?php echo ($user_info['ip']); ?></span>。
+							</div>
+							<div>
+								<span>您所在地区是&nbsp;</span><span class="ip-info"><?php echo ($user_info['place']); ?></span>。
+							</div>
+							<div>
+								<span>您的浏览器是&nbsp;</span><span class="ip-info"><?php echo ($user_info['browser']); ?></span>。
+							</div>
+							<div>
+								<span>您的操作系统&nbsp;</span><span class="ip-info"><?php echo ($user_info['os']); ?></span>。
+							</div>
+						</div>	
+														
 					</div>
-					<div class="home-ip">
-						<div>
-							<span>您的IP地址是&nbsp;</span><span class="ip-info"><?php echo ($user_info['ip']); ?></span>。
-						</div>
-						<div>
-							<span>您所在地区是&nbsp;</span><span class="ip-info"><?php echo ($user_info['place']); ?></span>。
-						</div>
-						<div>
-							<span>您的浏览器是&nbsp;</span><span class="ip-info"><?php echo ($user_info['browser']); ?></span>。
-						</div>
-						<div>
-							<span>您的操作系统&nbsp;</span><span class="ip-info"><?php echo ($user_info['os']); ?></span>。
-						</div>
-					</div>	
-													
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-8">
-				<h3><i class="fa fa-th-large fa-lg"></i>&nbsp;应用&nbsp;|&nbsp;Apps</h3>
-				<ul class="my-apps">
-					<?php if(is_array($apps)): $i = 0; $__LIST__ = $apps;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-							<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank">
-								<img src="/xhust/thinkphp/Public/Apps/Icon/<?php echo ($vo["icon"]); ?>.gif"/>
-								<span><?php echo ($vo["name"]); ?></span>
-							</a>
-						</li><?php endforeach; endif; else: echo "" ;endif; ?>
-				</ul>
+			<div class="row">
+				<div class="col-md-8">
+					<h3><i class="fa fa-th-large fa-lg"></i>&nbsp;应用&nbsp;|&nbsp;Apps</h3>
+					<ul class="my-apps">
+						<?php if(is_array($apps)): $i = 0; $__LIST__ = $apps;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+								<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank">
+									<img src="/xhust/thinkphp/Public/Apps/Icon/<?php echo ($vo["icon"]); ?>.gif"/>
+									<span><?php echo ($vo["name"]); ?></span>
+								</a>
+							</li><?php endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h3><i class="fa fa-thumbs-up fa-lg"></i>&nbsp;点赞排行</h3>
+					<ul class="loved-apps">
+						<?php if(is_array($loves)): $i = 0; $__LIST__ = $loves;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+								<strong><?php echo ($i); ?>.</strong>
+								<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank"><?php echo ($vo["name"]); ?></a>
+								<span>
+									<a href="javascript:void(0);"><i id="<?php echo ($vo["id"]); ?>" class="my-heart fa fa-heart fa-lg"></i></a>&nbsp;
+									<span id="<?php echo ($vo["id"]); ?>" class="love_times"><?php echo ($vo["love_times"]); ?></span>
+								</span>
+							</li><?php endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
+				</div>
+			</div>	
+			<div class="comment">
+			
 			</div>
-			<div class="col-md-4">
-				<h3><i class="fa fa-thumbs-up fa-lg"></i>&nbsp;点赞排行</h3>
-				<ul class="loved-apps">
-					<?php if(is_array($loves)): $i = 0; $__LIST__ = $loves;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-							<strong><?php echo ($i); ?>.</strong>
-							<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank"><?php echo ($vo["name"]); ?></a>
-							<span>
-								<a href="javascript:void(0);"><i id="<?php echo ($vo["id"]); ?>" class="my-heart fa fa-heart fa-lg"></i></a>&nbsp;
-								<span id="<?php echo ($vo["id"]); ?>" class="love_times"><?php echo ($vo["love_times"]); ?></span>
-							</span>
-						</li><?php endforeach; endif; else: echo "" ;endif; ?>
-				</ul>
-			</div>
-		</div>		
-	</div>
-	<div class="comment">
-		
-	</div>	
-	
+			
 <style type="text/css">
 	li,ul,ol{
 		list-style: none;
@@ -322,7 +318,7 @@
 
 </style>
 
-<div class="container my-footer">
+<div class="my-footer">
 	<div class="row copyright">
 		<div class="col-md-8">
 			<div class="row">
@@ -366,7 +362,10 @@
 	jQuery(document).ready(function($) {
 		
 	});
-</script>
+</script>		
+		</div>	
+	</div>
+
 </body>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {

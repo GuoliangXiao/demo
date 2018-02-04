@@ -124,81 +124,321 @@
 			
 			
 <style type="text/css">
-	.my-weather{
-		padding-bottom: 1em;
+	td{
+		border-collapse: separate;
+	}
+	.my-row{
 		margin: 0 0.5em 0 0.5em;
+		background: none;
 	}
-	.app-title{
-		
+	.div_phone_c{
 	}
-	.search-weather{
-		padding: 0.5em;
+	.div_phone{
+	    width: 20em;
+	    height:40em;
+	  	box-shadow: 0px 0px 0px 2px #aaa;
+	    background-color: #111;
+	    border-radius: 3em;
+	    margin: 0;
+	    padding: 0;
 	}
-	.search-s{
-		float: right;
+	.div_head{
+		height: 4.5em;
 	}
-	#city-picker{
-		width: 25em;
-		overflow: hidden;
+	.div_game{
+		width: 18em;
+		height: 32em;
+		background: white;
+		display: block;
+		margin-left: 1em;
+	}
+	.div_title{
+		display: none;
+	   	width: 100%;
+	   	height: 1.5em;
+	   	line-height: 1.5em;
+	   	background: red;
+	    text-align:center;
+	}
+	.div_content{
+	    border:0px solid pink;
+	    float:left;
+	}
+	.div_tile{
+	    float:left;
+	    width:14em;
+	    height: 28.5em;
+	    padding:0;
+	    border:0px solid #F1F1F1;
+	}
+	.div_tile tr td{
+	    border:1px solid #F1F1F1;
+	    width:1.3em;
+	    height:1.3em;
+	    background-color:white;
+	}
+	.div_panel{
+	    float:left;
+	    width:4em;
+	    padding-left:0;
+	    padding-top:6em;
+	    border:0px solid red;
+	}
+	.div_panel>span{
+		width: 100%;
+		display: inline-block;
+		color:white;
+		font-weight: bold;
+		text-align: center;
+	}
+	.div_button{
+	    float:left;
+	    width: 100%;
+	    height:3.5em;
+	    float:left;
+	}
+	.div_direction{
+	    float:left;
+	    margin-left:0.5em;
+	    margin-top:0.1em;
+	    border:0px solid green;
+	}
+	.div_direction img{
+	    width:3em;
+	    height:3em;
+	    padding:0.5em;
+	    border-radius:2.5em;
+	    border:1px solid white;
+	}
+	.div_control{
+	    float:left;
+	    margin-left: 1em;
+	}
+	.div_control img{
+	    width:3em;
+	    height:3em;
+	    padding:0.5em;
+	    border-radius:2.5em;
+	    border:1px solid white;
+	}
+	
+	.next{
+	    width:50px;
+	    height:50px;
+	}
+	.next table{
+	    
+	}
+	.next table tr td{
+	    border:1px solid #F1F1F1;
+	    width:0.8em;
+	    height:0.8em;
+	    background:red;
+	}
+	.div_help{
+		margin-top: 1em;
+		line-height: 2em;
+	}
+	.div_help strong{
+		font-size: 1.2em;
+		color: #A7040A;
 	}
 </style>
-<script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.data.min.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/citypicker/css/city-picker.css" />
-<div  class="app-container">
+<div class="app-container">
 	<div class="row">
 		<div class="col-md-6">
-			<h3 class="app-title"><i class="fa fa-snowflake-o fa-lg"></i>&nbsp;天气预报&nbsp;|&nbsp;Weather Forecast</h3>
+			<h3 class="app-title"><i class="fa fa-th fa-lg"></i>&nbsp;俄罗斯方块&nbsp;|&nbsp;Tile</h3>
 		</div>
-		<div class="col-md-6">
+	</div>
+	<div class="row my-row">
+		<div class="col-md-5 div_phone_c">
+            <div class="div_phone">
+            	<div class="div_head"></div>
+                <div class="div_game" style="background-image:url('http://pictureofxgl.qiniudn.com/online/tetris/screen.jpg');">
+                    <div class="div_title">
+                        俄罗斯方块
+                    </div>
+                    <div class="div_content" >
+                        <div class="div_tile">
 
-			<div class="form-inline search-weather">
-				<div class="form-group">
-                	<div style="position: relative;">
-                    	<input  id="city-picker" class="form-control" readonly type="text" value="湖北省/武汉市/洪山区" data-toggle="city-picker"/>
-                	</div>
-            	</div>
-				<div class="form-group">
-					<button class="btn-s btn btn-default">&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i>&nbsp;&nbsp;</button>
-				</div>	
+                        </div>
+                        <div class="div_panel">
+                            <span>next:</span>
+                            <div class="next">
+
+                            </div>
+                            <span>score:</span>
+                            <br/>
+                            <span class="score">0</span>
+                            <br/>
+                            <br/>
+                            <span>time:</span>
+                            <br/>
+                            <span class="time">0</span>
+                            <br/>
+                            <br/>
+                            <span>level:</span>
+                            <br/>
+                            <span class="level">0</span>
+                        </div>
+                    </div>
+                    <div class="div_button">
+                        <div class="div_direction">
+                            <img class="left" src="/xhust/thinkphp/Public/Apps/Tile/img/arrow_left.png"/>
+                            <img class="down" src="/xhust/thinkphp/Public/Apps/Tile/img/arrow_down.png"/>
+                            <img class="rotate" src="/xhust/thinkphp/Public/Apps/Tile/img/rotate.png"/>
+                            <img class="right" src="/xhust/thinkphp/Public/Apps/Tile/img/arrow_right.png"/>
+                        </div>
+                        <div class="div_control">
+                            <img  id="start" class="start" src="/xhust/thinkphp/Public/Apps/Tile/img/start.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div class="col-md-7">
+			<div class="div_rank"></div>
+			<div class="div_help">
+				<p>玩家可以通过界面按钮操作，体验快感，亦可以通过电脑键盘上
+					<strong>W</strong>，<strong>A</strong>，<strong>S</strong>，
+					<strong>D</strong>，<strong>R</strong>
+					五个按键操作，其中A按键为向左移动按键向右移动，S按键向下移动，W按键为翻转变形，R按键为开始或者暂停。
+				</p>
 			</div>
 		</div>
 	</div>
-	<div class="row my-weather">
-		
-	</div>
-	
+	<div class="row" style="height: 1em;"></div>	
 </div>
-<script src="https://cdn.bootcss.com/flot/0.8.3/jquery.flot.js"></script>
-
-
+<script type="text/javascript" src="/xhust/thinkphp/Public/Apps/Tile/js/Tiles.js"></script>
 <script type="text/javascript">
+	var width = 10;
+	var height = 22;
+	var tileHelper;
+
+	function initGame() {
+	    tileHelper = new Tiles(".div_tile", width, height, ".div_panel" ,function(score){
+	    	if(score>0)
+	    	{
+	    		var txt='请输入你的昵称，上传分数！';
+	    		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{
+					onOk:function(name){
+						if(name==''){
+							name='anonymous';
+						}
+						uploadScore(name,score);
+					}
+				});
+	    	}
+	    });
+	    tileHelper.initTile();
+	}
+
+	function startGame() {
+		//alert("start");
+	    var b = tileHelper.getStarted();
+	    if (b) {
+	        tileHelper.pause();
+	        $(".start").attr({
+	            "id" : "pause",
+	            "src" : "/xhust/thinkphp/Public/Apps/Tile/img/start.png"
+	        });
+	    } else {
+	        tileHelper.start();
+	        $(".start").attr({
+	            "id" : "start",
+	            "src" : "/xhust/thinkphp/Public/Apps/Tile/img/pause.png"
+	        });
+	    }
+	}
+
+	function bindFunctions() {
+	    $(".start").click(function() {
+	        //alert("start");
+	        startGame();
+	    });
+	    $(".down").click(function() {
+	        if (tileHelper == null) {
+	            return;
+	        }
+	        tileHelper.tileDown();
+	    });
+	    $(".left").click(function() {
+	        if (tileHelper == null) {
+	            return;
+	        }
+	        tileHelper.tileLeft();
+	    });
+	    $(".right").click(function() {
+	        if (tileHelper == null) {
+	            return;
+	        }
+	        tileHelper.tileRight();
+	    });
+	    $(".rotate").click(function() {
+	        if (tileHelper == null) {
+	            return;
+	        }
+	        tileHelper.rotateTile();
+	    });
+	    $(".div_button img").mousedown(function() {
+	        $(this).css("opacity", "0.6");
+	    });
+	    $(".div_button img").mouseup(function() {
+	        $(this).css("opacity", "1");
+	    });
+	    $(".div_button img").hover(function() {
+	        $(this).css("background-color", "white");
+	    }, function() {
+	        $(this).css("background-color", "transparent");
+	    });
+	    $(window).keypress(function() {
+	        keypress();
+	    });
+	    //document.onkeypress=keypress;
+	}
+
+	function keypress() {
+	    if (tileHelper == null) {
+	        return;
+	    }
+	    //alert(event.keyCode);
+	    if (event.keyCode == 65 || event.keyCode == 97) {
+	        //alert("left");
+	        tileHelper.tileLeft();
+	    } else if (event.keyCode == 68 || event.keyCode == 100) {
+	        tileHelper.tileRight();
+	    } else if (event.keyCode == 83 || event.keyCode == 115) {
+	        tileHelper.tileDown();
+	    } else if (event.keyCode == 87 || event.keyCode == 119) {
+	        tileHelper.rotateTile();
+	    } else if (event.keyCode == 114 || event.keyCode == 82) {
+	        startGame();
+	    }
+	}
+
 	jQuery(document).ready(function($) {
-		$(".btn-s").click(function(event) {
-			/* Act on the event */
-			var city=$("#city-picker").val();
-			//alert(city);
-			if(city!=""){
-				postCity(city);
-			}else{
-				alert("请输入城市名称查询");
-			}
-			//alert(city);
-		});
-		$(".btn-s").click();
+	    bindFunctions();
+    	initGame();
+    	showRank();
 	});
-	function postCity(city){
-		var url='<?php echo U("Apps/Weather/getWeather");?>';	
-		$.post(url, {city: city}, function(data, textStatus, xhr) {
+	function showRank(){
+		$('.div_rank').empty();
+		var url='<?php echo U("Apps/Score/index?app_id=$app_id");?>';
+    	$('.div_rank').load(url);  	
+	}
+	function uploadScore(name,score){
+		//alert(socre);
+		var url="<?php echo U('Apps/Score/uploadScore');?>";
+		var app_id='<?php echo ($app_id); ?>';
+		$.post(url, {app_id:app_id, name:name,score:score}, function(data, textStatus, xhr) {
 			/*optional stuff to do after success */
 			//alert(data);
 			if(data['status']==1){
-				//alert(data['info']);
-				$('.my-weather').html(data['info']);
+				showRank();
 			}else{
-				alert("请输入正确的城市名称再次查询");
-			}
-		});	
+				window.wxc.xcConfirm(data['info'], window.wxc.xcConfirm.typeEnum.info);
+			}			
+		});
 	}
 </script>
 			<?php if(($app_id) != "0"): ?><div>

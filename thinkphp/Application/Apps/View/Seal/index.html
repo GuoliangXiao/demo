@@ -99,7 +99,7 @@
 		    if (name != "") {
 		        if (chinestTest(name)) {
 		            if(name.length<2||name.length>4){
-		                alert("请输入2-4个汉字！");
+		                alert_alt("请输入2-4个汉字！");
 		            }else{
 		            	//alert(getKind());
 		                $(".img-result").each(function(index) {		     
@@ -109,11 +109,14 @@
 		           		});
 		            }
 		        }else{
-		            alert("请输入汉字!");
+		            alert_alt("含有非汉字字符，请输入2-4个汉字字符!",function(){
+		            	$("input[name='input_text']").val('');
+		            });
 		        }
 		    }else{
-		        alert("输入为空！");
+		        alert_alt("输入为空！");
 		    }
 		});
 	});
+
 </script>

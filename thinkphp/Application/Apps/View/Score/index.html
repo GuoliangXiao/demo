@@ -1,0 +1,27 @@
+<style type="text/css">
+	
+</style>
+<div>
+	<div>
+		<h4><i class="fa fa-first-order fa-lg"></i>&nbsp;|&nbsp排行榜;</h4>
+	</div>
+	<table class="table table-striped">
+		<tr>
+			<td>#</td>
+			<td>玩家</td>
+			<td>分数</td>
+			<td>时间</td>
+		</tr>
+		<volist name="score" id="vo" empty="还没有人开始玩这个游戏哦，来成为第一个玩这个游戏的人吧！！">
+			<tr>
+				<td>{$i}</td>
+				<td>{$vo['name']}</td>
+				<td <?php if($i<4){
+				echo "style='font-weight:bold;color:#A7040A;'";
+			} ?>
+				>{$vo['score']}</td>
+				<td>{$vo['time']}</td>
+			</tr>
+		</volist>
+	</table>
+</div>

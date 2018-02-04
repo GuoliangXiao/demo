@@ -34,101 +34,104 @@
 
 <js href="__PUBLIC__/Js/Home/index.js"/>
 
-<body style="background: #eeeeee;">
+<body style="background: #eeeeee;">	
 	<include file="./Public/Html/header.html"/>
-	<div class="container my-container">
-		<div class="row">
-			<div class="col-md-8">
-				<ul class="slippry-ppt">
-					<li class="slippry-one">
-						<include file="Public/d3svg"/>
-					</li>
-					<li class="slippry-two"></li>
-				</ul>
-			</div>
-			<div class="col-md-4">
-				<div class="c-date">
-					<div class="home-weater">
-						<ul>
-							<li>
-								<img src="__PUBLIC__/Apps/Weather/img/{$weather_info['data']['forecast'][0]['type']}.gif">
-							</li>
-							<li>
-								<div>
-									<h3 class="h3-title">{$weather_info['data']['city']}</h3><br/>
-									<h3 class="h3-title">{$weather_info['data']['forecast'][0]['type']}</h3>
+	<div {:choose_class()}>
+		<div class="my-container">			
+			<div class="row">
+				<div class="col-md-8">
+					<ul class="slippry-ppt">
+						<li class="slippry-one">
+							<include file="Public/d3svg"/>
+						</li>
+						<li class="slippry-two"></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<div class="c-date">
+						<div class="home-weater">
+							<ul>
+								<li>
+									<img src="__PUBLIC__/Apps/Weather/img/{$weather_info['data']['forecast'][0]['type']}.gif">
+								</li>
+								<li>
+									<div>
+										<h3 class="h3-title">{$weather_info['data']['city']}</h3><br/>
+										<h3 class="h3-title">{$weather_info['data']['forecast'][0]['type']}</h3>
 
-									<span style="font-size: 1.2em;margin-left: 0.8em;">{$weather_info['data']['forecast'][0]['fengxiang']}</span>
-									<br/>
-									<span>{$weather_info['data']['forecast'][0]['high']}&nbsp;&nbsp;
-									{$weather_info['data']['forecast'][0]['low']}</span><br>
-									<span>
-										<?php 
-										    date_default_timezone_set("PRC");
-										    echo (date("Y年m").'月'.$weather_info['data']['forecast'][0]['date']);
-										?>
+										<span style="font-size: 1.2em;margin-left: 0.8em;">{$weather_info['data']['forecast'][0]['fengxiang']}</span>
+										<br/>
+										<span>{$weather_info['data']['forecast'][0]['high']}&nbsp;&nbsp;
+										{$weather_info['data']['forecast'][0]['low']}</span><br>
+										<span>
+											<?php 
+											    date_default_timezone_set("PRC");
+											    echo (date("Y年m").'月'.$weather_info['data']['forecast'][0]['date']);
+											?>
+											
+										</span>
+										<br>
 										
-									</span>
-									<br>
-									
-									
-								</div>
-							</li>
-						</ul>
+										
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="home-ip">
+							<div>
+								<span>您的IP地址是&nbsp;</span><span class="ip-info">{$user_info['ip']}</span>。
+							</div>
+							<div>
+								<span>您所在地区是&nbsp;</span><span class="ip-info">{$user_info['place']}</span>。
+							</div>
+							<div>
+								<span>您的浏览器是&nbsp;</span><span class="ip-info">{$user_info['browser']}</span>。
+							</div>
+							<div>
+								<span>您的操作系统&nbsp;</span><span class="ip-info">{$user_info['os']}</span>。
+							</div>
+						</div>	
+														
 					</div>
-					<div class="home-ip">
-						<div>
-							<span>您的IP地址是&nbsp;</span><span class="ip-info">{$user_info['ip']}</span>。
-						</div>
-						<div>
-							<span>您所在地区是&nbsp;</span><span class="ip-info">{$user_info['place']}</span>。
-						</div>
-						<div>
-							<span>您的浏览器是&nbsp;</span><span class="ip-info">{$user_info['browser']}</span>。
-						</div>
-						<div>
-							<span>您的操作系统&nbsp;</span><span class="ip-info">{$user_info['os']}</span>。
-						</div>
-					</div>	
-													
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-8">
-				<h3><i class="fa fa-th-large fa-lg"></i>&nbsp;应用&nbsp;|&nbsp;Apps</h3>
-				<ul class="my-apps">
-					<volist name="apps" id="vo">
-						<li>
-							<a href={:generate_url($vo['url'],$vo['id'])} target="_blank">
-								<img src="__PUBLIC__/Apps/Icon/{$vo.icon}.gif"/>
-								<span>{$vo.name}</span>
-							</a>
-						</li>
-					</volist>
-				</ul>
+			<div class="row">
+				<div class="col-md-8">
+					<h3><i class="fa fa-th-large fa-lg"></i>&nbsp;应用&nbsp;|&nbsp;Apps</h3>
+					<ul class="my-apps">
+						<volist name="apps" id="vo">
+							<li>
+								<a href={:generate_url($vo['url'],$vo['id'])} target="_blank">
+									<img src="__PUBLIC__/Apps/Icon/{$vo.icon}.gif"/>
+									<span>{$vo.name}</span>
+								</a>
+							</li>
+						</volist>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h3><i class="fa fa-thumbs-up fa-lg"></i>&nbsp;点赞排行</h3>
+					<ul class="loved-apps">
+						<volist name="loves" id="vo">
+							<li>
+								<strong>{$i}.</strong>
+								<a href={:generate_url($vo['url'],$vo['id'])} target="_blank">{$vo.name}</a>
+								<span>
+									<a href="javascript:void(0);"><i id="{$vo.id}" class="my-heart fa fa-heart fa-lg"></i></a>&nbsp;
+									<span id="{$vo.id}" class="love_times">{$vo.love_times}</span>
+								</span>
+							</li>
+						</volist>
+					</ul>
+				</div>
+			</div>	
+			<div class="comment">
+			
 			</div>
-			<div class="col-md-4">
-				<h3><i class="fa fa-thumbs-up fa-lg"></i>&nbsp;点赞排行</h3>
-				<ul class="loved-apps">
-					<volist name="loves" id="vo">
-						<li>
-							<strong>{$i}.</strong>
-							<a href={:generate_url($vo['url'],$vo['id'])} target="_blank">{$vo.name}</a>
-							<span>
-								<a href="javascript:void(0);"><i id="{$vo.id}" class="my-heart fa fa-heart fa-lg"></i></a>&nbsp;
-								<span id="{$vo.id}" class="love_times">{$vo.love_times}</span>
-							</span>
-						</li>
-					</volist>
-				</ul>
-			</div>
-		</div>		
+			<include file="./Public/Html/footer.html"/>		
+		</div>	
 	</div>
-	<div class="comment">
-		
-	</div>	
-	<include file="./Public/Html/footer.html"/>
+
 </body>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
