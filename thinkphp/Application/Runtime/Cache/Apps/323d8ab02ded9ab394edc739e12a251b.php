@@ -34,7 +34,8 @@
 	}
 	.weather-forecast-info{
 		width: 8em;
-		margin-right: 0.5em;		
+		margin-right: 0.5em;
+		margin-bottom: 0.5em;		
 		background: none;
 		background: #FFFFFF;
 	}
@@ -99,7 +100,7 @@
 		 
 		<div class="row">
 			<div class="weather-info">
-				<div class="col-md-6">
+				<div class="col-md-7">
 					<div class="weather-info-1">
 						<div class="">
 							<img class="weather-img" src="/xhust/thinkphp/Public/Apps/Weather/img/<?php echo ($info['data']['forecast'][0]['type']); ?>.png">
@@ -124,7 +125,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-5">
 					<div>
 						<p class="weather-info-ganmmao"><?php echo ($info['data']['ganmao']); ?></p>
 					</div>
@@ -134,7 +135,7 @@
 
 		<div class="weather-next">
 			<ul>
-				<?php $__FOR_START_370__=1;$__FOR_END_370__=5;for($i=$__FOR_START_370__;$i < $__FOR_END_370__;$i+=1){ ?><li class="weather-forecast-info">
+				<?php $__FOR_START_17252__=1;$__FOR_END_17252__=5;for($i=$__FOR_START_17252__;$i < $__FOR_END_17252__;$i+=1){ ?><li class="weather-forecast-info">
 						<div><?php echo ($info['data']['forecast'][$i]['date']); ?></div>
 						<div style="font-size: 1.1em;"><?php echo ($info['data']['forecast'][$i]['type']); ?></div>
 						<div>
@@ -160,7 +161,7 @@
 						<div class="aqi-content-2"></div>
 					</div>
 					<div class="aqi-standart">
-						<?php $__FOR_START_2499__=0;$__FOR_END_2499__=6;for($i=$__FOR_START_2499__;$i < $__FOR_END_2499__;$i+=1){ ?><div style="display:inline-block; width: 16.66%;height: 1.5em;text-align: center;line-height: 1.5em;color: white;"></div><?php } ?>
+						<?php $__FOR_START_22989__=0;$__FOR_END_22989__=6;for($i=$__FOR_START_22989__;$i < $__FOR_END_22989__;$i+=1){ ?><div style="display:inline-block; width: 16.66%;height: 1.5em;text-align: center;line-height: 1.5em;color: white;"></div><?php } ?>
 					</div>
 				</div>
 			</div>
