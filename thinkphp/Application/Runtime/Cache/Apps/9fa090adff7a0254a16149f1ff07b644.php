@@ -198,7 +198,7 @@
 	</div>
 	<div class="seal-content">
 		<ul>
-			<?php $__FOR_START_20__=0;$__FOR_END_20__=30;for($i=$__FOR_START_20__;$i < $__FOR_END_20__;$i+=1){ ?><li>
+			<?php $__FOR_START_11476__=0;$__FOR_END_11476__=30;for($i=$__FOR_START_11476__;$i < $__FOR_END_11476__;$i+=1){ ?><li>
 					<div class="seal-img">
 						<div><img class="img-result" src="http://hbh-hbh.7e14.starter-us-west-2.openshiftapps.com/Seal/php/get_img.php?font=<?php echo ($i); ?>"></div>
 						<span><?php echo ($seal_fonts[$i]); ?></span>

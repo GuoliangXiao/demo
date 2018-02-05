@@ -268,5 +268,6 @@ function is_mobile(){
 function choose_class(){
   if(is_mobile()){
         echo 'class="container-fluid"';
+        echo 'style="padding:0;margin:0"';
   }else echo 'class="container"';
 }
