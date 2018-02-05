@@ -56,8 +56,6 @@
 		padding-top:1em;
 	}
 	.div-aqi-2{
-		margin-left : 0;
-		padding-left: 0;
 	}
 	.legend_container{
 		width: 100%;
@@ -135,7 +133,7 @@
 
 		<div class="weather-next">
 			<ul>
-				<?php $__FOR_START_17252__=1;$__FOR_END_17252__=5;for($i=$__FOR_START_17252__;$i < $__FOR_END_17252__;$i+=1){ ?><li class="weather-forecast-info">
+				<?php $__FOR_START_2565__=1;$__FOR_END_2565__=5;for($i=$__FOR_START_2565__;$i < $__FOR_END_2565__;$i+=1){ ?><li class="weather-forecast-info">
 						<div><?php echo ($info['data']['forecast'][$i]['date']); ?></div>
 						<div style="font-size: 1.1em;"><?php echo ($info['data']['forecast'][$i]['type']); ?></div>
 						<div>
@@ -161,7 +159,9 @@
 						<div class="aqi-content-2"></div>
 					</div>
 					<div class="aqi-standart">
-						<?php $__FOR_START_22989__=0;$__FOR_END_22989__=6;for($i=$__FOR_START_22989__;$i < $__FOR_END_22989__;$i+=1){ ?><div style="display:inline-block; width: 16.66%;height: 1.5em;text-align: center;line-height: 1.5em;color: white;"></div><?php } ?>
+						<?php $__FOR_START_31322__=0;$__FOR_END_31322__=6;for($i=$__FOR_START_31322__;$i < $__FOR_END_31322__;$i+=1){ ?><div style="display:inline-block; width: 16.66%;height: 1.5em;text-align: center;line-height: 1.5em;color: white;">
+								
+							</div><?php } ?>
 					</div>
 				</div>
 			</div>
