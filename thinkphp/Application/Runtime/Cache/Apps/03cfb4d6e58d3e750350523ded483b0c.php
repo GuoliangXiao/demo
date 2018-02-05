@@ -10,6 +10,7 @@
 	.my-container{
 		padding-top:5em;
 		background: #eeeeee;
+		padding: 0 0.3em 0 0.3em;
 	}
 	
 	.app-container{
@@ -47,18 +48,31 @@
 
 
 
-<script type="text/javascript" src="/xhust/thinkphp/Public/xcConfirm/js/xcConfirm.js"></script>
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/xcConfirm/css/xcConfirm.css" />
+<script type="text/javascript" src="/xhust/thinkphp/Public/Box/box.js"></script>
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Box/box.css" />
 <script type="text/javascript">
-	function alert_alt(txt,callback){
-		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info,{
-			onOk:callback
-		});
+	/*
+           width:  宽度,
+           height: 最小高度,
+           type: 'warning'|'error'|'success'|'info'|'question',
+           showConfirmButton: 是否显示确认按钮,
+           showCancelButton: 是否显示取消按钮,
+           confirmButtonText: '确认',
+           cancelButtonText: '取消'
+	*/
+	function alert_alt(txt, callback,tilte="",type="info", ok="确定"){
+		alert(tilte, txt, function () {
+			callback();
+    	}, {type: type, confirmButtonText: ok});
 	}
-	function confirm_alt(txt,callback){
-		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{
-			onOk:callback
-		});
+	function confirm_alt(txt,callback1, callback2, title="",type="info",ok="确定", cancel="取消"){
+		confirm(title, txt , function (isConfirm) {
+            if (isConfirm) {
+                callback1();
+            } else {
+               callback2();
+            }
+        }, {confirmButtonText: ok, cancelButtonText: cancel, width: 400});
 	}
 </script>
 <body style="background: #eeeeee;">
@@ -74,7 +88,9 @@
 		width: 100%;
 	}
 	.mynav>li{
-		width: 8em;
+		width: 7em;
+		padding: 0;
+		margin: 0;
 	}
 	.mynav>li:hover{
 		background:rgba(255,255,255,0.5);
@@ -113,12 +129,14 @@
 		<ul class="nav nav-tabs mynav">
 		  	<li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li>
 	   		<li role="presentation"><a href='/xhust/thinkphp/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
-		  	<li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
+
 		  	<li role="presentation"><a href="<?php echo (C("contact.cnblog")); ?>" target="_blank"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li>
 		</ul>
 	</div>
 </nav>
-	
+<!--
+			  	<li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
+-->	
 	<div <?php echo choose_class();?>>
 		<div class="my-container">
 			
@@ -157,7 +175,7 @@
 			
 			<form class="form-inline" >
 				<div class="form-group">
-					<?php $__FOR_START_15550__=0;$__FOR_END_15550__=6;for($i=$__FOR_START_15550__;$i < $__FOR_END_15550__;$i+=1){ ?><label class="radio-inline">
+					<?php $__FOR_START_9635__=0;$__FOR_END_9635__=6;for($i=$__FOR_START_9635__;$i < $__FOR_END_9635__;$i+=1){ ?><label class="radio-inline">
 						    <input type="radio" name="speacial_num" value="<?php echo ($speacial_sys[$i][0]); ?>"
 						    <?php if($i==2) echo 'checked'?>
 						    >
@@ -168,7 +186,7 @@
 				</div>
 		  		<div class="form-group" >
             		<select name="normal_num" id="select-sys" class="form-control" disabled>
-						<?php $__FOR_START_28959__=2;$__FOR_END_28959__=65;for($i=$__FOR_START_28959__;$i < $__FOR_END_28959__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+						<?php $__FOR_START_24736__=2;$__FOR_END_24736__=65;for($i=$__FOR_START_24736__;$i < $__FOR_END_24736__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 					</select>
             	</div>
 			</form>
@@ -191,7 +209,7 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_19564__=0;$__FOR_END_19564__=3;for($i=$__FOR_START_19564__;$i < $__FOR_END_19564__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_5209__=0;$__FOR_END_5209__=3;for($i=$__FOR_START_5209__;$i < $__FOR_END_5209__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
 						<td style="vertical-align: middle;" width="50%">
 							<?php echo ($speacial_sys[$i][1]); ?>
@@ -203,13 +221,13 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_8757__=3;$__FOR_END_8757__=6;for($i=$__FOR_START_8757__;$i < $__FOR_END_8757__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_30750__=3;$__FOR_END_30750__=6;for($i=$__FOR_START_30750__;$i < $__FOR_END_30750__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
 						<td style="vertical-align: middle;" width="50%">
 							
 							<?php if($i == 5): ?><div class="form-group" style="margin: 0;">
 				            		<select name="normal_result" id="select-sys" class="form-control">
-										<?php $__FOR_START_26314__=2;$__FOR_END_26314__=65;for($i=$__FOR_START_26314__;$i < $__FOR_END_26314__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+										<?php $__FOR_START_30975__=2;$__FOR_END_30975__=65;for($i=$__FOR_START_30975__;$i < $__FOR_END_30975__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 									</select>
 			            		</div>
 			            		<?php else: echo ($speacial_sys[$i][1]); endif; ?>

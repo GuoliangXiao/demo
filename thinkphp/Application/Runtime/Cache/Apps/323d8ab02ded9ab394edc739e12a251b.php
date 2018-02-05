@@ -134,7 +134,7 @@
 
 		<div class="weather-next">
 			<ul>
-				<?php $__FOR_START_9906__=1;$__FOR_END_9906__=5;for($i=$__FOR_START_9906__;$i < $__FOR_END_9906__;$i+=1){ ?><li class="weather-forecast-info">
+				<?php $__FOR_START_370__=1;$__FOR_END_370__=5;for($i=$__FOR_START_370__;$i < $__FOR_END_370__;$i+=1){ ?><li class="weather-forecast-info">
 						<div><?php echo ($info['data']['forecast'][$i]['date']); ?></div>
 						<div style="font-size: 1.1em;"><?php echo ($info['data']['forecast'][$i]['type']); ?></div>
 						<div>
@@ -160,7 +160,7 @@
 						<div class="aqi-content-2"></div>
 					</div>
 					<div class="aqi-standart">
-						<?php $__FOR_START_26115__=0;$__FOR_END_26115__=6;for($i=$__FOR_START_26115__;$i < $__FOR_END_26115__;$i+=1){ ?><div style="display:inline-block; width: 16.66%;height: 1.5em;text-align: center;line-height: 1.5em;color: white;"></div><?php } ?>
+						<?php $__FOR_START_2499__=0;$__FOR_END_2499__=6;for($i=$__FOR_START_2499__;$i < $__FOR_END_2499__;$i+=1){ ?><div style="display:inline-block; width: 16.66%;height: 1.5em;text-align: center;line-height: 1.5em;color: white;"></div><?php } ?>
 					</div>
 				</div>
 			</div>

@@ -270,36 +270,37 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-8">
-					<h3><i class="fa fa-th-large fa-lg"></i>&nbsp;应用&nbsp;|&nbsp;Apps</h3>
-					<ul class="my-apps">
-						<?php if(is_array($apps)): $i = 0; $__LIST__ = $apps;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-								<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank">
-									<img src="/xhust/thinkphp/Public/Apps/Icon/<?php echo ($vo["icon"]); ?>.gif"/>
-									<span><?php echo ($vo["name"]); ?></span>
-								</a>
-							</li><?php endforeach; endif; else: echo "" ;endif; ?>
-					</ul>
+			<div class="my-container-div">
+				<div class="row">
+					<div class="col-md-8">
+						<h3><i class="fa fa-th-large fa-lg"></i>&nbsp;应用&nbsp;|&nbsp;Apps</h3>
+						<ul class="my-apps">
+							<?php if(is_array($apps)): $i = 0; $__LIST__ = $apps;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+									<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank">
+										<img src="/xhust/thinkphp/Public/Apps/Icon/<?php echo ($vo["icon"]); ?>.gif"/>
+										<span><?php echo ($vo["name"]); ?></span>
+									</a>
+								</li><?php endforeach; endif; else: echo "" ;endif; ?>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<h3><i class="fa fa-thumbs-up fa-lg"></i>&nbsp;点赞排行</h3>
+						<ul class="loved-apps">
+							<?php if(is_array($loves)): $i = 0; $__LIST__ = $loves;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+									<strong><?php echo ($i); ?>.</strong>
+									<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank"><?php echo ($vo["name"]); ?></a>
+									<span>
+										<a href="javascript:void(0);"><i id="<?php echo ($vo["id"]); ?>" class="my-heart fa fa-heart fa-lg"></i></a>&nbsp;
+										<span id="<?php echo ($vo["id"]); ?>" class="love_times"><?php echo ($vo["love_times"]); ?></span>
+									</span>
+								</li><?php endforeach; endif; else: echo "" ;endif; ?>
+						</ul>
+					</div>
+				</div>	
+				<div class="comment">
+				
 				</div>
-				<div class="col-md-4">
-					<h3><i class="fa fa-thumbs-up fa-lg"></i>&nbsp;点赞排行</h3>
-					<ul class="loved-apps">
-						<?php if(is_array($loves)): $i = 0; $__LIST__ = $loves;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-								<strong><?php echo ($i); ?>.</strong>
-								<a href=<?php echo generate_url($vo['url'],$vo['id']);?> target="_blank"><?php echo ($vo["name"]); ?></a>
-								<span>
-									<a href="javascript:void(0);"><i id="<?php echo ($vo["id"]); ?>" class="my-heart fa fa-heart fa-lg"></i></a>&nbsp;
-									<span id="<?php echo ($vo["id"]); ?>" class="love_times"><?php echo ($vo["love_times"]); ?></span>
-								</span>
-							</li><?php endforeach; endif; else: echo "" ;endif; ?>
-					</ul>
-				</div>
-			</div>	
-			<div class="comment">
-			
-			</div>
-			
+				
 <style type="text/css">
 	li,ul,ol{
 		list-style: none;
@@ -394,6 +395,7 @@
 		
 	});
 </script>		
+			</div>
 		</div>	
 	</div>
 
