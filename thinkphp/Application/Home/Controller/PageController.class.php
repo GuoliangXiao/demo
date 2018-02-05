@@ -18,7 +18,17 @@ class PageController extends Controller {
         $htmls=$this->fetch('index');
         $this->ajaxReturn(array('status'=>1,'info'=>$htmls));
     }
-
+    public function loadComment(){
+        $app_id=I('get.app_id');
+        $this->assign('app_id',$app_id);
+        $count=M('comment')-> where(array('pid'=>0,'status'=>1,'app_id'=>$app_id))->count();
+        $num=4;
+        $page=ceil($count/$num);
+        $this->assign('comment_count',$count);
+        $this->assign('num',$num);
+        $this->assign('page',$page);
+        $this->display(T('Home@Comment/index'));
+    }
     public function addComment(){
         $rules = array(//定义动态验证规则
             array('comment','require','评论不能为空'),

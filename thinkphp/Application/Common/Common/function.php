@@ -10,7 +10,7 @@ function comment_level($level){
 	return ($level-1);
 }
 function get_app_url($app_id){
-	return U('Home/Page/index?app_id='.$app_id);
+	return U('Home/Page/loadComment?app_id='.$app_id);
 }
 
 /**
