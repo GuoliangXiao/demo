@@ -1,7 +1,7 @@
-<script type="text/javascript">
+<?php if (!defined('THINK_PATH')) exit();?><script type="text/javascript">
 	var icons=[{
         name: "贴吧表情",
-        path: "__PUBLIC__/jQuery-emoji/dist/img/tieba/",
+        path: "/xhust/thinkphp/Public/jQuery-emoji/dist/img/tieba/",
         maxNum: 50,
         file: ".jpg",
         placeholder: ":{alias}:",
@@ -112,7 +112,7 @@
 		},
 		{
 		 	name:'QQ表情',
-		 	path:'__PUBLIC__/jQuery-emoji/dist/img/qq/',
+		 	path:'/xhust/thinkphp/Public/jQuery-emoji/dist/img/qq/',
 		 	maxNum:91,
 		 	excludeNums: [41, 45, 54],
 		 	file: ".gif",
@@ -217,12 +217,12 @@
 		    	<div>
     				<div class="pinglun ">
 				        <div class="div-form">
-				            <form class="" action="{:U('Home/Page/addComment')}" method="post">
+				            <form class="" action="<?php echo U('Home/Page/addComment');?>" method="post">
 				                <div class="form-group">
 				                    <label for="username"><i class="fa fa-user-o fa-lg"></i>&nbsp;昵称&nbsp;|&nbsp;Name</label>
 				                    <input id="username" class="form-control" type="text" placeholder="昵称" name="username">
 				                    <input type="hidden" placeholder="" name="pid" value="0">
-				                    <input type="hidden" placeholder="" name="app_id" value="{$app_id_p}">
+				                    <input type="hidden" placeholder="" name="app_id" value="<?php echo ($app_id_p); ?>">
 				                </div>
 				                <div class="form-group">
 				                    <label for="mail"><i class="fa fa-envelope-o fa-lg"></i>&nbsp;邮箱&nbsp;|&nbsp;Email</label>
@@ -244,15 +244,11 @@
 		    	</div>
 			</div>
 			<div class="comment-info">
-				{:W('Comment/showComment',array(0,4,$app_id))}
+				<?php echo W('Comment/showComment',array(0,4,$app_id));?>
 			</div>
-			<gt name="comment_count" value="0">
-				<div class="mybutton">
-					<for start="0" end="$page">					
-						<button class="btn btn-default btn-page" id={$i}>{$i+1}</button>
-					</for>			
-				</div>
-			</gt>
+			<?php if(($comment_count) > "0"): ?><div class="mybutton">
+					<?php $__FOR_START_23772__=0;$__FOR_END_23772__=$page;for($i=$__FOR_START_23772__;$i < $__FOR_END_23772__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+				</div><?php endif; ?>
 		</div>
 		<div class="col-md-0">
 			<div class="app-recommend">
@@ -266,8 +262,8 @@
 <script type="text/javascript">
 	var start=0;
 	var num=4;
-	var len='{$comment_count}';
-	var app_id='{$app_id}';
+	var len='<?php echo ($comment_count); ?>';
+	var app_id='<?php echo ($app_id); ?>';
 	$('.btn-page').click(function(event) {
 		/* Act on the event */
 		start=$(this).attr('id')*num;
@@ -282,7 +278,7 @@
 		//postInfo();
 	}
 	function postInfo(){
-		var url="{:U('Home/Page/index')}";
+		var url="<?php echo U('Home/Page/index');?>";
 		$.post(url,{start:start,num:num,app_id:app_id},function(data){
 			//alert(data.info);
 			//$(".comment-info").empty();

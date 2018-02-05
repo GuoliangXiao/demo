@@ -1,0 +1,66 @@
+<style type="text/css">
+	.mybutton{
+		background: #f7f7f7;
+		padding: 0.6em;
+		width: 100%;
+		text-align: center;
+	}
+	.btn-page{
+		margin: 0.1em;
+		display: inline-block;
+	}
+	.app-recommend{
+		
+	}
+	
+</style>
+<div>
+	<div class="row">
+		<div class="col-md-12 comment-div">
+
+			<div class="comment-info">
+		    	{:W('Comment/showComment',array(0,4,$app_id))}
+			</div>
+			<gt name="comment_count" value="0">
+				<div class="mybutton">
+					<for start="0" end="$page">					
+						<button class="btn btn-default btn-page" id={$i}>{$i+1}</button>
+					</for>			
+				</div>
+			</gt>
+		</div>
+		<div class="col-md-0">
+			<div class="app-recommend">
+				
+				
+			</div>
+		</div>
+	</div>
+	
+</div>
+<script type="text/javascript">
+	var start=0;
+	var num=4;
+	var len='{$comment_count}';
+	var app_id='{$app_id}';
+	$('.btn-page').click(function(event) {
+		/* Act on the event */
+		start=$(this).attr('id')*num;
+		$(".btn-page").removeClass('disabled');
+		$(this).addClass('disabled');
+		postInfo();
+	});
+	if(len>0){
+		$('.btn-page').first().addClass('disabled');
+	}
+	function postInfo(){
+		var url="{:U('Home/Page/index')}";
+		$.post(url,{start:start,num:num,app_id:app_id},function(data){
+			//alert(data.info);
+			$(".comment-info").empty();
+			$(".comment-info").html(data.info);
+			//$(".app-recommend").height($(".comment-div").height());
+			//alert($(".comment-div").height());
+		});
+	}
+</script>
