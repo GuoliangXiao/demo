@@ -10,7 +10,9 @@
 		width: 100%;
 	}
 	.mynav>li{
-		width: 8em;
+		width: 7em;
+		padding: 0;
+		margin: 0;
 	}
 	.mynav>li:hover{
 		background:rgba(255,255,255,0.5);
@@ -49,8 +51,11 @@
 		<ul class="nav nav-tabs mynav">
 		  	<li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="__PUBLIC__/Apps/xhust.ico"/></a></li>
 	   		<li role="presentation"><a href='__ROOT__/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
-		  	<li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
+
 		  	<li role="presentation"><a href="{$Think.config.contact.cnblog}" target="_blank"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li>
 		</ul>
 	</div>
 </nav>
+<!--
+			  	<li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
+-->

@@ -47,18 +47,31 @@
 
 
 
-<script type="text/javascript" src="/xhust/thinkphp/Public/xcConfirm/js/xcConfirm.js"></script>
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/xcConfirm/css/xcConfirm.css" />
+<script type="text/javascript" src="/xhust/thinkphp/Public/Box/box.js"></script>
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Box/box.css" />
 <script type="text/javascript">
-	function alert_alt(txt,callback){
-		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info,{
-			onOk:callback
-		});
+	/*
+           width:  宽度,
+           height: 最小高度,
+           type: 'warning'|'error'|'success'|'info'|'question',
+           showConfirmButton: 是否显示确认按钮,
+           showCancelButton: 是否显示取消按钮,
+           confirmButtonText: '确认',
+           cancelButtonText: '取消'
+	*/
+	function alert_alt(txt, callback,tilte="",type="info", ok="确定"){
+		alert(tilte, txt, function () {
+			callback();
+    	}, {type: type, confirmButtonText: ok});
 	}
-	function confirm_alt(txt,callback){
-		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{
-			onOk:callback
-		});
+	function confirm_alt(txt,callback1, callback2, title="",type="info",ok="确定", cancel="取消"){
+		confirm(title, txt , function (isConfirm) {
+            if (isConfirm) {
+                callback1();
+            } else {
+               callback2();
+            }
+        }, {confirmButtonText: ok, cancelButtonText: cancel, width: 400});
 	}
 </script>
 <body style="background: #eeeeee;">
@@ -74,7 +87,9 @@
 		width: 100%;
 	}
 	.mynav>li{
-		width: 8em;
+		width: 7em;
+		padding: 0;
+		margin: 0;
 	}
 	.mynav>li:hover{
 		background:rgba(255,255,255,0.5);
@@ -113,12 +128,14 @@
 		<ul class="nav nav-tabs mynav">
 		  	<li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li>
 	   		<li role="presentation"><a href='/xhust/thinkphp/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
-		  	<li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
+
 		  	<li role="presentation"><a href="<?php echo (C("contact.cnblog")); ?>" target="_blank"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li>
 		</ul>
 	</div>
 </nav>
-	
+<!--
+			  	<li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
+-->	
 	<div <?php echo choose_class();?>>
 		<div class="my-container">
 			

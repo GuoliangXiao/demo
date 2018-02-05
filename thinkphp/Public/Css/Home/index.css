@@ -93,12 +93,12 @@
 }
 .c-date{
 	height: 20em;
-	background: #0B0B0B;
+	background: #1B72C1;
+	color: white;
 }
 .home-weater{
 	height: 10em;
 	width: 100%;
-	color:white;
 }
 .home-weater ul{
 	padding: 0;
@@ -131,7 +131,6 @@
 .home-ip{
 	padding: 0.5em;
 	height: 10em;
-	color:white;
 }
 .home-ip>div{
 	line-height: 2em;

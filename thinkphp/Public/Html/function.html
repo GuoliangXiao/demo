@@ -17,17 +17,30 @@
 
 
 
-<js href="__PUBLIC__/xcConfirm/js/xcConfirm.js"/>
-<css href="__PUBLIC__/xcConfirm/css/xcConfirm.css"/>
+<js href="__PUBLIC__/Box/box.js"/>
+<css href="__PUBLIC__/Box/box.css"/>
 <script type="text/javascript">
-	function alert_alt(txt,callback){
-		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info,{
-			onOk:callback
-		});
+	/*
+           width:  宽度,
+           height: 最小高度,
+           type: 'warning'|'error'|'success'|'info'|'question',
+           showConfirmButton: 是否显示确认按钮,
+           showCancelButton: 是否显示取消按钮,
+           confirmButtonText: '确认',
+           cancelButtonText: '取消'
+	*/
+	function alert_alt(txt, callback,tilte="",type="info", ok="确定"){
+		alert(tilte, txt, function () {
+			callback();
+    	}, {type: type, confirmButtonText: ok});
 	}
-	function confirm_alt(txt,callback){
-		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{
-			onOk:callback
-		});
+	function confirm_alt(txt,callback1, callback2, title="",type="info",ok="确定", cancel="取消"){
+		confirm(title, txt , function (isConfirm) {
+            if (isConfirm) {
+                callback1();
+            } else {
+               callback2();
+            }
+        }, {confirmButtonText: ok, cancelButtonText: cancel, width: 400});
 	}
 </script>

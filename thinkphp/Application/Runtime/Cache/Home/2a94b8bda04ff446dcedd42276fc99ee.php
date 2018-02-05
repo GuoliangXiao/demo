@@ -39,6 +39,7 @@
 			onOk:callback
 		});
 	}
+	alert_alt('hello');
 </script>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -61,7 +62,9 @@
 		width: 100%;
 	}
 	.mynav>li{
-		width: 8em;
+		width: 7em;
+		padding: 0;
+		margin: 0;
 	}
 	.mynav>li:hover{
 		background:rgba(255,255,255,0.5);
@@ -100,12 +103,14 @@
 		<ul class="nav nav-tabs mynav">
 		  	<li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li>
 	   		<li role="presentation"><a href='/xhust/thinkphp/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
-		  	<li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
+
 		  	<li role="presentation"><a href="<?php echo (C("contact.cnblog")); ?>" target="_blank"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li>
 		</ul>
 	</div>
 </nav>
-
+<!--
+			  	<li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> &nbsp;应用</a></li>
+-->
 	<div <?php echo choose_class();?>>
 		<div class="my-container">			
 			<div class="row">
@@ -213,7 +218,7 @@
 						<div class="home-weater">
 							<ul>
 								<li>
-									<img src="/xhust/thinkphp/Public/Apps/Weather/img/<?php echo ($weather_info['data']['forecast'][0]['type']); ?>.gif">
+									<img src="/xhust/thinkphp/Public/Apps/Weather/img/<?php echo ($weather_info['data']['forecast'][0]['type']); ?>.png">
 								</li>
 								<li>
 									<div>
