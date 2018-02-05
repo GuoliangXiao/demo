@@ -38,7 +38,7 @@
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
@@ -132,7 +132,7 @@
 		font-size: 1.1em;
 	}
 	.my-row{
-		margin: 0 0.5em 0 0.5em;
+		
 	}
 	.td-result{
 		font-weight: bold;
@@ -153,11 +153,11 @@
 	</div>
 	<div class="row my-row">
 		<div class="col-md-6">
-			<?php  $speacial_sys=array( 0=>array( 0=>2, 1=>'2进制' ), 1=>array( 0=>8, 1=>'8进制' ), 2=>array( 0=>10, 1=>'10进制' ), 3=>array( 0=>16, 1=>'16进制' ), 4=>array( 0=>32, 1=>'32进制' ), 5=>array( 0=>0, 1=>'其他' ), ); ?>
+			<?php  $speacial_sys=array(array(2,'2进制'),array( 8,'8进制'),array(10, '10进制'),array(16, '16进制'),array(32, '32进制'),array(0,'其他'),); ?>
 			
-			<form class="form-inline">
+			<form class="form-inline" >
 				<div class="form-group">
-					<?php $__FOR_START_5473__=0;$__FOR_END_5473__=6;for($i=$__FOR_START_5473__;$i < $__FOR_END_5473__;$i+=1){ ?><label class="radio-inline">
+					<?php $__FOR_START_15550__=0;$__FOR_END_15550__=6;for($i=$__FOR_START_15550__;$i < $__FOR_END_15550__;$i+=1){ ?><label class="radio-inline">
 						    <input type="radio" name="speacial_num" value="<?php echo ($speacial_sys[$i][0]); ?>"
 						    <?php if($i==2) echo 'checked'?>
 						    >
@@ -168,7 +168,7 @@
 				</div>
 		  		<div class="form-group" >
             		<select name="normal_num" id="select-sys" class="form-control" disabled>
-						<?php $__FOR_START_22662__=2;$__FOR_END_22662__=65;for($i=$__FOR_START_22662__;$i < $__FOR_END_22662__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+						<?php $__FOR_START_28959__=2;$__FOR_END_28959__=65;for($i=$__FOR_START_28959__;$i < $__FOR_END_28959__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 					</select>
             	</div>
 			</form>
@@ -191,9 +191,9 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_13639__=0;$__FOR_END_13639__=3;for($i=$__FOR_START_13639__;$i < $__FOR_END_13639__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_19564__=0;$__FOR_END_19564__=3;for($i=$__FOR_START_19564__;$i < $__FOR_END_19564__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
-						<td style="vertical-align: middle;" width="30%">
+						<td style="vertical-align: middle;" width="50%">
 							<?php echo ($speacial_sys[$i][1]); ?>
 						</td>
 						<td class="td-result" style="vertical-align: middle;" class="<?php echo ($speacial_sys[$i][0]); ?> td-result"></td>
@@ -203,13 +203,13 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_372__=3;$__FOR_END_372__=6;for($i=$__FOR_START_372__;$i < $__FOR_END_372__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_8757__=3;$__FOR_END_8757__=6;for($i=$__FOR_START_8757__;$i < $__FOR_END_8757__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
-						<td style="vertical-align: middle;" width="30%">
+						<td style="vertical-align: middle;" width="50%">
 							
 							<?php if($i == 5): ?><div class="form-group" style="margin: 0;">
 				            		<select name="normal_result" id="select-sys" class="form-control">
-										<?php $__FOR_START_9885__=2;$__FOR_END_9885__=65;for($i=$__FOR_START_9885__;$i < $__FOR_END_9885__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+										<?php $__FOR_START_26314__=2;$__FOR_END_26314__=65;for($i=$__FOR_START_26314__;$i < $__FOR_END_26314__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 									</select>
 			            		</div>
 			            		<?php else: echo ($speacial_sys[$i][1]); endif; ?>

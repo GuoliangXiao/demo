@@ -15,25 +15,25 @@
 
 }
 .my-apps li{
-	width: 9em;
-	height: 11em;
+	width: 7em;
+	height: 9em;
 	background: #F7F7F7;
 	display: inline-block;
 	text-decoration: none;
-	margin:0.6em;
+	margin:0.3em;
 }
 .my-apps li:hover{
 	background: rgba(255,255,255,1);
 }
 .my-apps li img{
-	margin-left:1em;
+	margin-left:0.5em;
 	margin-top:0.5em;
-	width: 7em;
+	width: 6em;
 }
 .my-apps li span{
 	width: 100%;
-	margin-top:1em;
-	font-size: 1.1em;
+	margin-top:0.5em;
+	font-size: 1em;
 	font-weight: bold;
 	display: inline-block;
 	text-align: center;
@@ -49,11 +49,11 @@
 	font-weight: bold;
 	font-size: 1.2em;
 	display: inline-block;
-	padding: 1em;
+	padding: 0em;
 }
 .loved-apps{
 	width: 100%;
-	padding-left:1em;
+	padding-left:0em;
 }
 .loved-apps li{
 	width: 100%;

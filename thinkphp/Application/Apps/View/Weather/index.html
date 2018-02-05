@@ -14,8 +14,14 @@
 		float: right;
 	}
 	#city-picker{
-		width: 25em;
-		overflow: hidden;
+		word-break:keep-all;
+		display: block;
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+	}
+	#city-picker>div{
+
 	}
 </style>
 <js href="__PUBLIC__/citypicker/js/city-picker.data.min.js"/>
@@ -30,7 +36,7 @@
 
 			<div class="form-inline search-weather">
 				<div class="form-group">
-                	<div style="position: relative;">
+                	<div>
                     	<input  id="city-picker" class="form-control" readonly type="text" value="湖北省/武汉市/洪山区" data-toggle="city-picker"/>
                 	</div>
             	</div>

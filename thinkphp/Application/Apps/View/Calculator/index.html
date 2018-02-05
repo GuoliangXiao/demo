@@ -8,7 +8,7 @@
 		font-size: 1.1em;
 	}
 	.my-row{
-		margin: 0 0.5em 0 0.5em;
+		
 	}
 	.td-result{
 		font-weight: bold;
@@ -30,36 +30,11 @@
 	<div class="row my-row">
 		<div class="col-md-6">
 			<?php 
-				$speacial_sys=array(
-					0=>array(
-						0=>2,
-						1=>'2进制'
-					),
-					1=>array(
-						0=>8,
-						1=>'8进制'
-					),
-					2=>array(
-						0=>10,
-						1=>'10进制'
-					),
-					3=>array(
-						0=>16,
-						1=>'16进制'
-					),
-					4=>array(
-						0=>32,
-						1=>'32进制'
-					),
-					5=>array(
-						0=>0,
-						1=>'其他'
-					),
-				);
+				$speacial_sys=array(array(2,'2进制'),array(	8,'8进制'),array(10,	'10进制'),array(16,	'16进制'),array(32,	'32进制'),array(0,'其他'),);
 
 			?>
 			
-			<form class="form-inline">
+			<form class="form-inline" >
 				<div class="form-group">
 					<for start="0" end="6">
 						<label class="radio-inline">
@@ -110,7 +85,7 @@
 				<for start="0" end="3">
 					<tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
-						<td style="vertical-align: middle;" width="30%">
+						<td style="vertical-align: middle;" width="50%">
 							{$speacial_sys[$i][1]}
 						</td>
 						<td class="td-result" style="vertical-align: middle;" class="{$speacial_sys[$i][0]} td-result"></td>
@@ -124,7 +99,7 @@
 				<for start="3" end="6">
 					<tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
-						<td style="vertical-align: middle;" width="30%">
+						<td style="vertical-align: middle;" width="50%">
 							
 							<if condition="$i eq 5">
 								<div class="form-group" style="margin: 0;">

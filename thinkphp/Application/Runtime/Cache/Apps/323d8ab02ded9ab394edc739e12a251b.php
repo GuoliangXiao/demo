@@ -1,56 +1,30 @@
 <?php if (!defined('THINK_PATH')) exit();?><style type="text/css">
 	.h3-title{
 		padding: 0;
-		margin:  0.5em 0 0.2em 0;
+		margin:  0.2em 0 0.1em 0;
 		display: inline-block;
 	}
-	.weather-info{
-		padding: 0;
-		margin: 0em;
-		background: #0B0B0B;
-		width: 100%;
-		color: white;
-		border-bottom: 1px solid white;
-	}
-	.weather-info ul{
-		padding: 0;
-		margin: 0;
-	}
-	.weather-info ul li{
-		list-style: none;
-		text-decoration: none;
-		display: inline-block;
-		padding: 0.5em 1em 0.5em 1em;
-		margin: 0;
-	}
-	.weather-info ul li img{
+	.weather-info-1>div{
 		display: inline-block;
 		height: 10em;
-		padding: 0.3em 0 0.5em 0;
 		vertical-align: top;
 	}
-	.weather-info ul li div{
-		display: inline-block;
-		height: 9em;
-		width: auto;
-		vertical-align: top;
+	.weather-img{
+		height: 7em;
+		margin-top:0.5em;
 	}
+	
 	.weather-info-ganmmao{
-		height: 9em;
 		line-height: 2em;
 		vertical-align: center;
-		max-width: 12em;
-		width: auto;
-		margin-top:1em;
-		background: transparent;
+		margin-top:0.5em;
 	}
 	.weather-next{
-		padding-top: 1em;
-		background: #0B0B0B;
-		color:white;
 	}
 	.weather-next ul{
 		border-top:0px solid black;
+		padding: 0;
+		margin: 0;
 	}
 	.weather-next strong{
 		font-size: 1.1em;
@@ -59,9 +33,10 @@
 		width: 100%;
 	}
 	.weather-forecast-info{
-		width: 9em;
-		padding: 0.5em;
-		border: 0px solid green;
+		width: 8em;
+		margin-right: 0.5em;		
+		background: none;
+		background: #FFFFFF;
 	}
 	.weather-forecast-info div{
 		width: 100%;
@@ -74,7 +49,7 @@
 	}
 	.temp-plot{
 		width: 100%;
-		height: 14em;
+		height: 12em;
 	}
 	.div-aqi{
 		padding-top:1em;
@@ -122,51 +97,57 @@
 	<div class="col-md-6">
 		
 		 
-		<div class="weather-info">
-			<ul>
-				<li>
-					<img src="/xhust/thinkphp/Public/Apps/Weather/img/<?php echo ($info['data']['forecast'][0]['type']); ?>.gif">
-				</li>
-				<li>
-					<div>
-						<h3 class="h3-title"><?php echo ($info['data']['city']); ?></h3><br/>
-						<h3 class="h3-title"><?php echo ($info['data']['forecast'][0]['type']); ?></h3>
+		<div class="row">
+			<div class="weather-info">
+				<div class="col-md-6">
+					<div class="weather-info-1">
+						<div class="">
+							<img class="weather-img" src="/xhust/thinkphp/Public/Apps/Weather/image/<?php echo ($info['data']['forecast'][0]['type']); ?>.gif">
+						</div>
+						<div class="">
+							<div style="margin-left: 1em;">
+								<h3 class="h3-title"><?php echo ($info['data']['city']); ?></h3><br/>
+								<h3 class="h3-title"><?php echo ($info['data']['forecast'][0]['type']); ?></h3>
 
-						<span style="font-size: 1.2em;margin-left: 0.8em;"><?php echo ($info['data']['forecast'][0]['fengxiang']); ?></span>
-						<br/>
-						<span><?php echo ($info['data']['forecast'][0]['high']); ?>&nbsp;&nbsp;
-						<?php echo ($info['data']['forecast'][0]['low']); ?></span><br>
-						<span>
-							<?php  date_default_timezone_set("PRC"); echo (date("Y年m").'月'.$info['data']['forecast'][0]['date']); ?>
-							
-						</span>
-						<br>
-						
-						
+								<span style="font-size: 1.2em;margin-left: 0.8em;"><?php echo ($info['data']['forecast'][0]['fengxiang']); ?></span>
+								<br/>
+								<span><?php echo ($info['data']['forecast'][0]['high']); ?>&nbsp;&nbsp;
+								<?php echo ($info['data']['forecast'][0]['low']); ?></span><br>
+								<span>
+									<?php  date_default_timezone_set("PRC"); echo (date("Y年m").'月'.$info['data']['forecast'][0]['date']); ?>
+									
+								</span>
+								<br>
+								
+								
+							</div>
+						</div>
 					</div>
-				</li>
-				<li>
+				</div>
+				<div class="col-md-6">
 					<div>
 						<p class="weather-info-ganmmao"><?php echo ($info['data']['ganmao']); ?></p>
 					</div>
-				</li>
-			</ul>
+				</div>
+			</div>
 		</div>
 
 		<div class="weather-next">
 			<ul>
-				<?php $__FOR_START_10682__=1;$__FOR_END_10682__=5;for($i=$__FOR_START_10682__;$i < $__FOR_END_10682__;$i+=1){ ?><li class="weather-forecast-info">
+				<?php $__FOR_START_9038__=1;$__FOR_END_9038__=5;for($i=$__FOR_START_9038__;$i < $__FOR_END_9038__;$i+=1){ ?><li class="weather-forecast-info">
 						<div><?php echo ($info['data']['forecast'][$i]['date']); ?></div>
-						<div><?php echo ($info['data']['forecast'][$i]['type']); ?></div>
+						<div style="font-size: 1.1em;"><?php echo ($info['data']['forecast'][$i]['type']); ?></div>
 						<div>
-							<img src="/xhust/thinkphp/Public/Apps/Weather/img/<?php echo ($info['data']['forecast'][$i]['type']); ?>.gif">
+							<img src="/xhust/thinkphp/Public/Apps/Weather/image/<?php echo ($info['data']['forecast'][$i]['type']); ?>.gif">
 						</div>
 					</li><?php } ?>
 			</ul>
 		</div>
 	</div>
 	<div class="col-md-6">
-		<div class="temp-plot"></div>
+		<div>
+			<div class="temp-plot"></div>
+		</div>
 		<div class="row div-aqi">
 			<div class="col-md-2"><div class="legend_container"></div></div>
 			<div class="col-md-10 div-aqi-2">
@@ -179,7 +160,7 @@
 						<div class="aqi-content-2"></div>
 					</div>
 					<div class="aqi-standart">
-						<?php $__FOR_START_8299__=0;$__FOR_END_8299__=6;for($i=$__FOR_START_8299__;$i < $__FOR_END_8299__;$i+=1){ ?><div style="display:inline-block; width: 16.66%;height: 1.5em;text-align: center;line-height: 1.5em;color: white;"></div><?php } ?>
+						<?php $__FOR_START_31855__=0;$__FOR_END_31855__=6;for($i=$__FOR_START_31855__;$i < $__FOR_END_31855__;$i+=1){ ?><div style="display:inline-block; width: 16.66%;height: 1.5em;text-align: center;line-height: 1.5em;color: white;"></div><?php } ?>
 					</div>
 				</div>
 			</div>
@@ -246,7 +227,7 @@
 	    s = obj.data.yesterday.high;
 	    s = s.substring(3, s.length - 1);
 	    var d2 = [[0, s]];
-	    var t = [[0, obj.data.yesterday.date]];
+	    var t = [[0, shortDate(obj.data.yesterday.date)]];
 	    for (var i = 0; i < obj.data.forecast.length; i++) {
 	        var s = obj.data.forecast[i].low;
 	        s = s.substring(3, s.length - 1);
@@ -254,7 +235,7 @@
 	        s = obj.data.forecast[i].high;
 	        s = s.substring(3, s.length - 1);
 	        d2.push([i + 1, s]);
-	        t.push([i + 1, obj.data.forecast[i].date]);
+	        t.push([i + 1, shortDate(obj.data.forecast[i].date)]);
 	    }
 	    for (var i = 0; i < d1.length; i++) {
 	        for ( j = 0; j < d1[i].length; j++) {
@@ -262,6 +243,10 @@
 	        }
 	    }
 	    plot(d1, d2, t);
+	}
+	function shortDate(s){
+		return s.replace(/星期/,'周');
+		//return s.substring(0,2);
 	}
 	function getAqiDegreen(aqi) {
     if (aqi < 200) {

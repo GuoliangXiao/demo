@@ -38,7 +38,7 @@
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
@@ -181,7 +181,7 @@
 	</div>
 	<div class="seal-content">
 		<ul>
-			<?php $__FOR_START_13020__=0;$__FOR_END_13020__=30;for($i=$__FOR_START_13020__;$i < $__FOR_END_13020__;$i+=1){ ?><li>
+			<?php $__FOR_START_25716__=0;$__FOR_END_25716__=30;for($i=$__FOR_START_25716__;$i < $__FOR_END_25716__;$i+=1){ ?><li>
 					<div class="seal-img">
 						<div><img class="img-result" src="http://hbh-hbh.7e14.starter-us-west-2.openshiftapps.com/Seal/php/get_img.php?font=<?php echo ($i); ?>"></div>
 						<span><?php echo ($seal_fonts[$i]); ?></span>

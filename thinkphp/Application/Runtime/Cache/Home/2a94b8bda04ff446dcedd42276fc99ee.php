@@ -17,16 +17,31 @@
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<!--
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/font-awesome-4.7.0/css/font-awesome.min.css" />
--->
+
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
 
+
+
+<script type="text/javascript" src="/xhust/thinkphp/Public/xcConfirm/js/xcConfirm.js"></script>
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/xcConfirm/css/xcConfirm.css" />
+<script type="text/javascript">
+	function alert_alt(txt,callback){
+		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info,{
+			onOk:callback
+		});
+	}
+	function confirm_alt(txt,callback){
+		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{
+			onOk:callback
+		});
+	}
+</script>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Css/Home/index.css" />
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Slippry/slippry.css" />
 <script type="text/javascript" src="/xhust/thinkphp/Public/Slippry/slippry.min.js"></script>

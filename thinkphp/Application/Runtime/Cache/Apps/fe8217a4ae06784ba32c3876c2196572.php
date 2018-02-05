@@ -38,7 +38,7 @@
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
@@ -138,8 +138,14 @@
 		float: right;
 	}
 	#city-picker{
-		width: 25em;
-		overflow: hidden;
+		word-break:keep-all;
+		display: block;
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+	}
+	#city-picker>div{
+
 	}
 </style>
 <script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.data.min.js"></script>
@@ -154,7 +160,7 @@
 
 			<div class="form-inline search-weather">
 				<div class="form-group">
-                	<div style="position: relative;">
+                	<div>
                     	<input  id="city-picker" class="form-control" readonly type="text" value="湖北省/武汉市/洪山区" data-toggle="city-picker"/>
                 	</div>
             	</div>
