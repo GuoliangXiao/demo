@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><style type="text/css">
+<style type="text/css">
 	.mybutton{
 		background: #f7f7f7;
 		padding: 0.6em;
@@ -19,12 +19,15 @@
 		<div class="col-md-12 comment-div">
 
 			<div class="comment-info">
-		    
+		    	{:W('Comment/showComment',array(0,4,$app_id))}
 			</div>
-
-			<?php if(($comment_count) > "0"): ?><div class="mybutton">
-					<?php $__FOR_START_25126__=0;$__FOR_END_25126__=$page;for($i=$__FOR_START_25126__;$i < $__FOR_END_25126__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
-				</div><?php endif; ?>
+			<gt name="comment_count" value="0">
+				<div class="mybutton">
+					<for start="0" end="$page">					
+						<button class="btn btn-default btn-page" id={$i}>{$i+1}</button>
+					</for>			
+				</div>
+			</gt>
 		</div>
 		<div class="col-md-0">
 			<div class="app-recommend">
@@ -38,8 +41,8 @@
 <script type="text/javascript">
 	var start=0;
 	var num=4;
-	var len='<?php echo ($comment_count); ?>';
-	var app_id='<?php echo ($app_id); ?>';
+	var len='{$comment_count}';
+	var app_id='{$app_id}';
 	$('.btn-page').click(function(event) {
 		/* Act on the event */
 		start=$(this).attr('id')*num;
@@ -48,12 +51,10 @@
 		postInfo();
 	});
 	if(len>0){
-		$('.btn-page').first().click();
-	}else{
-		postInfo();
+		$('.btn-page').first().addClass('disabled');
 	}
 	function postInfo(){
-		var url="<?php echo U('Home/Page/pageNext');?>";
+		var url="{:U('Home/Page/index')}";
 		$.post(url,{start:start,num:num,app_id:app_id},function(data){
 			//alert(data.info);
 			$(".comment-info").empty();

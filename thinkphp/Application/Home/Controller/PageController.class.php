@@ -2,21 +2,24 @@
 namespace Home\Controller;
 use Think\Controller;
 use Think\Model;
+use Home\Model\CommentModel;
 class PageController extends Controller {
-    public function index(){
-    	//echo THINK_VERSION;
-        $app_id=I('get.app_id');
-        $this->assign('app_id',$app_id);
-        $count=M('comment')-> where(array('pid'=>0,'status'=>1,'app_id'=>$app_id))->count();
-        $num=4;
-        $page=ceil($count/$num);
-        $this->assign('comment_count',$count);
-        $this->assign('num',$num);
-        $this->assign('page',$page);
-    	$this->display();
+    function index(){
+        $start=I('post.start');
+        $num=I('post.num');
+        $app_id=I('post.app_id');
+
+        $cm=new CommentModel();       
+        $comment=$cm->CommentList($pid=0,$app_id,$commentList=array(),$spac=0,$pauthor=NULL,$start,$num);
+        $this->assign('comment_len',count($comment));
+        $this->assign('commentList',$comment);
+        $this->assign('app_id_p',$app_id);
+        layout(false);
+        $htmls=$this->fetch('index');
+        $this->ajaxReturn(array('status'=>1,'info'=>$htmls));
     }
 
-    public function  addComment(){
+    public function addComment(){
         $rules = array(//定义动态验证规则
             array('comment','require','评论不能为空'),
             array('username','require','昵称不能为空'),
@@ -43,47 +46,6 @@ class PageController extends Controller {
                 $this->error('评论失败');
             }
         }
-    }
-
-    //评论列表
-    function CommentList($pid=0,$app_id,&$commentList=array(),$spac=0,$pauthor=NULL,$start,$num){
-        static $i=0;
-        $spac=$spac+1;//初始为1级评论
-        $pauthor=$pauthor;
-        $List;
-        if($pid==0){
-            $List=M('comment')->limit($start,$num)-> where(array('pid'=>$pid,'status'=>1,'app_id'=>$app_id))->select();
-        }else{
-            $List=M('comment')-> where(array('pid'=>$pid,'status'=>1,'app_id'=>$app_id))->select();
-        }       
-        foreach($List as $k=>$v){
-            $commentList[$i]['level']=$spac;//评论层级
-            $commentList[$i]['author']=$v['author'];
-            $commentList[$i]['id']=$v['id'];
-            $commentList[$i]['pid']=$v['pid'];//此条评论的父id
-            $commentList[$i]['content']=$v['content'];
-            $commentList[$i]['time']=$v['add_time'];
-            $p=taobaoIP($v['ip']);
-            $commentList[$i]['place']=$p['province'].$p['city'];
-            $commentList[$i]['love_times']=$v['love_times'];
-            $commentList[$i]['app_id']=$v['app_id'];
-            $commentList[$i]['pauthor']=$pauthor;
-            $i++;
-            $this->CommentList($v['id'],$app_id,$commentList,$spac,$v['author'],0,0);
-        }
-        return $commentList;
-    }
-    function pageNext(){
-        $start=I('post.start');
-        $num=I('post.num');
-        $app_id=I('post.app_id');
-        $comment=$this->CommentList($pid=0,$app_id,$commentList=array(),$spac=0,$pauthor=NULL,$start,$num);
-        $this->assign('comment_len',count($comment));
-        $this->assign('commentList',$comment);
-        $this->assign('app_id_p',$app_id);
-        layout(false);
-        $htmls=$this->fetch('page');
-        $this->ajaxReturn(array('status'=>1,'info'=>$htmls));
     }
     function commentUp(){
         $user=new Model('comment');

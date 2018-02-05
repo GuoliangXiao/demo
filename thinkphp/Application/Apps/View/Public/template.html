@@ -9,7 +9,6 @@
 <style type="text/css">
 	.my-container{
 		padding-top:5em;
-		background: #eeeeee;
 		padding: 0 0.3em 0 0.3em;
 	}
 	
@@ -44,9 +43,10 @@
 				</div>
 			</neq>
 			<div class="comment">
+				{:W('Comment/index',array($app_id))}
 			</div>
 			<include file="./Public/Html/footer.html"/>
-			</div>
+		</div>
 	</div>
 	
 </body>	
@@ -55,9 +55,9 @@
 		$('.my-container').css('padding-top',pt);
 		jQuery(document).ready(function($) {
 
-			var url="{:get_app_url($app_id)}";
+/*			var url="{:get_app_url($app_id)}";
 			//alert(url);
-			$('.comment').load(url);
+			$('.comment').load(url);*/
 
 			$(window).resize(function(event) {
 				/* Act on the event */

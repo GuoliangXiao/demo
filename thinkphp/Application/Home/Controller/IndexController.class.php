@@ -48,6 +48,7 @@ class IndexController extends Controller {
             $r['data']=$d;
         }
         $this->ajaxReturn($r);
+        
     }
 
 }

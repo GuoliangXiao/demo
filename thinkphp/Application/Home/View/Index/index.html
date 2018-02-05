@@ -109,7 +109,7 @@
 					</div>
 				</div>	
 				<div class="comment">
-				
+					{:W('Comment/index',array(0))}
 				</div>
 				<include file="./Public/Html/footer.html"/>		
 			</div>
@@ -122,15 +122,12 @@
 		$(".slippry-ppt").slippry();
 		$(".slippry-two").particleground();
 		$(".slippry-ppt>li").css("display","block");
-		var url="{:U('Home/Page/index?app_id=0')}";
-		$('.comment').load(url);
-
 	});
 	
 	$('.my-heart').click(function(event) {
 		/* Act on the event */
 		//alert($(this).attr('id'));
-		var url='{:U("Home/Index/addHeart")}';
+		var url='{:W("Home/Index/addHeart")}';
 		var appid=$(this).attr('id');
 		$.post(url, {id: appid}, function(data, textStatus, xhr) {
 			/*optional stuff to do after success */
