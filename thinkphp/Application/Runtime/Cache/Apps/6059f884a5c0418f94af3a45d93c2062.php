@@ -10,6 +10,7 @@
 	.my-container{
 		padding-top:5em;
 		background: #eeeeee;
+		padding: 0 0.3em 0 0.3em;
 	}
 	
 	.app-container{
