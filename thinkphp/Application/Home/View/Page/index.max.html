@@ -61,8 +61,8 @@
 	$(".content").emojiParse({
 		icons:icons
 	})
-	emojiInit("#content-text",".addface");
-	var startadd=0;
+	
+/*	var startadd=0;
 	$(".hf").click(function(event) {
 		if($(this).parent().parent().parent().parent().find('.div-form-add').length==0){
 			$('.div-form-add').remove();
@@ -82,7 +82,7 @@
 			$('.div-form-add').remove();
 			$('.pinglun').show();
 		}
-	});
+	});*/
 	$("form").submit(function(event) {
 		var user= $("input[name='username']").val();
 		var text=$("textarea[name='comment']").val();

@@ -101,3 +101,588 @@ INFO: [ view_filter ] --START--
 INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
 INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
 
+[ 2018-02-06T15:08:13+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 4,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 37 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 42 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 46 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 47 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 48 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 49 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 52 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:13:52+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0060s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 4,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 37 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 42 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 46 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 47 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 48 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 49 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 52 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 56 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:16:48+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/commentUp.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+SQL: SELECT `love_times` FROM `x_comment` WHERE `id` = 28 AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `x_comment` SET `love_times`='5' WHERE `id` = 28 AND `status` = 1 [ RunTime:0.2130s ]
+
+[ 2018-02-06T16:26:10+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0100s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 4,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 37 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 42 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 46 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 47 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 48 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 49 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 52 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 56 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T16:26:19+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0100s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 28 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 41 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 43 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 29 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 50 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 30 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 31 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:31:22+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0090s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 4,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 37 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 42 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 46 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 47 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 48 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 49 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 52 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 56 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:31:45+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0060s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 0,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 28 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 41 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 43 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 29 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 50 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 30 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 31 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:32:28+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0110s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 4,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 37 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 42 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 46 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 47 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 48 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 49 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 52 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 56 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T16:32:54+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0100s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 8,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 57 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:33:15+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 28 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 41 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 43 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 29 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 50 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 30 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 31 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:34:00+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 8,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 57 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 58 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T16:34:04+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0060s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 28 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 41 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 43 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 29 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 50 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 30 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 31 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-02-06T16:38:03+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0270s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 8,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 57 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 58 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T16:38:37+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0230s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 8,4   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 57 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 58 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 60 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T16:38:43+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 4,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 37 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 42 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 46 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 47 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 48 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 49 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 52 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 56 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:38:48+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0070s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 0,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 28 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 41 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 43 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 29 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 50 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 59 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 30 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 31 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T16:38:52+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0110s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 8,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 57 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 58 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 60 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:42:06+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 4,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 37 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 42 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 46 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 47 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 48 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 49 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 52 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 56 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:42:09+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0070s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 8,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 57 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 58 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 60 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-06T16:42:58+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0250s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 8,4   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 57 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 58 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 60 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 61 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T17:06:10+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0110s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 4,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 37 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 42 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 46 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 47 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 48 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 49 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 52 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 56 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+
+[ 2018-02-06T17:10:10+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 4,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 37 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 42 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 46 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 47 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 48 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 49 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 52 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 56 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T17:10:14+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0400s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 8,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 57 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 58 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 60 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 61 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T17:10:25+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0090s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 4,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 37 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 42 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 46 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 47 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 48 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 49 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 52 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 56 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T17:10:29+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Page/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0090s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\PageController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 28 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 41 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 43 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 29 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 50 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 59 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 30 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 31 AND `status` = 1 AND `app_id` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+
