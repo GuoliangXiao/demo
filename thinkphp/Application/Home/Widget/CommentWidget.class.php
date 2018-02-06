@@ -19,7 +19,6 @@ class CommentWidget extends Controller {
         $comment=$cm->CommentList($pid=0,$app_id,$commentList=array(),$spac=0,$pauthor=NULL,$start,$num);
         $this->assign('comment_len',count($comment));
         $this->assign('commentList',$comment);
-        $this->assign('app_id_p',$app_id);
         $this->display(T('Home@Page/index'));
     }
 }

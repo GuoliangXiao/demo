@@ -1,0 +1,79 @@
+<layout name="Public/template"/>
+<style type="text/css">
+	.my-weather{
+		padding-bottom: 1em;
+		margin: 0 0.5em 0 0.5em;
+	}
+	.app-title{
+		
+	}
+	.search-weather{
+		padding: 0.5em;
+	}
+	.search-s{
+		float: right;
+	}
+	#city-picker{
+		word-break:keep-all;
+		display: block;
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+	}
+	#city-picker>div{
+
+	}
+</style>
+<js href="__PUBLIC__/citypicker/js/city-picker.data.min.js"/>
+<js href="__PUBLIC__/citypicker/js/city-picker.min.js"/>
+<css href="__PUBLIC__/citypicker/css/city-picker.css"/>
+<div  class="app-container">
+	<div class="row">
+		<div class="col-md-6">
+			<h3 class="app-title"><i class="fa fa-snowflake-o fa-lg"></i>&nbsp;天气预报&nbsp;|&nbsp;Weather Forecast</h3>
+		</div>
+		<div class="col-md-6">
+
+			<div class="form-inline search-weather">
+				<div class="form-group">
+                	<div>
+                    	<input  id="city-picker" class="form-control" readonly type="text" value="湖北省/武汉市/洪山区" data-toggle="city-picker"/>
+                	</div>
+            	</div>
+				<div class="form-group">
+					<button class="btn-s btn btn-default">&nbsp;&nbsp;<i class="fa fa-search fa-lg"></i>&nbsp;&nbsp;</button>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="row my-weather">
+		
+	</div>
+	
+</div>
+<script src="https://cdn.bootcss.com/flot/0.8.3/jquery.flot.js"></script>
+
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".btn-s").click(function(event) {
+			var city=$("#city-picker").val();
+			if(city!=""){
+				postCity(city);
+			}else{
+				alert("请输入城市名称查询");
+			}
+		});
+		$(".btn-s").click();
+	});
+	function postCity(city){
+		var url='{:U("Apps/Weather/getWeather")}';	
+		$.post(url, {city: city}, function(data, textStatus, xhr) {
+			if(data['status']==1){
+				$('.my-weather').html(data['info']);
+			}else{
+				alert("请输入正确的城市名称再次查询");
+			}
+		});	
+	}
+</script>
