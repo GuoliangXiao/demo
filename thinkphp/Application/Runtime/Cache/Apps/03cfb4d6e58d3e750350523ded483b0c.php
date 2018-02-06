@@ -1,4 +1,68 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html><html><head><title>xhust</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><link rel="shortcut icon" href="/xhust/thinkphp/Public/Apps/xhust.ico"></head><style type="text/css">.my-container{padding-top:5em;padding: 0 0.3em 0 0.3em;}.app-container{}.app-title{display: inline-block;margin: 0.5em 0 0.5em 0;background: transparent;}.thumb-up{font-size: 1.2em;margin: 0em 1em 0 1em;}body{background: #eeeeee;}</style><!-- 最新版本的 Bootstrap 核心 CSS 文件 --><link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!-- 最新的 Bootstrap 核心 JavaScript 文件 --><script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"><script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script><!-- <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/bootstrap/css/bootstrap-responsive.min.css" /><script type="text/javascript" src="/xhust/thinkphp/Public/bootstrap/css/bootstrap.min.js"></script><link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/font-awesome-4.7.0/css/font-awesome.min.css" /> --><link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" /><link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" /><script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script><script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script><script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script><script type="text/javascript" src="/xhust/thinkphp/Public/Box/box.js"></script><link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Box/box.css" /><script type="text/javascript">/* width: 宽度, height: 最小高度, type: 'warning'|'error'|'success'|'info'|'question', showConfirmButton: 是否显示确认按钮, showCancelButton: 是否显示取消按钮, confirmButtonText: '确认', cancelButtonText: '取消'*/function alert_alt(txt, callback,tilte="",type="info", ok="确定"){alert(tilte, txt, function () {callback(); }, {type: type, confirmButtonText: ok});}function confirm_alt(txt,callback1, callback2, title="",type="info",ok="确定", cancel="取消"){confirm(title, txt , function (isConfirm) { if (isConfirm) { callback1(); } else { callback2(); } }, {confirmButtonText: ok, cancelButtonText: cancel, width: 400});}</script><body style="background: #eeeeee;"><style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='/xhust/thinkphp/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li> <li role="presentation"><a href="<?php echo (C("contact.cnblog")); ?>" target="_blank"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav><div <?php echo choose_class();?>><div class="my-container">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html><html><head><title>xhust</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><link rel="shortcut icon" href="/xhust/thinkphp/Public/Apps/xhust.ico"></head><style type="text/css">.my-container{padding-top:5em;padding: 0 0.3em 0 0.3em;}.app-container{}.app-title{display: inline-block;margin: 0.5em 0 0.5em 0;background: transparent;}.thumb-up{font-size: 1.2em;margin: 0em 1em 0 1em;}body{background: #eeeeee;}</style><!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+<!-- 
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/bootstrap/css/bootstrap-responsive.min.css" />
+<script type="text/javascript" src="/xhust/thinkphp/Public/bootstrap/css/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/font-awesome-4.7.0/css/font-awesome.min.css" /> -->
+
+<!-- 
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" />
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/jQuery-emoji/dist/css/jquery.emoji.css" />
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script> -->
+
+<link href="https://cdn.bootcss.com/emojione/2.2.7/assets/css/emojione.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/emojione/2.2.7/assets/sprites/emojione.sprites.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/emojione/2.2.7/lib/js/emojione.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/emojionearea/emojionearea.min.css" />
+
+<script type="text/javascript" src="/xhust/thinkphp/Public/emojionearea/emojionearea.min.js"></script>
+
+
+
+ 
+
+<script type="text/javascript" src="/xhust/thinkphp/Public/Box/box.js"></script>
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Box/box.css" />
+
+
+<script type="text/javascript">
+	/*
+           width:  宽度,
+           height: 最小高度,
+           type: 'warning'|'error'|'success'|'info'|'question',
+           showConfirmButton: 是否显示确认按钮,
+           showCancelButton: 是否显示取消按钮,
+           confirmButtonText: '确认',
+           cancelButtonText: '取消'
+	*/
+	function alert_alt(txt, callback,tilte="",type="info", ok="确定"){
+		alert(tilte, txt, function () {
+			callback();
+    	}, {type: type, confirmButtonText: ok});
+	}
+	function confirm_alt(txt,callback1, callback2, title="",type="info",ok="确定", cancel="取消"){
+		confirm(title, txt , function (isConfirm) {
+            if (isConfirm) {
+                callback1();
+            } else {
+               callback2();
+            }
+        }, {confirmButtonText: ok, cancelButtonText: cancel, width: 400});
+	}
+</script><body style="background: #eeeeee;"><style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='/xhust/thinkphp/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li> <li role="presentation"><a href="<?php echo (C("contact.cnblog")); ?>" target="_blank"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav><div <?php echo choose_class();?>><div class="my-container">
 <style type="text/css">
 	.my-table{
 	}
@@ -33,7 +97,7 @@
 			
 			<form class="form-inline" >
 				<div class="form-group">
-					<?php $__FOR_START_4466__=0;$__FOR_END_4466__=6;for($i=$__FOR_START_4466__;$i < $__FOR_END_4466__;$i+=1){ ?><label class="radio-inline">
+					<?php $__FOR_START_3072__=0;$__FOR_END_3072__=6;for($i=$__FOR_START_3072__;$i < $__FOR_END_3072__;$i+=1){ ?><label class="radio-inline">
 						    <input type="radio" name="speacial_num" value="<?php echo ($speacial_sys[$i][0]); ?>"
 						    <?php if($i==2) echo 'checked'?>
 						    >
@@ -44,7 +108,7 @@
 				</div>
 		  		<div class="form-group" >
             		<select name="normal_num" id="select-sys" class="form-control" disabled>
-						<?php $__FOR_START_22979__=2;$__FOR_END_22979__=65;for($i=$__FOR_START_22979__;$i < $__FOR_END_22979__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+						<?php $__FOR_START_19513__=2;$__FOR_END_19513__=65;for($i=$__FOR_START_19513__;$i < $__FOR_END_19513__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 					</select>
             	</div>
 			</form>
@@ -67,7 +131,7 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_21056__=0;$__FOR_END_21056__=3;for($i=$__FOR_START_21056__;$i < $__FOR_END_21056__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_638__=0;$__FOR_END_638__=3;for($i=$__FOR_START_638__;$i < $__FOR_END_638__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
 						<td style="vertical-align: middle;" width="50%">
 							<?php echo ($speacial_sys[$i][1]); ?>
@@ -79,13 +143,13 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_13689__=3;$__FOR_END_13689__=6;for($i=$__FOR_START_13689__;$i < $__FOR_END_13689__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_9183__=3;$__FOR_END_9183__=6;for($i=$__FOR_START_9183__;$i < $__FOR_END_9183__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
 						<td style="vertical-align: middle;" width="50%">
 							
 							<?php if($i == 5): ?><div class="form-group" style="margin: 0;">
 				            		<select name="normal_result" id="select-sys" class="form-control">
-										<?php $__FOR_START_21182__=2;$__FOR_END_21182__=65;for($i=$__FOR_START_21182__;$i < $__FOR_END_21182__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+										<?php $__FOR_START_26668__=2;$__FOR_END_26668__=65;for($i=$__FOR_START_26668__;$i < $__FOR_END_26668__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 									</select>
 			            		</div>
 			            		<?php else: echo ($speacial_sys[$i][1]); endif; ?>
@@ -104,6 +168,7 @@
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript">
 	function showResult(r){
 		$(".td-result").each(function(index) {

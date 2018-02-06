@@ -231,9 +231,11 @@
 				                <div class="form-group">
 				                	<label for="content-text">
 				                		<i class="fa fa-comment-o fa-lg"></i>&nbsp;评论&nbsp;|&nbsp;Comment&nbsp;&nbsp;&nbsp;
-				                		<a class="addface" href="javascript:void(0)">添加表情</a>
+				                		<a class="addface" href="javascript:void(0)"></a>
 				                	</label>
-				                    <textarea class="form-control" id="content-text" name="comment" rows="3" placeholder="请输入评论内容"></textarea>
+				                    <textarea id="content-text" class="form-control"  name="comment" rows="3" placeholder="请输入评论内容">
+				                    	
+				                    </textarea>
 				                </div>
 				                <div class="input-group submit-btn">
 				                    <button class="btn btn-info" type="submit">提交</button>
@@ -247,7 +249,7 @@
 				<?php echo W('Comment/showComment',array(0,4,$app_id));?>
 			</div>
 			<?php if(($comment_count) > "0"): ?><div class="mybutton">
-					<?php $__FOR_START_20255__=0;$__FOR_END_20255__=$page;for($i=$__FOR_START_20255__;$i < $__FOR_END_20255__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+					<?php $__FOR_START_29429__=0;$__FOR_END_29429__=$page;for($i=$__FOR_START_29429__;$i < $__FOR_END_29429__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
 				</div><?php endif; ?>
 		</div>
 		<div class="col-md-0">
@@ -259,6 +261,7 @@
 	</div>
 	
 </div>
+
 <script type="text/javascript">
 	var start=0;
 	var num=4;
@@ -270,24 +273,24 @@
 			$(".div-form").insertAfter($(".pinglun"));
 		}
 		start=$(this).attr('id')*num;
-		$(".btn-page").removeClass('disabled');
-		$(this).addClass('disabled');
-		postInfo();
+		$(".btn-page").addClass('disabled');
+		
+		postInfo($(this));
 	});
 	if(len>0){
 		$('.btn-page').first().addClass('disabled');
 	}else{
 	}
-	function postInfo(){
+	function postInfo(e){
 		var url="<?php echo U('Home/Page/index');?>";
 		$.post(url,{start:start,num:num,app_id:app_id},function(data){			
 			$(".comment-info").html(data.info);
-			$(".content").emojiParse({
-				icons:icons,
-			});
+			
+			$(".btn-page").removeClass('disabled');
+			e.addClass('disabled');
 		});
 	}
-	function emojiInit(s,b){
+	/*function emojiInit(s,b){
 		$(s).emoji({
 			button:b,
 			showTab: true,
@@ -295,13 +298,12 @@
 			icons:icons,
 		});
 	}
-	$(".content").emojiParse({
-		icons:icons
-	});
+	
 	emojiInit("#content-text",".addface");
 	$(".content").emojiParse({
 		icons:icons,
-	});
+	});*/
+	
 	$("form").submit(function(event) {
 		var user= $("input[name='username']").val();
 		var text=$("textarea[name='comment']").val();
@@ -315,5 +317,10 @@
 		return true;
 	});
 
-	
+	jQuery(document).ready(function($) {
+
+		$("#content-text").emojioneArea({
+      		autoHideFilters: true
+   		});
+	});
 </script>
