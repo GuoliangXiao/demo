@@ -30,7 +30,7 @@
 		                    		<span>
 		                    			<span class="comment-up-times" id="{$vo.id}">{$vo['love_times']}</span>
 		                    			<a id="{$vo.id}" class="comment-up" href="javascript:void(0)">
-		                    				<i class="fa fa-thumbs-o-up fa-lg"></i>
+		                    				<i class="fa fa-thumbs-o-up fa-1x"></i>
 		                    			</a>
 		                    		</span>
 		                    	</span>
@@ -50,50 +50,15 @@
 	</div>	
 </div>
 <script type="text/javascript">
-	function emojiInit(s,b){
-		$(s).emoji({
-			button:b,
-			showTab: true,
-	    	animation: 'fade',
-			icons:icons,
-		});
-	}
-	$(".content").emojiParse({
-		icons:icons
-	})
-	
-/*	var startadd=0;
 	$(".hf").click(function(event) {
-		if($(this).parent().parent().parent().parent().find('.div-form-add').length==0){
-			$('.div-form-add').remove();
-			$('.pinglun').hide();
-			var ht=$('.div-form').clone();
-			ht.addClass('div-form-add');
+		if($(this).parent().parent().parent().parent().find('.div-form').length==0){
 			var userid=$(this).attr('id');
-			ht.find("input[name='pid']").val(userid);
-			ht.find(".addface").addClass('addface-alt'+startadd);
-			ht.find("#content-text").addClass('content-text-alt'+startadd);
-			$(this).parent().parent().parent().after(ht);
-			emojiInit('.content-text-alt'+startadd,'.addface-alt'+startadd);
-			startadd++;
-			
-			
+			$(".div-form").find("input[name='pid']").val(userid);
+			$(".div-form").insertAfter($(this).parent().parent().parent());
 		}else{
-			$('.div-form-add').remove();
-			$('.pinglun').show();
+			$(".div-form").find("input[name='pid']").val(0);
+			$(".div-form").insertAfter($(".pinglun"));
 		}
-	});*/
-	$("form").submit(function(event) {
-		var user= $("input[name='username']").val();
-		var text=$("textarea[name='comment']").val();
-		if(user.length>15||user.length<2){
-			alert_alt('请输入正确用户名');
-			return false;
-		}else if(text.length==0){
-			alert_alt('请输入评论内容');
-			return false;
-		}
-		return true;
 	});
 	$(".comment-up").click(function(event) {
 		var url='{:U("Home/Page/commentUp")}';

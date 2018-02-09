@@ -25,7 +25,7 @@
 		                    		<span>
 		                    			<span class="comment-up-times" id="<?php echo ($vo["id"]); ?>"><?php echo ($vo['love_times']); ?></span>
 		                    			<a id="<?php echo ($vo["id"]); ?>" class="comment-up" href="javascript:void(0)">
-		                    				<i class="fa fa-thumbs-o-up fa-lg"></i>
+		                    				<i class="fa fa-thumbs-o-up fa-1x"></i>
 		                    			</a>
 		                    		</span>
 		                    	</span>

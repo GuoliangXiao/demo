@@ -26,7 +26,7 @@
 		color:blue;
 	}
 </style>
-<h3><i class="fa fa-pie-chart fa-lg"></i>&nbsp;&nbsp;|&nbsp;阅读排行</h3>
+<h3><i class="fa fa-pie-chart fa-1x"></i>&nbsp;阅读排行&nbsp;|&nbsp;Rank</h3>
 <ul class="blog-read-rank">
 	<?php if(is_array($read)): $i = 0; $__LIST__ = $read;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
 			<strong><?php echo ($i); ?>.</strong>

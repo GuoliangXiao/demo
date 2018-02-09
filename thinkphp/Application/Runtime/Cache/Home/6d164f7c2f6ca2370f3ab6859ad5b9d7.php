@@ -23,6 +23,17 @@
 		padding-right: 0.5em;
 		color: #A8B1BA;
 	}
+	.blog-title{
+		color: black;
+	}
+	.blog-title:hover{
+		color: black;
+		text-decoration: none;
+	}
+	.blog-title:focus{
+		color: black;
+		text-decoration: none;
+	}
 	.blog-page{
 		margin-top:0.5em;
 		text-align: center;
@@ -33,43 +44,44 @@
 </style>
 <div class="row">
 	<div class="col-md-8">
-		<h3><i class="fa fa-list-ul fa-lg"></i>&nbsp;文章&nbsp;|&nbsp;Blog</h3>
+		<h3><i class="fa fa-list-ul fa-1x"></i>&nbsp;文章&nbsp;|&nbsp;Blog</h3>
 		<div class="articles">
 			<?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="article-abstract">
-					<h4 class="blog-title"><?php echo ($vo['title']); ?></h4>
+					<h4>
+						<a target="_blank" class="blog-title" href="<?php echo U('Home/Article/index?id='.$vo['id']);?>"><?php echo ($vo['title']); ?></a>
+					</h4>
 					<p>
 						<strong>摘要:</strong>
 						<span class="blog-abstract"><?php echo filter_content($vo['content']);?></span>
 					</p>
 					<div class="article-info">
 						<span>
-							<i class="fa fa-eye fa-lg"></i>
+							<i class="fa fa-eye fa-1x"></i>
 							<span class="blog-read_times">(<?php echo ($vo['read_times']); ?>)</span>
 						</span>
 						<span>
-							<i class="fa fa-thumbs-o-up fa-lg"></i>
+							<i class="fa fa-thumbs-o-up fa-1x"></i>
 							<span class="blog-love_times">(<?php echo ($vo['love_times']); ?>)</span>
 							
 						</span>
 						
 						<span>
-							<i class="fa fa-clock-o fa-lg"></i> 
+							<i class="fa fa-clock-o fa-1x"></i> 
 							<span class="blog-created_at"><?php echo date('Y-m-d',strtotime($vo['created_at']));?></span>
 						</span>
 						<span>
-							<i class="fa fa-user-circle-o fa-lg"></i>
+							<i class="fa fa-user-circle-o fa-1x"></i>
 							<span class="blog-author"><?php echo ($vo['author']); ?></span>
 						</span>
-						<span><a class="blog-url" href="<?php echo U('Home/Article/index?id='.$vo['id']);?>" target="_blank">阅读全文</a></span>
 					</div>
 				</div><?php endforeach; endif; else: echo "" ;endif; ?>
 		</div>
 		<div class="blog-page">
-			<?php if(($blogpage) > "1"): $__FOR_START_22217__=0;$__FOR_END_22217__=$blogpage;for($i=$__FOR_START_22217__;$i < $__FOR_END_22217__;$i+=1){ ?><button class="btn btn-default btn-blogpage" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } endif; ?>
+			<?php if(($blogpage) > "1"): $__FOR_START_27282__=0;$__FOR_END_27282__=$blogpage;for($i=$__FOR_START_27282__;$i < $__FOR_END_27282__;$i+=1){ ?><button class="btn btn-default btn-blogpage" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } endif; ?>
 		</div>
 	</div>
 	<div class="col-md-4">
-		<?php echo W('Blog/blogrank');?>
+		<?php $is_phone=is_mobile(); if(!$is_phone){ W('Blog/blogrank'); } ?>
 	</div>
 </div>
 <script type="text/javascript">
@@ -104,7 +116,7 @@
 				$(this).find('.blog-love_times').html(data[index]['love_times']);
 				$(this).find('.blog-created_at').html(data[index]['created_at']);
 				$(this).find('.blog-author').html(data[index]['author']);
-				$(this).find('.blog-url').attr('href',data[index]['url']);
+				$(this).find('.blog-title').attr('href',data[index]['url']);
 			}else{
 				$(this).remove();
 			}			

@@ -213,25 +213,25 @@
 	<div class="row">
 		<div class="col-md-12 comment-div">
 			<div>
-				<h3><i class="fa fa-commenting fa-lg"></i>&nbsp;评论&nbsp;|&nbsp;Comment</h3>
+				<h3><i class="fa fa-commenting fa-1x"></i>&nbsp;评论&nbsp;|&nbsp;Comment</h3>
 		    	<div>
     				<div class="pinglun">
 				        <div class="div-form">
 				            <form class="" action="<?php echo U('Home/Page/addComment');?>" method="post">
 				                <div class="form-group">
-				                    <label for="username"><i class="fa fa-user-o fa-lg"></i>&nbsp;昵称&nbsp;|&nbsp;Name</label>
+				                    <label for="username"><i class="fa fa-user-o fa-1x"></i>&nbsp;昵称&nbsp;|&nbsp;Name</label>
 				                    <input id="username" class="form-control" type="text" placeholder="昵称" name="username">
 				                    <input type="hidden" placeholder="" name="pid" value="0">
 				                    <input type="hidden" placeholder="" name="app_id" value="<?php echo ($app_id); ?>"> 
 				                    <input type="hidden" placeholder="" name="category" value="<?php echo ($category); ?>">
 				                </div>
 				                <div class="form-group">
-				                    <label for="mail"><i class="fa fa-envelope-o fa-lg"></i>&nbsp;邮箱&nbsp;|&nbsp;Email</label>
+				                    <label for="mail"><i class="fa fa-envelope-o fa-1x"></i>&nbsp;邮箱&nbsp;|&nbsp;Email</label>
 				                    <input id="mail" class="form-control" type="email" placeholder="one@example.com" name="mail">
 				                </div>
 				                <div class="form-group">
 				                	<label for="content-text">
-				                		<i class="fa fa-comment-o fa-lg"></i>&nbsp;评论&nbsp;|&nbsp;Comment&nbsp;&nbsp;&nbsp;
+				                		<i class="fa fa-comment-o fa-1x"></i>&nbsp;评论&nbsp;|&nbsp;Comment&nbsp;&nbsp;&nbsp;
 				                		<a class="addface" href="javascript:void(0)"></a>
 				                	</label>
 				                    <textarea id="content-text" class="form-control"  name="comment" rows="3" placeholder="请输入评论内容">
@@ -250,7 +250,7 @@
 				<?php echo W('Comment/showComment',array(0,4,$app_id,$category));?>
 			</div>
 			<?php if(($page) > "0"): ?><div class="mybutton">
-					<?php $__FOR_START_25038__=0;$__FOR_END_25038__=$page;for($i=$__FOR_START_25038__;$i < $__FOR_END_25038__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+					<?php $__FOR_START_31274__=0;$__FOR_END_31274__=$page;for($i=$__FOR_START_31274__;$i < $__FOR_END_31274__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
 				</div><?php endif; ?>
 		</div>
 		<div class="col-md-0">
