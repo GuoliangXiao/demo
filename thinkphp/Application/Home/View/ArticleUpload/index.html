@@ -6,7 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="__PUBLIC__/Apps/xhust.ico">
 </head>
-
+<style type="text/css">
+    .my-container{
+        margin: 0.5em 2em 0.5em 2em;
+    }
+</style>
 <include file="./Public/Html/function.html"/>
 <css href="__PUBLIC__/kindeditor/themes/default/default.css"/>
 <css href="__PUBLIC__/kindeditor/plugins/code/prettify.css"/>
@@ -20,6 +24,8 @@
             uploadJson : '{:U("Home/ArticleUpload/kindQiniu")}',
             fileManagerJson : '__PUBLIC__/kindeditor/php/file_manager_json.php',
             allowFileManager : true,
+            width:$(".my-container").width(),
+            height:650,
             afterCreate : function() {
                 var self = this;
                 K.ctrl(document, 13, function() {
@@ -36,20 +42,20 @@
     });
 </script>
 <body style="background: #eeeeee;padding: 0;margin: 0;">	
-	<div {:choose_class()}>
+	<div class="container-fluid">
 		<div class="my-container">	
 			<form method="post" action="{:U('Home/ArticleUpload/kedit')}" onsubmit="">
 		        <div class="form-group">
-                    <label for="title">标题</label>
+                    <!-- <label for="title">标题</label> -->
                     <input id="title" class="form-control" type="text" placeholder="" name="title">
                 </div>
                 <div class="form-group">
-                    <label for="content">内容</label>
-                    <textarea id="editor_id" name="content" style="width:700px;height:300px;">
+                    <!-- <label for="content">内容</label> -->
+                    <textarea id="editor_id" name="content">
 				</textarea>
                 </div>
 		        
-				<button type="submit" class="btn btn-info">&nbsp;提交&nbsp;</button>
+				<button style="width: 100%;height: 3em;" type="submit" class="btn btn-info">&nbsp;提交&nbsp;</button>
 				
 			</form>
 		</div>	

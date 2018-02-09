@@ -23,20 +23,20 @@
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script> -->
 
-<link href="https://cdn.bootcss.com/emojione/2.2.7/assets/css/emojione.min.css" rel="stylesheet">
+<!-- <link href="https://cdn.bootcss.com/emojione/2.2.7/assets/css/emojione.min.css" rel="stylesheet">
 <link href="https://cdn.bootcss.com/emojione/2.2.7/assets/sprites/emojione.sprites.css" rel="stylesheet">
 <script src="https://cdn.bootcss.com/emojione/2.2.7/lib/js/emojione.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/emojionearea/emojionearea.min.css" />
 
-<script type="text/javascript" src="/xhust/thinkphp/Public/emojionearea/emojionearea.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/emojionearea/emojionearea.min.js"></script> -->
 
 
 
  
-<!-- 
+
 <script type="text/javascript" src="/xhust/thinkphp/Public/Box/box.js"></script>
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Box/box.css" /> -->
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Box/box.css" />
 
 
 <script type="text/javascript">

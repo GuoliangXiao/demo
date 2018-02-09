@@ -38,7 +38,7 @@ return array(
 	'TMPL_PARSE_STRING'=>array(
 	),
 	'UPLOAD_SITEIMG_QINIU' => array ( 
-        'maxSize' => 5 * 1024 * 1024,//文件大小
+        'maxSize' => 10 * 1024 * 1024,//文件大小5M
         'rootPath' => './',
         'saveName' => array ('uniqid', ''),
         'driver' => 'Qiniu',

@@ -6,7 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="/xhust/thinkphp/Public/Apps/xhust.ico">
 </head>
-
+<style type="text/css">
+    .my-container{
+        margin: 0.5em 2em 0.5em 2em;
+    }
+</style>
 <script
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
@@ -32,20 +36,20 @@
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-emoji/dist/js/jquery.emoji.min.js"></script> -->
 
-<link href="https://cdn.bootcss.com/emojione/2.2.7/assets/css/emojione.min.css" rel="stylesheet">
+<!-- <link href="https://cdn.bootcss.com/emojione/2.2.7/assets/css/emojione.min.css" rel="stylesheet">
 <link href="https://cdn.bootcss.com/emojione/2.2.7/assets/sprites/emojione.sprites.css" rel="stylesheet">
 <script src="https://cdn.bootcss.com/emojione/2.2.7/lib/js/emojione.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/emojionearea/emojionearea.min.css" />
 
-<script type="text/javascript" src="/xhust/thinkphp/Public/emojionearea/emojionearea.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/emojionearea/emojionearea.min.js"></script> -->
 
 
 
  
-<!-- 
+
 <script type="text/javascript" src="/xhust/thinkphp/Public/Box/box.js"></script>
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Box/box.css" /> -->
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/Box/box.css" />
 
 
 <script type="text/javascript">
@@ -82,9 +86,11 @@
     KindEditor.ready(function(K) {
         window.editor = K.create('#editor_id',{
         	cssPath : '/xhust/thinkphp/Public/kindeditor/plugins/code/prettify.css',
-            uploadJson : '<?php echo U("Home/ArticleUpload/kindQiniu");?>',
+            uploadJson : '<?php echo U("Home/ArticleUpload/kindfile");?>',
             fileManagerJson : '/xhust/thinkphp/Public/kindeditor/php/file_manager_json.php',
             allowFileManager : true,
+            width:$(".my-container").width(),
+            height:650,
             afterCreate : function() {
                 var self = this;
                 K.ctrl(document, 13, function() {
@@ -101,20 +107,20 @@
     });
 </script>
 <body style="background: #eeeeee;padding: 0;margin: 0;">	
-	<div <?php echo choose_class();?>>
+	<div class="container-fluid">
 		<div class="my-container">	
 			<form method="post" action="<?php echo U('Home/ArticleUpload/kedit');?>" onsubmit="">
 		        <div class="form-group">
-                    <label for="title">标题</label>
+                    <!-- <label for="title">标题</label> -->
                     <input id="title" class="form-control" type="text" placeholder="" name="title">
                 </div>
                 <div class="form-group">
-                    <label for="content">内容</label>
-                    <textarea id="editor_id" name="content" style="width:700px;height:300px;">
+                    <!-- <label for="content">内容</label> -->
+                    <textarea id="editor_id" name="content">
 				</textarea>
                 </div>
 		        
-				<button type="submit" class="btn btn-info">&nbsp;提交&nbsp;</button>
+				<button style="width: 100%;height: 3em;" type="submit" class="btn btn-info">&nbsp;提交&nbsp;</button>
 				
 			</form>
 		</div>	
