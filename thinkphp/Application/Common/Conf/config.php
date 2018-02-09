@@ -10,7 +10,7 @@ return array(
 	//'TMPL_R_DELIM'=>'}>',
 	//'VIEW_PATH'=>'./Public/',
 	/*
-	'SHOW_PAGE_TRACE' =>true,
+	'SHOW_PAGE_TRACE' =>false,
 	'DB_TYPE'=>'mysql',
 	'DB_USER'=>'root',
 	'DB_PWD'=>'root',
@@ -32,4 +32,21 @@ return array(
 		'about'=>"百无一用是柔情，不屑一顾最相思。",
 		'copyright'=>"Copyrights&copy;xhust.tk",
 	),
+	'article'=>array(
+		'tail'=>"百无一用是柔情，不屑一顾最相思。",
+	),
+	'TMPL_PARSE_STRING'=>array(
+	),
+	'UPLOAD_SITEIMG_QINIU' => array ( 
+        'maxSize' => 5 * 1024 * 1024,//文件大小
+        'rootPath' => './',
+        'saveName' => array ('uniqid', ''),
+        'driver' => 'Qiniu',
+        'driverConfig' => array (
+            'secretKey' => 'ZoCqEwQ-SJK0Jjeat02KnV7IwKdTwBoPmchsZ7P-', 
+            'accessKey' => 'v6cvE4V-mmHHlKrCiQ5Gv3LH0sjmS2xjnezuVcVm',
+            'domain' => 'p3u1lifj3.bkt.clouddn.com',
+            'bucket' => 'blogfile',
+        ) 
+    ),
 );

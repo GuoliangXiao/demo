@@ -7,10 +7,11 @@ class PageController extends Controller {
     function index(){
         $start=I('post.start');
         $num=I('post.num');
-        $app_id=I('post.app_id');
+        $app_id=I('post.app_id',0);
+        $category=I('post.category',0);
 
         $cm=new CommentModel();       
-        $comment=$cm->CommentList($pid=0,$app_id,$commentList=array(),$spac=0,$pauthor=NULL,$start,$num);
+        $comment=$cm->CommentList($pid=0,$app_id,$category,$commentList=array(),$spac=0,$pauthor=NULL,$start,$num);
         $this->assign('comment_len',count($comment));
         $this->assign('commentList',$comment);
         $this->assign('app_id_p',$app_id);
@@ -20,8 +21,9 @@ class PageController extends Controller {
     }
     public function loadComment(){
         $app_id=I('get.app_id');
+        $category=I('get.category',0);
         $this->assign('app_id',$app_id);
-        $count=M('comment')-> where(array('pid'=>0,'status'=>1,'app_id'=>$app_id))->count();
+        $count=M('comment')-> where(array('pid'=>0,'status'=>1,'app_id'=>$app_id,"category"=>$category))->count();
         $num=4;
         $page=ceil($count/$num);
         $this->assign('comment_count',$count);
@@ -43,6 +45,7 @@ class PageController extends Controller {
             'author'=>I('post.username'),
             'email'=>I('post.mail'),
             'app_id'=>I('post.app_id'),
+            'category'=>I('post.category'),
         );
 
         $comment = M("comment"); // 实例化User对象

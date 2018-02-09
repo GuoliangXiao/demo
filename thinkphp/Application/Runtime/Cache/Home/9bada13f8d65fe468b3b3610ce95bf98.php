@@ -222,7 +222,8 @@
 				                    <label for="username"><i class="fa fa-user-o fa-lg"></i>&nbsp;昵称&nbsp;|&nbsp;Name</label>
 				                    <input id="username" class="form-control" type="text" placeholder="昵称" name="username">
 				                    <input type="hidden" placeholder="" name="pid" value="0">
-				                    <input type="hidden" placeholder="" name="app_id" value="<?php echo ($app_id); ?>">
+				                    <input type="hidden" placeholder="" name="app_id" value="<?php echo ($app_id); ?>"> 
+				                    <input type="hidden" placeholder="" name="category" value="<?php echo ($category); ?>">
 				                </div>
 				                <div class="form-group">
 				                    <label for="mail"><i class="fa fa-envelope-o fa-lg"></i>&nbsp;邮箱&nbsp;|&nbsp;Email</label>
@@ -246,10 +247,10 @@
 		    	</div>
 			</div>
 			<div class="comment-info">
-				<?php echo W('Comment/showComment',array(0,4,$app_id));?>
+				<?php echo W('Comment/showComment',array(0,4,$app_id,$category));?>
 			</div>
-			<?php if(($comment_count) > "0"): ?><div class="mybutton">
-					<?php $__FOR_START_12498__=0;$__FOR_END_12498__=$page;for($i=$__FOR_START_12498__;$i < $__FOR_END_12498__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+			<?php if(($page) > "0"): ?><div class="mybutton">
+					<?php $__FOR_START_25038__=0;$__FOR_END_25038__=$page;for($i=$__FOR_START_25038__;$i < $__FOR_END_25038__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
 				</div><?php endif; ?>
 		</div>
 		<div class="col-md-0">
@@ -265,8 +266,9 @@
 <script type="text/javascript">
 	var start=0;
 	var num=4;
-	var len='<?php echo ($comment_count); ?>';
+	var len='<?php echo ($page); ?>';
 	var app_id='<?php echo ($app_id); ?>';
+	var category='<?php echo ($category); ?>';
 	$('.btn-page').click(function(event) {
 		if($(".hf").parent().parent().parent().parent().find('.div-form').length!=0){
 			$(".div-form").find("input[name='pid']").val(0);
@@ -279,13 +281,14 @@
 	});
 	if(len>0){
 		$('.btn-page').first().addClass('disabled');
-	}else{
 	}
 	function postInfo(e){
 		var url="<?php echo U('Home/Page/index');?>";
-		$.post(url,{start:start,num:num,app_id:app_id},function(data){			
+		$.post(url,{start:start,num:num,app_id:app_id,category:category},function(data){			
 			$(".comment-info").html(data.info);
-			
+			$(".content").emojiParse({
+				icons:icons,
+			});
 			$(".btn-page").removeClass('disabled');
 			e.addClass('disabled');
 		});
@@ -300,9 +303,10 @@
 	}
 	
 	emojiInit("#content-text",".addface");
+	*/
 	$(".content").emojiParse({
 		icons:icons,
-	});*/
+	});
 	
 	$("form").submit(function(event) {
 		var user= $("input[name='username']").val();
@@ -318,11 +322,11 @@
 	});
 
 	jQuery(document).ready(function($) {
-
+/*
 		$("#content-text").emojioneArea({
       		autoHideFilters: true,
       		placeholder:'请输入评论内容'
-   		});
+   		});*/
 
 	});
 </script>

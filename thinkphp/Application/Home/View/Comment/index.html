@@ -222,7 +222,8 @@
 				                    <label for="username"><i class="fa fa-user-o fa-lg"></i>&nbsp;昵称&nbsp;|&nbsp;Name</label>
 				                    <input id="username" class="form-control" type="text" placeholder="昵称" name="username">
 				                    <input type="hidden" placeholder="" name="pid" value="0">
-				                    <input type="hidden" placeholder="" name="app_id" value="{$app_id}">
+				                    <input type="hidden" placeholder="" name="app_id" value="{$app_id}"> 
+				                    <input type="hidden" placeholder="" name="category" value="{$category}">
 				                </div>
 				                <div class="form-group">
 				                    <label for="mail"><i class="fa fa-envelope-o fa-lg"></i>&nbsp;邮箱&nbsp;|&nbsp;Email</label>
@@ -246,9 +247,9 @@
 		    	</div>
 			</div>
 			<div class="comment-info">
-				{:W('Comment/showComment',array(0,4,$app_id))}
+				{:W('Comment/showComment',array(0,4,$app_id,$category))}
 			</div>
-			<gt name="comment_count" value="0">
+			<gt name="page" value="0">
 				<div class="mybutton">
 					<for start="0" end="$page">					
 						<button class="btn btn-default btn-page" id={$i}>{$i+1}</button>
@@ -269,8 +270,9 @@
 <script type="text/javascript">
 	var start=0;
 	var num=4;
-	var len='{$comment_count}';
+	var len='{$page}';
 	var app_id='{$app_id}';
+	var category='{$category}';
 	$('.btn-page').click(function(event) {
 		if($(".hf").parent().parent().parent().parent().find('.div-form').length!=0){
 			$(".div-form").find("input[name='pid']").val(0);
@@ -283,13 +285,14 @@
 	});
 	if(len>0){
 		$('.btn-page').first().addClass('disabled');
-	}else{
 	}
 	function postInfo(e){
 		var url="{:U('Home/Page/index')}";
-		$.post(url,{start:start,num:num,app_id:app_id},function(data){			
+		$.post(url,{start:start,num:num,app_id:app_id,category:category},function(data){			
 			$(".comment-info").html(data.info);
-			
+			$(".content").emojiParse({
+				icons:icons,
+			});
 			$(".btn-page").removeClass('disabled');
 			e.addClass('disabled');
 		});
@@ -304,9 +307,10 @@
 	}
 	
 	emojiInit("#content-text",".addface");
+	*/
 	$(".content").emojiParse({
 		icons:icons,
-	});*/
+	});
 	
 	$("form").submit(function(event) {
 		var user= $("input[name='username']").val();

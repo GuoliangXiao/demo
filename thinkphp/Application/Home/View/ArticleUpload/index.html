@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>xhust</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="__PUBLIC__/Apps/xhust.ico">
+</head>
+
+<include file="./Public/Html/function.html"/>
+<css href="__PUBLIC__/kindeditor/themes/default/default.css"/>
+<css href="__PUBLIC__/kindeditor/plugins/code/prettify.css"/>
+<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor-all.js"></script>
+<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh-CN.js"></script>
+<script>
+	KindEditor.options.filterMode = false; 
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id',{
+        	cssPath : '__PUBLIC__/kindeditor/plugins/code/prettify.css',
+            uploadJson : '{:U("Home/ArticleUpload/kindQiniu")}',
+            fileManagerJson : '__PUBLIC__/kindeditor/php/file_manager_json.php',
+            allowFileManager : true,
+            afterCreate : function() {
+                var self = this;
+                K.ctrl(document, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+            }
+        });
+        prettyPrint();
+    });
+</script>
+<body style="background: #eeeeee;padding: 0;margin: 0;">	
+	<div {:choose_class()}>
+		<div class="my-container">	
+			<form method="post" action="{:U('Home/ArticleUpload/kedit')}" onsubmit="">
+		        <div class="form-group">
+                    <label for="title">标题</label>
+                    <input id="title" class="form-control" type="text" placeholder="" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="content">内容</label>
+                    <textarea id="editor_id" name="content" style="width:700px;height:300px;">
+				</textarea>
+                </div>
+		        
+				<button type="submit" class="btn btn-info">&nbsp;提交&nbsp;</button>
+				
+			</form>
+		</div>	
+	</div>
+</body>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		
+	});
+</script>
+</html>

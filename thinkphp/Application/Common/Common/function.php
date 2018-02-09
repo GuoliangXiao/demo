@@ -12,7 +12,40 @@ function comment_level($level){
 function get_app_url($app_id){
 	return U('Home/Page/loadComment?app_id='.$app_id);
 }
-
+function filter_content($html){
+  $html=html_entity_decode($html);
+  $html=strip_tags($html);
+  $html=str_replace(array(" ","　","\t","\n","\r"), '', $html);
+  $len=min(160,strlen($html));
+  return mb_substr($html, 0, $len);
+}
+function blog_decode($html){
+  $html=html_entity_decode($html);
+  require_once 'simple_html_dom.php';
+  $shd=str_get_html($html);
+  $img=$shd->find('img');
+  foreach ($img as $key => $value) {
+    $url=substr($value->src,0,strpos($value->src,'?'));
+    $img[$key]->src=Qiniu_Sign($url);
+  }
+  return $shd;
+}
+function Qiniu_Encode($str) 
+{
+    $find = array('+', '/');
+    $replace = array('-', '_');
+    return str_replace($find, $replace, base64_encode($str));
+}
+function Qiniu_Sign($url) {
+    $setting = C ( 'UPLOAD_SITEIMG_QINIU' );
+    $duetime = NOW_TIME + 86400;
+    $DownloadUrl = $url . '?e=' . $duetime;
+    $Sign = hash_hmac ( 'sha1', $DownloadUrl, $setting ["driverConfig"] ["secretKey"], true );
+    $EncodedSign = Qiniu_Encode ( $Sign );
+    $Token = $setting ["driverConfig"] ["accessKey"] . ':' . $EncodedSign;
+    $RealDownloadUrl = $DownloadUrl . '&token=' . $Token;
+    return $RealDownloadUrl;
+}
 /**
  * 获取客户端浏览器信息 添加win10 edge浏览器判断
  * @param  null
