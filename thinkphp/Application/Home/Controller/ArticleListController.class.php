@@ -18,7 +18,7 @@ class ArticleListController extends Controller {
         $limit=I('post.limit');
         $a=M('article');
         $wh['status']=1;
-        $article=$a->where($wh)->limit($start,$limit)->select();
+        $article=$a->where($wh)->order('created_at desc')->limit($start,$limit)->select();
         foreach ($article as $key => $value) {
             $article[$key]['content']= filter_content($value['content']);
             $article[$key]['created_at']= date('Y-m-d',strtotime($value['created_at']));

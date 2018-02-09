@@ -49,10 +49,10 @@
 <nav class="navbar navbar-fixed-top mynavdiv">
 	<div {:choose_class()}>
 		<ul class="nav nav-tabs mynav">
-		  	<li role="presentation" id="li-x"><a href="javascript:void(0);"><img src="__PUBLIC__/Apps/xhust.ico"/></a></li>
-	   		<li role="presentation"><a href='__ROOT__/'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;首页</a></li>
+		  	<li role="presentation" id="li-x"><a href='{:U("Home/Index/index")}'><img src="__PUBLIC__/Apps/xhust.ico"/></a></li>
+	   		<li role="presentation"><a href='{:U("Home/Index/index#my-app-position")}'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;应用</a></li>
 
-		  	<li role="presentation"><a href="{:U('Home/ArticleList/index')}" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li>
+		  	<li role="presentation"><a href="{:U('Home/Index/index#my-blog-position')}" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li>
 		</ul>
 	</div>
 </nav>

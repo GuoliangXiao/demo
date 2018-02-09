@@ -77,7 +77,7 @@
 				</div><?php endforeach; endif; else: echo "" ;endif; ?>
 		</div>
 		<div class="blog-page">
-			<?php if(($blogpage) > "1"): $__FOR_START_3062__=0;$__FOR_END_3062__=$blogpage;for($i=$__FOR_START_3062__;$i < $__FOR_END_3062__;$i+=1){ ?><button class="btn btn-default btn-blogpage" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } endif; ?>
+			<?php if(($blogpage) > "1"): $__FOR_START_30718__=0;$__FOR_END_30718__=$blogpage;for($i=$__FOR_START_30718__;$i < $__FOR_END_30718__;$i+=1){ ?><button class="btn btn-default btn-blogpage" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } endif; ?>
 		</div>
 	</div>
 	<div class="col-md-4">
@@ -117,8 +117,9 @@
 				$(this).find('.blog-created_at').html(data[index]['created_at']);
 				$(this).find('.blog-author').html(data[index]['author']);
 				$(this).find('.blog-title').attr('href',data[index]['url']);
+				$(this).css('display','block');
 			}else{
-				$(this).remove();
+				$(this).css('display','none');
 			}			
 		});
 	}

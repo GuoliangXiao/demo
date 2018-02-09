@@ -128,8 +128,9 @@
 				$(this).find('.blog-created_at').html(data[index]['created_at']);
 				$(this).find('.blog-author').html(data[index]['author']);
 				$(this).find('.blog-title').attr('href',data[index]['url']);
+				$(this).css('display','block');
 			}else{
-				$(this).remove();
+				$(this).css('display','none');
 			}			
 		});
 	}
