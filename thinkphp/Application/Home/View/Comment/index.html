@@ -289,10 +289,7 @@
 	function postInfo(e){
 		var url="{:U('Home/Page/index')}";
 		$.post(url,{start:start,num:num,app_id:app_id,category:category},function(data){			
-			$(".comment-info").html(data.info);
-			$(".content").emojiParse({
-				icons:icons,
-			});
+			$(".comment-info").html(data.info);			
 			$(".btn-page").removeClass('disabled');
 			e.addClass('disabled');
 		});
@@ -307,11 +304,11 @@
 	}
 	
 	emojiInit("#content-text",".addface");
-	*/
+	
 	$(".content").emojiParse({
 		icons:icons,
 	});
-	
+	*/
 	$("form").submit(function(event) {
 		var user= $("input[name='username']").val();
 		var text=$("textarea[name='comment']").val();

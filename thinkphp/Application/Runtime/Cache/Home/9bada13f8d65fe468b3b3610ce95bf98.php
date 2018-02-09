@@ -250,7 +250,7 @@
 				<?php echo W('Comment/showComment',array(0,4,$app_id,$category));?>
 			</div>
 			<?php if(($page) > "0"): ?><div class="mybutton">
-					<?php $__FOR_START_31274__=0;$__FOR_END_31274__=$page;for($i=$__FOR_START_31274__;$i < $__FOR_END_31274__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+					<?php $__FOR_START_16261__=0;$__FOR_END_16261__=$page;for($i=$__FOR_START_16261__;$i < $__FOR_END_16261__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
 				</div><?php endif; ?>
 		</div>
 		<div class="col-md-0">
@@ -285,10 +285,7 @@
 	function postInfo(e){
 		var url="<?php echo U('Home/Page/index');?>";
 		$.post(url,{start:start,num:num,app_id:app_id,category:category},function(data){			
-			$(".comment-info").html(data.info);
-			$(".content").emojiParse({
-				icons:icons,
-			});
+			$(".comment-info").html(data.info);			
 			$(".btn-page").removeClass('disabled');
 			e.addClass('disabled');
 		});
@@ -303,11 +300,11 @@
 	}
 	
 	emojiInit("#content-text",".addface");
-	*/
+	
 	$(".content").emojiParse({
 		icons:icons,
 	});
-	
+	*/
 	$("form").submit(function(event) {
 		var user= $("input[name='username']").val();
 		var text=$("textarea[name='comment']").val();

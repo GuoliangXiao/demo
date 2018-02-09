@@ -213,25 +213,25 @@
 	<div class="row">
 		<div class="col-md-12 comment-div">
 			<div>
-				<h3><i class="fa fa-commenting fa-lg"></i>&nbsp;评论&nbsp;|&nbsp;Comment</h3>
+				<h3><i class="fa fa-commenting fa-1x"></i>&nbsp;评论&nbsp;|&nbsp;Comment</h3>
 		    	<div>
     				<div class="pinglun">
 				        <div class="div-form">
 				            <form class="" action="<?php echo U('Home/Page/addComment');?>" method="post">
 				                <div class="form-group">
-				                    <label for="username"><i class="fa fa-user-o fa-lg"></i>&nbsp;昵称&nbsp;|&nbsp;Name</label>
+				                    <label for="username"><i class="fa fa-user-o fa-1x"></i>&nbsp;昵称&nbsp;|&nbsp;Name</label>
 				                    <input id="username" class="form-control" type="text" placeholder="昵称" name="username">
 				                    <input type="hidden" placeholder="" name="pid" value="0">
 				                    <input type="hidden" placeholder="" name="app_id" value="<?php echo ($app_id); ?>"> 
 				                    <input type="hidden" placeholder="" name="category" value="<?php echo ($category); ?>">
 				                </div>
 				                <div class="form-group">
-				                    <label for="mail"><i class="fa fa-envelope-o fa-lg"></i>&nbsp;邮箱&nbsp;|&nbsp;Email</label>
+				                    <label for="mail"><i class="fa fa-envelope-o fa-1x"></i>&nbsp;邮箱&nbsp;|&nbsp;Email</label>
 				                    <input id="mail" class="form-control" type="email" placeholder="one@example.com" name="mail">
 				                </div>
 				                <div class="form-group">
 				                	<label for="content-text">
-				                		<i class="fa fa-comment-o fa-lg"></i>&nbsp;评论&nbsp;|&nbsp;Comment&nbsp;&nbsp;&nbsp;
+				                		<i class="fa fa-comment-o fa-1x"></i>&nbsp;评论&nbsp;|&nbsp;Comment&nbsp;&nbsp;&nbsp;
 				                		<a class="addface" href="javascript:void(0)"></a>
 				                	</label>
 				                    <textarea id="content-text" class="form-control"  name="comment" rows="3" placeholder="请输入评论内容">
@@ -249,8 +249,8 @@
 			<div class="comment-info">
 				<?php echo W('Comment/showComment',array(0,4,$app_id,$category));?>
 			</div>
-			<?php if(($comment_count) > "0"): ?><div class="mybutton">
-					<?php $__FOR_START_9554__=0;$__FOR_END_9554__=$page;for($i=$__FOR_START_9554__;$i < $__FOR_END_9554__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+			<?php if(($page) > "0"): ?><div class="mybutton">
+					<?php $__FOR_START_9739__=0;$__FOR_END_9739__=$page;for($i=$__FOR_START_9739__;$i < $__FOR_END_9739__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
 				</div><?php endif; ?>
 		</div>
 		<div class="col-md-0">
@@ -266,7 +266,7 @@
 <script type="text/javascript">
 	var start=0;
 	var num=4;
-	var len='<?php echo ($comment_count); ?>';
+	var len='<?php echo ($page); ?>';
 	var app_id='<?php echo ($app_id); ?>';
 	var category='<?php echo ($category); ?>';
 	$('.btn-page').click(function(event) {
@@ -281,15 +281,11 @@
 	});
 	if(len>0){
 		$('.btn-page').first().addClass('disabled');
-	}else{
 	}
 	function postInfo(e){
 		var url="<?php echo U('Home/Page/index');?>";
 		$.post(url,{start:start,num:num,app_id:app_id,category:category},function(data){			
-			$(".comment-info").html(data.info);
-			$(".content").emojiParse({
-				icons:icons,
-			});
+			$(".comment-info").html(data.info);			
 			$(".btn-page").removeClass('disabled');
 			e.addClass('disabled');
 		});
@@ -304,11 +300,11 @@
 	}
 	
 	emojiInit("#content-text",".addface");
-	*/
+	
 	$(".content").emojiParse({
 		icons:icons,
 	});
-	
+	*/
 	$("form").submit(function(event) {
 		var user= $("input[name='username']").val();
 		var text=$("textarea[name='comment']").val();
