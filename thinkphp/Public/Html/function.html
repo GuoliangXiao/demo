@@ -54,7 +54,7 @@
 			callback();
     	}, {type: type, confirmButtonText: ok});
 	}
-	function confirm_alt(txt,callback1, callback2, title="",type="info",ok="确定", cancel="取消"){
+	function confirm_alt(title="",txt,callback1, callback2,type="info",ok="确定", cancel="取消"){
 		confirm(title, txt , function (isConfirm) {
             if (isConfirm) {
                 callback1();

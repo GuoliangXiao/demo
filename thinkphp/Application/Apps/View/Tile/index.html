@@ -189,20 +189,15 @@
 	var width = 10;
 	var height = 22;
 	var tileHelper;
-
 	function initGame() {
 	    tileHelper = new Tiles(".div_tile", width, height, ".div_panel" ,function(score){
-	    	if(score>0)
-	    	{
-	    		var txt='请输入你的昵称，上传分数！';
-	    		window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{
-					onOk:function(name){
-						if(name==''){
-							name='anonymous';
-						}
-						uploadScore(name,score);
-					}
-				});
+	    	if(score>=0)
+	    	{	    		
+			    var value = prompt('输入你的名字：', 'anonymous');  
+			    if(value == null||value==""){  
+			        value='anonymous'
+			    }
+			    uploadScore(name,score);
 	    	}
 	    });
 	    tileHelper.initTile();
@@ -311,7 +306,7 @@
 			if(data['status']==1){
 				showRank();
 			}else{
-				window.wxc.xcConfirm(data['info'], window.wxc.xcConfirm.typeEnum.info);
+				alert_alt('上传失败');
 			}			
 		});
 	}
