@@ -49,4 +49,5 @@ return array(
             'bucket' => 'blogfile',
         ) 
     ),
+    'SESSION_OPTIONS'=>array('name'=>'login','expire'=>3600),
 );

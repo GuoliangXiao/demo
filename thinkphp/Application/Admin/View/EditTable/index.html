@@ -1,0 +1,52 @@
+<layout name="Public/template"/>
+<style type="text/css">
+	td{
+		text-align: center;
+	}
+</style>
+<div class="row">
+	<div class="col-md-12">
+		<h3 style="text-align: center;">{$table_name}</h3>
+		<table class="table table-striped">
+			<tr>
+				<foreach name="dbFields" item="vo">
+					<td>{$vo}</td>
+				</foreach>
+				<td colspan="2">
+					<a target="_blank" href="{:U('Admin/EditTable/add?table='.$table_name)}">
+						<button class="btn btn-success">添加</button>
+					</a>
+				</td>
+			</tr>
+			<volist name="data" id="vo">
+				<tr id="{$vo['id']}">
+					<foreach name="dbFields" item="fd">
+						<td>{$vo[$fd]|short_to_str}</td>
+					</foreach>
+					<td>
+						<a href="{:U('Admin/EditTable/edit?id='.$vo['id'].'&table='.$table_name)}">
+							<button id="{$vo['id']}" class="btn btn-info btn-modify">修改</button>
+						</a>
+					</td>
+					<td><button id="{$vo['id']}" class="btn btn-danger btn-delete">删除</button></td>
+				</tr>
+			</volist>
+		</table>
+	</div>
+</div>
+<script type="text/javascript">
+	var table_name="{$table_name}";
+	$(".btn-delete").click(function(event) {
+		/* Act on the event */
+		var url="{:U('Admin/EditTable/delete')}";
+		var id=$(this).attr('id');
+		$.post(url, {table: table_name, id: id}, function(data) {
+			if(data!=-1){
+				$("tr[id="+data+"]").remove();
+			}else{
+				alert('删除失败');
+			}
+		});
+	});
+	
+</script>

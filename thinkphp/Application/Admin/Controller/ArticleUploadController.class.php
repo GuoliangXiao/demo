@@ -1,9 +1,10 @@
 <?php
-namespace Home\Controller;
+namespace Admin\Controller;
 use Think\Controller;
 use Think\Model;
 class ArticleUploadController extends Controller {
     public function index(){
+        check_admin();
     	$this->display();
     }
     public function kedit(){

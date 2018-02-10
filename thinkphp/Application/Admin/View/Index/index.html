@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>xhust</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="__PUBLIC__/Apps/xhust.ico">
+</head>
+
+<include file="./Public/Html/function.html"/>
+<js href="__PUBLIC__/md5.js"/>
+<style type="text/css">
+	.my-container{
+		padding: 0 0.3em 0 0.3em;
+		background: #eeeeee;
+	}
+	.login{
+		width: 100%;
+		text-align: center;
+	}
+	.login-info{
+		width: 30em;
+		background: green;
+		display: inline-block;
+		margin-top:10em;
+		padding:1em;
+		background:white;
+		border-radius: 10px;
+	}
+	.form-interval{
+		margin:0.5em;
+	}
+	#user,#password,#verifycode{
+		width: 20em;
+	}
+	.btn-confirm{
+		width: 22em;
+		margin-top:0.5em;
+	}
+</style>
+
+<body style="background: #eeeeee;padding: 0;margin: 0;">	
+	<div {:choose_class()}>
+		<div class="my-container">			
+			<div class="login">
+				<div class="login-info">
+					<h3>xhust login</h3>
+					<hr>
+					<form class="form-inline" method="post" action="{:U('Admin/Index/login')}">
+					    <div class="form-group form-interval">
+						    <label for="user">用户</label>
+						    <input name="user" type="text" class="form-control" id="user" placeholder="user">
+						</div>
+						<div class="form-group form-interval">
+						    <label for="password">密码</label>
+						    <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+						</div>
+						<img id="verifyimg" class="form-interval" src="{:U('Admin/Index/verifyimg')}">
+						<div class="form-group form-interval">
+						  	<label for="verifycode">验证码</label>
+						    <input name="verifycode" type="text" class="form-control" id="verifycode" placeholder="verifycode">
+					  	</div>
+					  	<br>
+						<button type="submit" class="btn btn-success btn-confirm">确定</button>
+					</form>
+				</div>
+			</div>			
+		</div>	
+	</div>
+</body>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$("form").submit(function(event) {
+			var user=$("#user").val();
+			if(user==""){
+				alert_alt('请输入用户名！');
+				return false;
+			}
+			var password=$("#password").val();
+			if(password==""){
+				alert_alt('请输入密码！');
+				return false;
+			}
+			var verifycode=$("#verifycode").val();
+			if(verifycode==""){
+				alert_alt('请输入验证码！');
+				return false;
+			}
+			$("#password").val(md5.hex($("#password").val()));
+			return true;
+		});
+		$("#verifyimg").click(function(event) {
+			/* Act on the event */
+			var url="{:U('Admin/Index/verifyimg')}";
+			$(this).attr('src',url);
+		});
+		/*$("#verifycode").blur(function(event) {
+			var url="{:U('Admin/Index/checkverify')}";
+			$.post(url, {param1: 'value1'}, function(data, textStatus, xhr) {
+				optional stuff to do after success 
+			});
+		});*/
+	});
+</script>
+</html>

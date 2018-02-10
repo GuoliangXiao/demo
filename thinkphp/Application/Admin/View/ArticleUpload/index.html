@@ -21,7 +21,7 @@
     KindEditor.ready(function(K) {
         window.editor = K.create('#editor_id',{
         	cssPath : '__PUBLIC__/kindeditor/plugins/code/prettify.css',
-            uploadJson : '{:U("Home/ArticleUpload/kindQiniu")}',
+            uploadJson : '{:U("Admin/ArticleUpload/kindQiniu")}',
             fileManagerJson : '__PUBLIC__/kindeditor/php/file_manager_json.php',
             allowFileManager : true,
             width:$(".my-container").width(),
@@ -41,10 +41,20 @@
         prettyPrint();
     });
 </script>
+<style type="text/css">
+    .back-list{
+        margin: 0.5em;
+    }
+</style>
 <body style="background: #eeeeee;padding: 0;margin: 0;">	
 	<div class="container-fluid">
-		<div class="my-container">	
-			<form method="post" action="{:U('Home/ArticleUpload/kedit')}" onsubmit="">
+		<div class="my-container">
+            <div class="back-list">
+                <a href="{:U('Admin/Index/datatable')}">
+                    <button class="btn btn-success">返回文章列表</button>
+                </a>
+            </div>	
+			<form method="post" action="{:U('Admin/ArticleUpload/kedit')}" onsubmit="">
 		        <div class="form-group">
                     <!-- <label for="title">标题</label> -->
                     <input id="title" class="form-control" type="text" placeholder="" name="title">

@@ -1,0 +1,58 @@
+<layout name="Public/template"/>
+<css href="__PUBLIC__/kindeditor/themes/default/default.css"/>
+<css href="__PUBLIC__/kindeditor/plugins/code/prettify.css"/>
+<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor-all.js"></script>
+<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh-CN.js"></script>
+<script>
+	KindEditor.options.filterMode = false; 
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#content',{
+        	cssPath : '__PUBLIC__/kindeditor/plugins/code/prettify.css',
+            uploadJson : '{:U("Admin/ArticleUpload/kindQiniu")}',
+            fileManagerJson : '__PUBLIC__/kindeditor/php/file_manager_json.php',
+            allowFileManager : true,
+            width:$(".my-container").width(),
+            height:500,
+            afterCreate : function() {
+                var self = this;
+                K.ctrl(document, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+            }
+        });
+        prettyPrint();
+    });
+</script>
+<style type="text/css">
+	.field{
+		width: 5em;
+	}
+	.content{
+
+	}
+</style>
+<div class="row">
+	<div class="col-md-12">
+		<h3 style="text-align: center;">{$table}</h3>
+		<form action="{:U('addrow?table='.$table)}" method="post">
+			<table class="table table-striped">
+				<foreach name="dbFields" item="vo">
+					<neq name="vo" value="id">
+						<tr class ="{$vo}">
+							<td class="field">{$vo}</td>
+							<td>
+								<input id="{$vo}" class="form-control" type="text" name="{$vo}" value="" placeholder="{$vo}">
+							</td>
+						</tr>
+					</neq>
+				</foreach>
+			</table>
+			<button style="width: 100%;" class="btn btn-info" type="submit">添加</button>			
+		</form>
+	</div>
+</div>

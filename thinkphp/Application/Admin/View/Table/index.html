@@ -1,0 +1,36 @@
+<layout name="Public/template"/>
+<style type="text/css">
+	.all-table{
+		display: block;
+		text-align: center;
+		font-size: 1.3em;
+		color: black;
+	}
+	.all-table:hover{
+		text-decoration: none;
+		color:#5CB85C;
+	}
+	.all-table:focus{
+		text-decoration: none;
+		color: black;
+	}
+</style>
+<div class="row">
+	<div class="col-md-12">
+		<h3>Sweat</h3>
+		<table class="table table-striped">
+			<foreach name="db_tables" item="vo">
+				<tr>
+					<td>
+						<php>
+							$prefix=C('DB_PREFIX');
+							$vo=substr($vo,strlen($prefix));
+						</php>
+						<a target="_blank" class="all-table" href="{:U('Admin/EditTable/index?table='.$vo)}">{$vo}</a>
+					</td>
+				</tr>
+			</foreach>
+		</table>
+	</div>
+	
+</div>

@@ -19,7 +19,7 @@ class CommentModel extends Model{
             $commentList[$i]['id']=$v['id'];
             $commentList[$i]['pid']=$v['pid'];//此条评论的父id
             $commentList[$i]['content']=$v['content'];
-            $commentList[$i]['time']=$v['add_time'];
+            $commentList[$i]['time']=date('Y-m-d',strtotime($v['created_at']));
             $p=taobaoIP($v['ip']);
             $commentList[$i]['place']=$p['province'].$p['city'];
             $commentList[$i]['love_times']=$v['love_times'];

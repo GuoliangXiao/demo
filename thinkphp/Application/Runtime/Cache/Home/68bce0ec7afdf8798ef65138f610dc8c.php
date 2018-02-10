@@ -19,7 +19,7 @@
 		                    		
 		                    		<span>
 		                    			<span  class="hfplace"><?php echo ($vo["place"]); ?></span>
-		                    			<span  class="hftime"><?php echo (date("Y-m-d",$vo["time"])); ?></span>
+		                    			<span  class="hftime"><?php echo ($vo["time"]); ?></span>
 		                    			
 		                    		</span>
 		                    		<span>

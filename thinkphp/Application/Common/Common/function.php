@@ -1,4 +1,15 @@
 <?php
+function user_group(){
+  if(session('login.status')){
+    return session('login.group');
+  }
+  return -1;
+}
+function check_admin(){
+  if(user_group()!=0){
+     redirect(U('Admin/Index/index'),0,'');
+  }
+}
 function generate_url($url,$id){
 	if($url){
 		return U('Apps/'.$url.'/index?id='.$id);
@@ -11,6 +22,12 @@ function comment_level($level){
 }
 function get_app_url($app_id){
 	return U('Home/Page/loadComment?app_id='.$app_id);
+}
+function short_to_str($html){
+  $html=html_entity_decode($html);
+  $html=strip_tags($html);
+  $len=min(50,strlen($html));
+  return mb_substr($html, 0, $len);
 }
 function filter_content($html){
   $html=html_entity_decode($html);
