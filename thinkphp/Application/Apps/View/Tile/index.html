@@ -191,7 +191,7 @@
 	var tileHelper;
 	function initGame() {
 	    tileHelper = new Tiles(".div_tile", width, height, ".div_panel" ,function(score){
-	    	if(score>=0)
+	    	if(score>0)
 	    	{	    		
 			    var value = prompt('输入你的名字：', 'anonymous');  
 			    if(value == null||value==""){  
