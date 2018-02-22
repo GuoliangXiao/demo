@@ -1,0 +1,157 @@
+<layout name="Public/template"/>
+<style type="text/css">
+	.div_table tr td{
+  	    border:1px solid #F1F1F1;
+	    width:15px;
+	    height:15px;
+	    background-color:white;
+	}
+	.div_panel{
+		padding: 0.5em;
+	}
+	.div_state{
+		text-align: center;
+		font-size: 1.2em;
+	}
+	.div_control{
+		text-align: center;
+	}
+	.div_control>button{
+		width: 5em;
+	}
+	.score,.level{
+		color: #EC2126;
+		font-weight: bold;
+	}
+</style>
+<div class="app-container">
+	<div class="row">
+		<div class="col-md-6">
+			<h3 class="app-title"><i class="fa fa-sheqel fa-1x"></i>&nbsp;贪吃蛇&nbsp;|&nbsp;Snake</h3>
+		</div>
+		<div class="col-md-6"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 game-area">
+           <div class="div_game">
+                <div class="div_board">
+                    <table class="div_table"></table>
+                </div>
+                <div class="div_panel row">
+                	<div class="div_state col-md-4">
+	            	    <span>score:</span>
+	                	<span class="score">0</span>
+	               		<span>level:</span>
+	                	<span class="level">0</span>  
+	                </div>       
+	                <div class="div_control col-md-8">
+	                    <button value="0" class="btn btn-info start">start</button>
+	                    &nbsp;&nbsp;
+	                    <button value="1" class="btn btn-success left">left</button>
+	                    <button value="2" class="btn btn-success right">right</button>
+	                    <button value="3" class="btn btn-success up">up</button>
+	                    <button value="4" class="btn btn-success down">down</button>
+	                </div>
+                </div>
+            </div>
+		</div>
+		<div class="col-md-4">
+			<div class="div_rank"></div>
+		</div>
+	</div>
+</div>
+<js href="__PUBLIC__/Apps/Snake/js/Snake.js"/>
+<script type="text/javascript">
+	var w=$(".game-area").width();
+	var h=$(window).height()*0.7;
+	w=Math.floor(w/15);
+	h=Math.floor(h/15);
+    var snake = new SnakeBoard(w, h, ".div_table", function(score,level){
+    	$(".score").text(score);
+    	$(".level").text(level);
+    },function(score){
+    	if(score>0){	    		
+		    prompt_alt('游戏结束，上传分数', '输入你的名字:', function(value){
+				if(value == null||value==""){  
+		        	value='anonymous'
+		    	}
+		   		uploadScore(value,score);
+		   		$(".start").text("start");
+			});	  			   
+    	}else{
+    		confirm_alt('游戏结束，是否重新开始？',function(){
+    			$(".start").text("pause");
+    			snake.restart();
+    		},function(){
+    			$(".start").text("start");
+    		});
+    	}
+    });
+    snake.initGame();
+    showRank();
+
+    $(".div_control>button").click(function(event) {
+	    var d = $(this).val();
+        var t = $(this).text();
+        if (d == 0) {
+            if (t == "start") {
+            	$(this).text("pause");
+            	if(snake.isOver()==true){
+                	snake.restart();
+            	}else{
+                	snake.start();
+            	}
+            } else {
+                $(this).text("start");
+                snake.pause();
+               
+            }
+
+        } else {
+            snake.move(parseInt(d));
+        }
+    });
+    $(window).keypress(function() {
+        switch(event.keyCode) {
+            //left
+            case 97:
+            case 65:
+                snake.move(1);
+                break;
+            //right
+            case 100:
+            case 68:
+                snake.move(2);
+                break;
+            //down
+            case 115:
+            case 83:
+                snake.move(4);
+                break;
+            //up
+            case 119:
+            case 87:
+                snake.move(3);
+                break;
+        }
+    });
+    function showRank(){
+		$('.div_rank').empty();
+		var url='{:U("Apps/Score/index?app_id=$app_id")}';
+		$('.div_rank').load(url);  	
+	}
+	function uploadScore(name,score){
+		//alert(socre);
+		var url="{:U('Apps/Score/uploadScore')}";
+		var app_id='{$app_id}';
+		$.post(url, {app_id:app_id, name:name,score:score}, function(data, textStatus, xhr) {
+			/*optional stuff to do after success */
+			//alert(data);
+			if(data['status']==1){
+				showRank();
+			}else{
+				alert_alt('上传失败');
+			}			
+		});
+	}
+</script>

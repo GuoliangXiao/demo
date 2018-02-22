@@ -104,309 +104,163 @@
                callback1(lobibox.getValue());
             }
           }
-        });
-      }
+      });
+  }
+  function confirm_alt(txt,callback1,callback2){
+      Lobibox.confirm({
+          msg: txt,
+          callback:function (lobibox, type){
+              if(type=='yes'){
+                  callback1();
+              }else if(type=='no'){
+                callback2();
+              }
+          }
+      });
+  }
 </script><body style="background: #eeeeee;"><style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href='<?php echo U("Home/Index/index");?>'><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='<?php echo U("Home/Index/index#my-app-position");?>'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;应用</a></li> <li role="presentation"><a href="<?php echo U('Home/Index/index#my-blog-position');?>" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav><div <?php echo choose_class();?>><div class="my-container">
 <style type="text/css">
-	td{
-		border-collapse: separate;
-	}
-	.my-row{
-	}
-	.div_phone_c{
-		
-	}
-	.div_phone{
-	    width: 20em;
-	    height:40em;
-	  	box-shadow: 0px 0px 0px 2px #aaa;
-	    background-color: #111;
-	    border-radius: 3em;
-	    margin: 0;
-	    padding: 0;
-	}
-	.div_head{
-		height: 4.5em;
-	}
-	.div_game{
-		width: 18em;
-		height: 32em;
-		background: white;
-		display: block;
-		margin-left: 1em;
-	}
-	.div_title{
-		display: none;
-	   	width: 100%;
-	   	height: 1.5em;
-	   	line-height: 1.5em;
-	   	background: red;
-	    text-align:center;
-	}
-	.div_content{
-	    border:0px solid pink;
-	    float:left;
-	}
-	.div_tile{
-	    float:left;
-	    width:14em;
-	    height: 28.5em;
-	    padding:0;
-	    border:0px solid #F1F1F1;
-	}
-	.div_tile tr td{
-	    border:1px solid #F1F1F1;
-	    width:1.3em;
-	    height:1.3em;
+	.div_table tr td{
+  	    border:1px solid #F1F1F1;
+	    width:15px;
+	    height:15px;
 	    background-color:white;
 	}
 	.div_panel{
-	    float:left;
-	    width:4em;
-	    padding-left:0;
-	    padding-top:6em;
-	    border:0px solid red;
+		padding: 0.5em;
 	}
-	.div_panel>span{
-		width: 100%;
-		display: inline-block;
-		color:white;
-		font-weight: bold;
+	.div_state{
 		text-align: center;
-	}
-	.div_button{
-	    float:left;
-	    width: 100%;
-	    height:3.5em;
-	    float:left;
-	}
-	.div_direction{
-	    float:left;
-	    margin-left:0.5em;
-	    margin-top:0.1em;
-	    border:0px solid green;
-	}
-	.div_direction img{
-	    width:3em;
-	    height:3em;
-	    padding:0.5em;
-	    border-radius:2.5em;
-	    border:1px solid white;
+		font-size: 1.2em;
 	}
 	.div_control{
-	    float:left;
-	    margin-left: 1em;
+		text-align: center;
 	}
-	.div_control img{
-	    width:3em;
-	    height:3em;
-	    padding:0.5em;
-	    border-radius:2.5em;
-	    border:1px solid white;
+	.div_control>button{
+		width: 5em;
 	}
-	
-	.next{
-	    width:50px;
-	    height:50px;
-	}
-	.next table{
-	    
-	}
-	.next table tr td{
-	    border:1px solid #F1F1F1;
-	    width:0.8em;
-	    height:0.8em;
-	    background:red;
-	}
-	.div_help{
-		margin-top: 1em;
-		line-height: 2em;
-	}
-	.div_help strong{
-		font-size: 1.2em;
-		color: #A7040A;
+	.score,.level{
+		color: #EC2126;
+		font-weight: bold;
 	}
 </style>
 <div class="app-container">
 	<div class="row">
 		<div class="col-md-6">
-			<h3 class="app-title"><i class="fa fa-th fa-1x"></i>&nbsp;俄罗斯方块&nbsp;|&nbsp;Tile</h3>
+			<h3 class="app-title"><i class="fa fa-sheqel fa-1x"></i>&nbsp;贪吃蛇&nbsp;|&nbsp;Snake</h3>
 		</div>
+		<div class="col-md-6"></div>
 	</div>
-	<div class="row my-row">
-		<div class="col-md-5 div_phone_c">
-            <div class="div_phone">
-            	<div class="div_head"></div>
-                <div class="div_game" style="background-image:url('http://pictureofxgl.qiniudn.com/online/tetris/screen.jpg');">
-                    <div class="div_title">
-                        俄罗斯方块
-                    </div>
-                    <div class="div_content" >
-                        <div class="div_tile">
-
-                        </div>
-                        <div class="div_panel">
-                            <span>next:</span>
-                            <div class="next">
-
-                            </div>
-                            <span>score:</span>
-                            <br/>
-                            <span class="score">0</span>
-                            <br/>
-                            <br/>
-                            <span>time:</span>
-                            <br/>
-                            <span class="time">0</span>
-                            <br/>
-                            <br/>
-                            <span>level:</span>
-                            <br/>
-                            <span class="level">0</span>
-                        </div>
-                    </div>
-                    <div class="div_button">
-                        <div class="div_direction">
-                            <img class="left" src="/xhust/thinkphp/Public/Apps/Tile/img/arrow_left.png"/>
-                            <img class="down" src="/xhust/thinkphp/Public/Apps/Tile/img/arrow_down.png"/>
-                            <img class="rotate" src="/xhust/thinkphp/Public/Apps/Tile/img/rotate.png"/>
-                            <img class="right" src="/xhust/thinkphp/Public/Apps/Tile/img/arrow_right.png"/>
-                        </div>
-                        <div class="div_control">
-                            <img  id="start" class="start" src="/xhust/thinkphp/Public/Apps/Tile/img/start.png"/>
-                        </div>
-                    </div>
+	<div class="row">
+		<div class="col-md-8 game-area">
+           <div class="div_game">
+                <div class="div_board">
+                    <table class="div_table"></table>
+                </div>
+                <div class="div_panel row">
+                	<div class="div_state col-md-4">
+	            	    <span>score:</span>
+	                	<span class="score">0</span>
+	               		<span>level:</span>
+	                	<span class="level">0</span>  
+	                </div>       
+	                <div class="div_control col-md-8">
+	                    <button value="0" class="btn btn-info start">start</button>
+	                    &nbsp;&nbsp;
+	                    <button value="1" class="btn btn-success left">left</button>
+	                    <button value="2" class="btn btn-success right">right</button>
+	                    <button value="3" class="btn btn-success up">up</button>
+	                    <button value="4" class="btn btn-success down">down</button>
+	                </div>
                 </div>
             </div>
 		</div>
-		<div class="col-md-7">
+		<div class="col-md-4">
 			<div class="div_rank"></div>
-			<div class="div_help">
-				<p>玩家可以通过界面按钮操作，体验快感，亦可以通过电脑键盘上
-					<strong>W</strong>，<strong>A</strong>，<strong>S</strong>，
-					<strong>D</strong>，<strong>R</strong>
-					五个按键操作，其中A按键为向左移动按键向右移动，S按键向下移动，W按键为翻转变形，R按键为开始或者暂停。
-				</p>
-			</div>
 		</div>
 	</div>
-	<div class="row" style="height: 1em;"></div>	
 </div>
-<script type="text/javascript" src="/xhust/thinkphp/Public/Apps/js/function.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/Apps/Tile/js/Tiles.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/Apps/Snake/js/Snake.js"></script>
 <script type="text/javascript">
-	var width = 10;
-	var height = 22;
-	var tileHelper;
-	function initGame() {
-	    tileHelper = new Tiles(".div_tile", width, height, ".div_panel" ,function(score){
-	    	if(score>0)
-	    	{	    		
-			    prompt_alt('输入你的名字:', '输入你的名字:',function(value){
-					if(value == null||value==""){  
-			        	value='anonymous'
-			    	}
-			   		uploadScore(value,score);
-				});  			   
-	    	}
-	    });
-	    tileHelper.initTile();
-	}
+	var w=$(".game-area").width();
+	var h=$(window).height()*0.7;
+	w=Math.floor(w/15);
+	h=Math.floor(h/15);
+    var snake = new SnakeBoard(w, h, ".div_table", function(score,level){
+    	$(".score").text(score);
+    	$(".level").text(level);
+    },function(score){
+    	if(score>0){	    		
+		    prompt_alt('游戏结束，上传分数', '输入你的名字:', function(value){
+				if(value == null||value==""){  
+		        	value='anonymous'
+		    	}
+		   		uploadScore(value,score);
+		   		$(".start").text("start");
+			});	  			   
+    	}else{
+    		confirm_alt('游戏结束，是否重新开始？',function(){
+    			$(".start").text("pause");
+    			snake.restart();
+    		},function(){
+    			$(".start").text("start");
+    		});
+    	}
+    });
+    snake.initGame();
+    showRank();
 
-	function startGame() {
-		//alert("start");
-	    var b = tileHelper.getStarted();
-	    if (b) {
-	        tileHelper.pause();
-	        $(".start").attr({
-	            "id" : "pause",
-	            "src" : "/xhust/thinkphp/Public/Apps/Tile/img/start.png"
-	        });
-	    } else {
-	        tileHelper.start();
-	        $(".start").attr({
-	            "id" : "start",
-	            "src" : "/xhust/thinkphp/Public/Apps/Tile/img/pause.png"
-	        });
-	    }
-	}
+    $(".div_control>button").click(function(event) {
+	    var d = $(this).val();
+        var t = $(this).text();
+        if (d == 0) {
+            if (t == "start") {
+            	$(this).text("pause");
+            	if(snake.isOver()==true){
+                	snake.restart();
+            	}else{
+                	snake.start();
+            	}
+            } else {
+                $(this).text("start");
+                snake.pause();
+               
+            }
 
-	function bindFunctions() {
-	    $(".start").click(function() {
-	        //alert("start");
-	        startGame();
-	    });
-	    $(".down").click(function() {
-	        if (tileHelper == null) {
-	            return;
-	        }
-	        tileHelper.tileDown();
-	    });
-	    $(".left").click(function() {
-	        if (tileHelper == null) {
-	            return;
-	        }
-	        tileHelper.tileLeft();
-	    });
-	    $(".right").click(function() {
-	        if (tileHelper == null) {
-	            return;
-	        }
-	        tileHelper.tileRight();
-	    });
-	    $(".rotate").click(function() {
-	        if (tileHelper == null) {
-	            return;
-	        }
-	        tileHelper.rotateTile();
-	    });
-	    $(".div_button img").mousedown(function() {
-	        $(this).css("opacity", "0.6");
-	    });
-	    $(".div_button img").mouseup(function() {
-	        $(this).css("opacity", "1");
-	    });
-	    $(".div_button img").hover(function() {
-	        $(this).css("background-color", "white");
-	    }, function() {
-	        $(this).css("background-color", "transparent");
-	    });
-	    $(window).keypress(function() {
-	        keypress();
-	    });
-	    //document.onkeypress=keypress;
-	}
-
-	function keypress() {
-	    if (tileHelper == null) {
-	        return;
-	    }
-	    //alert(event.keyCode);
-	    if (event.keyCode == 65 || event.keyCode == 97) {
-	        //alert("left");
-	        tileHelper.tileLeft();
-	    } else if (event.keyCode == 68 || event.keyCode == 100) {
-	        tileHelper.tileRight();
-	    } else if (event.keyCode == 83 || event.keyCode == 115) {
-	        tileHelper.tileDown();
-	    } else if (event.keyCode == 87 || event.keyCode == 119) {
-	        tileHelper.rotateTile();
-	    } else if (event.keyCode == 114 || event.keyCode == 82) {
-	        startGame();
-	    }
-	}
-
-	jQuery(document).ready(function($) {
-	    bindFunctions();
-    	initGame();
-    	showRank();
-	});
-	function showRank(){
+        } else {
+            snake.move(parseInt(d));
+        }
+    });
+    $(window).keypress(function() {
+        switch(event.keyCode) {
+            //left
+            case 97:
+            case 65:
+                snake.move(1);
+                break;
+            //right
+            case 100:
+            case 68:
+                snake.move(2);
+                break;
+            //down
+            case 115:
+            case 83:
+                snake.move(4);
+                break;
+            //up
+            case 119:
+            case 87:
+                snake.move(3);
+                break;
+        }
+    });
+    function showRank(){
 		$('.div_rank').empty();
 		var url='<?php echo U("Apps/Score/index?app_id=$app_id");?>';
 		$('.div_rank').load(url);  	
 	}
-	function uploadScore(url,name,score){
+	function uploadScore(name,score){
 		//alert(socre);
 		var url="<?php echo U('Apps/Score/uploadScore');?>";
 		var app_id='<?php echo ($app_id); ?>';

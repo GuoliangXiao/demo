@@ -1,1 +1,89 @@
-<!DOCTYPE html><html><head><title>xhust</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><link rel="shortcut icon" href="__PUBLIC__/Apps/xhust.ico"></head><include file="./Public/Html/function.html"/><script src="https://d3js.org/d3.v4.min.js"></script><css href="__PUBLIC__/Slippry/slippry.css"/><js href="__PUBLIC__/Slippry/slippry.min.js"/><js href="__PUBLIC__/jquery.particleground.js"/><style type="text/css">.my-container{padding-top:5em;background: #eeeeee;}.my-container-div{padding: 0 0.3em 0 0.3em;}.slippry-ppt>li{height: 20em;width: 100%;background: yellow;display: none;}</style><body style="background: #eeeeee;padding: 0;margin: 0;"><include file="./Public/Html/header.html"/><div {:choose_class()}><div class="my-container"><div class="row"><div class="col-md-8"><ul class="slippry-ppt"><li class="slippry-one"><include file="Public/d3svg"/></li><li class="slippry-two"></li></ul></div><div class="col-md-4">{:W('Info/index')}</div></div><div class="my-container-div"><div id="my-app-position">{:W('App/index',array(0,10))}</div><div id="my-blog-position">{:W('Blog/index',array(0,4))}</div><div class="comment">{:W('Comment/index',array(0))}</div><include file="./Public/Html/footer.html"/></div></div></div><include file="./Public/Html/anchor.html"/></body><script type="text/javascript">jQuery(document).ready(function($) {$(".slippry-ppt").slippry();$(".slippry-two").particleground();$(".slippry-ppt>li").css("display","block");});var pt=$(".mynavdiv").height();$('.my-container').css('padding-top',pt);jQuery(document).ready(function($) {$(window).resize(function(event) {var pt=$(".mynavdiv").height();$('.my-container').css('padding-top',pt);});});</script></html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>xhust</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="__PUBLIC__/Apps/xhust.ico">
+</head>
+
+<include file="./Public/Html/function.html"/>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<css href="__PUBLIC__/Slippry/slippry.css"/>
+<js href="__PUBLIC__/Slippry/slippry.min.js"/>
+<js href="__PUBLIC__/jquery.particleground.js"/>
+<style type="text/css">
+	.my-container{
+		padding-top:5em;
+		background: #eeeeee;
+	}
+	.my-container-div{
+		padding: 0 0.3em 0 0.3em;
+	}
+	.slippry-ppt>li{
+		height: 20em;
+		width: 100%;
+		background: yellow;
+		display: none;
+
+	}
+	
+</style>
+
+<body style="background: #eeeeee;padding: 0;margin: 0;">	
+	<include file="./Public/Html/header.html"/>
+	<div {:choose_class()}>
+		<div class="my-container">			
+			<div class="row">
+				<div class="col-md-8">
+					<ul class="slippry-ppt">						
+						<li class="slippry-two">
+						</li>
+						<li class="slippry-one">
+							<include file="Public/d3svg"/>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					{:W('Info/index')}
+				</div>
+			</div>
+			<div class="my-container-div">
+					<div id="my-app-position">
+						{:W('App/index',array(0,10))}
+					</div>
+					<div id="my-blog-position">
+						{:W('Blog/index',array(0,4))}
+					</div>					
+				<div class="comment">
+					{:W('Comment/index',array(0))}
+				</div>
+				<include file="./Public/Html/footer.html"/>		
+			</div>
+		</div>	
+	</div>
+	<include file="./Public/Html/anchor.html"/>	
+</body>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".slippry-ppt").slippry({
+			speed:1000,
+			pager:true,
+		});
+		
+		$(".slippry-ppt>li").css("display","block");
+		$(".slippry-two").particleground();
+	});
+
+	var pt=$(".mynavdiv").height();
+		$('.my-container').css('padding-top',pt);
+		jQuery(document).ready(function($) {
+			$(window).resize(function(event) {
+				var pt=$(".mynavdiv").height();
+				$('.my-container').css('padding-top',pt);
+			});
+	
+		});
+</script>
+</html>
