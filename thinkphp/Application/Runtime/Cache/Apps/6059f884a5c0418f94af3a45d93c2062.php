@@ -104,8 +104,20 @@
                callback1(lobibox.getValue());
             }
           }
-        });
-      }
+      });
+  }
+  function confirm_alt(txt,callback1,callback2){
+      Lobibox.confirm({
+          msg: txt,
+          callback:function (lobibox, type){
+              if(type=='yes'){
+                  callback1();
+              }else if(type=='no'){
+                callback2();
+              }
+          }
+      });
+  }
 </script><body style="background: #eeeeee;"><style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href='<?php echo U("Home/Index/index");?>'><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='<?php echo U("Home/Index/index#my-app-position");?>'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;应用</a></li> <li role="presentation"><a href="<?php echo U('Home/Index/index#my-blog-position');?>" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav><div <?php echo choose_class();?>><div class="my-container">
 <style type="text/css">
 	td{
@@ -406,7 +418,7 @@
 		var url='<?php echo U("Apps/Score/index?app_id=$app_id");?>';
 		$('.div_rank').load(url);  	
 	}
-	function uploadScore(url,name,score){
+	function uploadScore(name,score){
 		//alert(socre);
 		var url="<?php echo U('Apps/Score/uploadScore');?>";
 		var app_id='<?php echo ($app_id); ?>';

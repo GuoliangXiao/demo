@@ -143,6 +143,14 @@
 		color: #EC2126;
 		font-weight: bold;
 	}
+	.div_help{
+		margin-top: 0em;
+		line-height: 2em;
+	}
+	.div_help strong{
+		font-size: 1.2em;
+		color: #A7040A;
+	}
 </style>
 <div class="app-container">
 	<div class="row">
@@ -177,6 +185,9 @@
 		</div>
 		<div class="col-md-4">
 			<div class="div_rank"></div>
+			<div class="div_help">
+				贪吃蛇可通过控制面板上的按钮控制小蛇改变方向，也可以通过键盘上的&nbsp;<strong>W</strong>,<strong>A</strong>,<strong>S</strong>,<strong>D</strong>&nbsp;键来改变方向。游戏设有分数和等级，小蛇没获得一个食物，积分加一，积分没增加&nbsp;<strong>5</strong>&nbsp;分便会提升一个等级，每提升一个等级，便会出现一些障碍物，并且小蛇的移动速度会增加。小蛇应当避免碰到障碍物和墙壁来获取食物以获取更高分数。
+			</div>
 		</div>
 	</div>
 </div>
