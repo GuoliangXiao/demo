@@ -77,7 +77,7 @@
 				</div><?php endforeach; endif; else: echo "" ;endif; ?>
 		</div>
 		<div class="blog-page">
-			<?php if(($blogpage) > "1"): $__FOR_START_14211__=0;$__FOR_END_14211__=$blogpage;for($i=$__FOR_START_14211__;$i < $__FOR_END_14211__;$i+=1){ ?><button class="btn btn-default btn-blogpage" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } endif; ?>
+			<?php if(($blogpage) > "1"): $__FOR_START_28352__=0;$__FOR_END_28352__=$blogpage;for($i=$__FOR_START_28352__;$i < $__FOR_END_28352__;$i+=1){ ?><button class="btn btn-default btn-blogpage" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } endif; ?>
 		</div>
 	</div>
 	<div class="col-md-4">
@@ -94,7 +94,7 @@
 		/* Act on the event */
 		$(".btn-blogpage").addClass('disabled');
 		blogstart=$(this).attr('id')*bloglimit;
-		var url="<?php echo U('Home/ArticleList/getBlog');?>";
+		var url="<?php echo U('Home/Article/getBlog');?>";
 		var e=$(this);
 		$.post(url,{start:blogstart,limit:bloglimit},function(data){	
 			showBlogData(data);

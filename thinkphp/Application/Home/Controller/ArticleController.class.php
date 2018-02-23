@@ -44,4 +44,12 @@ class ArticleController extends Controller {
         $this->ajaxReturn($r);
         
     }
+    function getBlog(){
+        $start=I('post.start');
+        $limit=I('post.limit');
+        $a=M('article');
+        $wh['status']=1;      
+        $article=$a->where($wh)->order('created_at desc')->limit($start,$limit)->select();
+        $this->ajaxReturn($article,'JSON');
+    }
 }

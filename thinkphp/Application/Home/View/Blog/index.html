@@ -105,7 +105,7 @@
 		/* Act on the event */
 		$(".btn-blogpage").addClass('disabled');
 		blogstart=$(this).attr('id')*bloglimit;
-		var url="{:U('Home/ArticleList/getBlog')}";
+		var url="{:U('Home/Article/getBlog')}";
 		var e=$(this);
 		$.post(url,{start:blogstart,limit:bloglimit},function(data){	
 			showBlogData(data);

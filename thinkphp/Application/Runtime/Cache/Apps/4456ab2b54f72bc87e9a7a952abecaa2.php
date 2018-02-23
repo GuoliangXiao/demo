@@ -138,6 +138,7 @@
 	}
 	.div_control>button{
 		width: 5em;
+		margin:0.1em;
 	}
 	.score,.level{
 		color: #EC2126;

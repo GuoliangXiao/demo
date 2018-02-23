@@ -16,11 +16,11 @@ class BlogWidget extends Controller {
         $this->assign('read',$read);
     	$this->display(T('Home@Blog/index'));
     }
-     public function blogrank(){
+    public function blogrank(){
         $a=M('article');
         $wh['status']=1;
         $read=$a->where($wh)->field('id,title,author,created_at,read_times,love_times')->order("read_times desc")->limit(5)->select();
         $this->assign('read',$read);
         $this->display(T('Home@Blog/blogrank'));
-     }
+    }
 }
