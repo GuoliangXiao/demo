@@ -50,6 +50,9 @@ class ArticleController extends Controller {
         $a=M('article');
         $wh['status']=1;      
         $article=$a->where($wh)->order('created_at desc')->limit($start,$limit)->select();
+        foreach ($article as $key => $value) {
+            $article[$key]['content']=filter_content($article[$key]['content']);
+        }
         $this->ajaxReturn($article,'JSON');
     }
 }
