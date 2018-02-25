@@ -1,0 +1,352 @@
+<layout name="Public/template"/>
+<style type="text/css">
+	.qr-div{
+	}
+	.qr-menu{
+	}
+	.qr-content{
+		margin-bottom: 0.5em;
+	}
+	.qr-content>div{
+		display: none;
+	}
+	.qr-card{
+		margin-top:0.5em;
+	}
+	.allmap{
+		height: 20em;
+		width: 100%;
+	}
+	.btn-gen{
+		margin: 0.5em 0 0.5em 0;
+		width: 100%;
+	}
+	.qr-result{
+		text-align: center;
+		vertical-align: center;
+	}
+	#img_result{
+		display: inline-block;
+	}
+	.qr-img{
+		max-height: 25em;
+	}
+	.temp-img>ul,.temp-img>ul>li{
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+
+	}
+	.temp-img>ul{
+		text-align: center;
+	}
+	.qr-logo-1{
+		width: 4em;
+		padding: 0.1em;
+	}
+	.qr-logo-1:hover{
+		width: 4.5em;
+	}
+	.qr-logo-upload{
+		margin: 0.5em;
+	}
+	.upload-img{
+	}
+	.btn-logo{
+		width: 100%;
+	}
+	.logo-img{
+		max-width: 8em;
+		max-height: 8em;
+	}
+</style>
+<div class="app-container">
+	<div class="row">
+		<div class="col-md-6">
+			<h3 class="app-title"><i class="fa fa-qrcode fa-1x"></i>&nbsp;二维码&nbsp;|&nbsp;QRCode</h3>
+		</div>
+		<div class="col-md-6"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 qr-div">
+			<ul class="nav nav-tabs nav-justified qr-menu">
+				<li id="1" role="presentation" class="active"><a href="#">网址</a></li>
+				<li id="2" role="presentation"><a href="#">名片</a></li>
+				<li id="3" role="presentation"><a href="#">短信</a></li>
+				<li id="4" role="presentation"><a href="#">位置</a></li>				
+			</ul>
+			<div class="qr-content">
+				<div class="qr-net" style="display: block;">
+					<div class="form-group">
+					    <label for="qr-txt">请输入文本(网址)</label>
+					    <textarea id="qr-txt" class="form-control" rows="6" placeholder="请输入文本(网址)">http://xhust.tk</textarea>
+				  	</div>
+				</div>
+				<div>
+					<php>
+						$info=array(array('姓名','text'),array('电话','number'),array('邮箱','email'),array('地址','text'),array('生日','text'),array('昵称','text'),array('备注','text'));
+					</php>
+					<foreach name='info' item="vo">
+						<div class="input-group qr-card">
+							<span class="input-group-addon" id="{$i}">{$vo[0]}</span>
+							<input type="{$vo[1]}" class="form-control" placeholder="{$vo[0]}" aria-describedby="{$i}">
+						</div>
+					</foreach>
+				</div>
+				<div>
+					<div class="form-group">
+					    <label for="smsto">输入电话号码</label>
+					    <input type="number" name="tel" id="smsto" class="form-control smsto" placeholder="输入电话号码">
+				  	</div>
+					<div class="form-group">
+					    <label for="sms">请输入短信内容</label>
+					    <textarea id="sms" class="form-control sms" rows="5" placeholder="请输入短信内容"></textarea>
+				  	</div>
+				</div>
+				<div>
+					<div class="allmap" id="allmap"></div>
+				</div>
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon" id="size">二维码尺寸</span>
+				<input type="number" class="form-control qr-size" value="300" aria-describedby="size" onkeyup="this.value=this.value.replace(/\D/g,'');this.value=Math.min(400,this.value);" onafterpaste="this.value=this.value.replace(/\D/g,'');this.value=Math.min(360,this.value);">
+			</div>
+			<button class="btn btn-info btn-gen">生成二维码</button>
+		</div>
+		<div class="col-md-2">
+			<ul class="nav nav-tabs nav-justified">
+				<li role="presentation" class="active"><a href="#">添加图片</a></li>			
+			</ul>
+			<div class="temp-img">
+				<ul>
+					<foreach name="imglist" item="vo">
+						<li>
+							<a href="#">
+								<img id="{$vo}" class="qr-logo qr-logo-1" src="__PUBLIC__/Apps/QRcode/icon/{$vo}">
+							</a>
+						</li>
+					</foreach>
+				</ul>
+			</div>
+			<div style="text-align: center;">
+				<img src="" class="logo-img qr-logo">
+			</div>
+			<div class="form-group nqr-logo-upload">
+				<input class="form-control" id="fileupload" type="file" name="file">
+			</div>
+			
+		</div>
+		<div class="col-md-4">
+			<ul class="nav nav-tabs nav-justified">
+				<li role="presentation" class="active"><a href="#">二维码图像</a></li>
+				<li role="presentation"><a href="#" class="qr-download">下载</a></li>			
+			</ul>
+			<div class="qr-result">
+				<div id="img_result">
+					<img class="qr-img" src="" alt="QRcode">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=343f050d59b12c74ee8ba3d3ca5ac844"></script>
+<!-- <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script> -->
+<js href="__PUBLIC__/Apps/QRcode/js/qrcode.js"/>
+<js href="__PUBLIC__/jQuery-File-Upload-8.8.5/js/vendor/jquery.ui.widget.js"/>
+<js href="__PUBLIC__/jQuery-File-Upload-8.8.5/js/jquery.iframe-transport.js"/>
+<js href="__PUBLIC__/jQuery-File-Upload-8.8.5/js/jquery.fileupload.js"/>
+<script type="text/javascript">
+	var position=null;
+	jQuery(document).ready(function($) {
+		$(".qr-menu>li").click(function(event) {
+			$(".qr-menu>li").removeClass('active');
+			$(this).addClass('active');
+			var id=$(this).attr('id');
+			$(".qr-content>div").css('display','none');
+			$('.qr-content>div').eq(id-1).css('display','block');			
+			if(id==4){
+				initMap("allmap");
+			}
+			/*var h=$('.qr-div').height();
+			var mh=$("#img_result").height();
+			if(h>mh){
+				$("#img_result").css('margin-top',(h-mh)/2+'px');
+			}else{
+				$("#img_result").css('margin-top',"0");
+			}*/
+		});
+		$(".qr-logo").click(function(event) {
+			if($(this).hasClass('selected')){
+				$(this).removeClass('selected');
+				$(this).css('background-color','transparent');
+			}else{
+				$(".qr-logo").css('background-color','transparent');
+				$(".qr-logo").removeClass('selected');
+				$(this).addClass('selected');
+				$(this).css('background-color','white');
+				generateQRCode();
+			}			
+		});
+		$(".btn-gen").click(function(event) {			
+			generateQRCode();
+		});
+		generateQRCode();
+		$('#fileupload').fileupload({
+	        dataType: 'json',
+	        url:"{:U('getLogo')}",
+	        done: function (e, data) {
+	           /*alert(JSON.stringify(data));*/
+	           var img_url="__ROOT__"+data.result.pic_url;
+	           if(data.result.status==1){	           	  
+	           	   $(".qr-logo").css('background-color','transparent');
+				   $(".qr-logo").removeClass('selected');
+				   $(".logo-img").attr({src:img_url});
+				   $(".logo-img").addClass('selected');
+				   $(".logo-img").attr('id',data.result.pic_url);
+				   generateQRCode();
+	           }else{
+	           	   alert_alt(data.result.error);	
+	           }
+	        }
+   		});
+		$(".qr-download").click(function(event) {
+        	window.open($('.qr-img').attr('src'));
+		});
+	});
+	function generateQRCode(){
+		var type=1;
+		$(".qr-menu>li").each(function(index, el) {
+			if($(this).hasClass('active')){
+				type=$(this).attr('id');
+			}
+		});
+		var data="";
+		type=parseInt(type);
+		switch(type){
+			case 1:data=generateUrl();break;
+			case 2:data=generateContact();break;
+			case 3:data=generateSms();break;
+			case 4:data=generatePos();break;
+		}
+		generate(data);
+	}
+
+	function generateUrl() {
+		return $("#qr-txt").val();
+	}
+	function generateContact() {
+		var data = new Array();
+		$(".qr-card>input").each(function(index) {
+			data[index] = $(this).val();
+		});
+		if (data[0] == "") {
+			showMistake();
+			return;
+		}
+		if (!telCheck(data[1])) {
+			showMistake();
+			return;
+		}
+		var url = "MECARD:N:" + data[0] + ";TEL:" + data[1] + ";";
+
+		if (mailCheck(data[2])) {
+			url += "EMAIL:" + data[2] + ";";
+		}
+		if (data[3]) {
+			if (data[3].length > 16) {
+				data[3] = data[3].substr(0, 16);
+			}
+			url += "ADR:" + data[3] + ";";
+		}
+		if (data[4]) {
+			url += "BDAY:" + data[4] + ";";
+		}
+		if (data[5]) {
+			url += "NICKNAME:" + data[5] + ";";
+		}
+		if (data[6]) {
+			url += "NOTE:" + data[6] + ";";
+		}
+		url += ";";
+		return url;
+	}
+
+	function generateSms() {
+		var phone = $(".smsto").val();
+		if (!telCheck(phone)) {
+			showMistake();
+			return;
+		}
+		var sms = $(".sms").val();
+		sms = cut_blank(sms);
+		if (sms == "") {
+			showMistake();
+			return;
+		}
+		var url = "{smsto:" + phone + ":" + sms + "}";
+		return url;
+	}
+
+	function generatePos() {
+		if (position) {
+			var data = "{geo:" + position.lat + "," + position.lng + "}";
+			return data;
+		} else {
+			return '';
+			alert_alt("正在定位...");
+		}
+	}
+	function generate(data) {
+		/*var s = toUtf8(data);
+		var h=$('.qr-div').height();
+		if(h>size){
+			$("#img_result").css('margin-top',(h-size)/2+'px');
+		}
+		$("#img_result").children().remove();
+		$("#img_result").css({
+			width : size + "px",
+			height : size + "px"
+		});
+		$("#img_result").qrcode({
+			render : "table", //table方式
+			width : size, //宽度
+			height : size, //高度
+			text : s //任意内容
+		});*/
+		var size=$(".qr-size").val();		
+		size=size<0?0:size;
+		size=size>400?400:size;
+		$(".qr-size").val(size);
+
+		var logo=null;
+		$(".qr-logo").each(function(index, el) {
+	        if($(this).hasClass('selected')){
+	        	logo=$(this).attr('id');
+	        }
+		});
+		
+		var url="{:U('Apps/QRcode/qrcode')}";
+		url+='?url='+data;
+		url+='&&size='+size;
+		if(logo!=null){
+			url+='&&logo='+logo;
+		}
+		if($(".logo-img").hasClass('selected')){
+			url+='&&img='+1;
+		}
+		$(".qr-img").attr('src',url);
+		$(".qr-img").load(function() {
+			/*var h=$('.qr-div').height();
+			var mh=$("#img_result").height();
+			if(h>mh){
+				$("#img_result").css('margin-top',(h-mh)/2+'px');
+			}else{
+				$("#img_result").css('margin-top',"0");
+			}*/
+		});
+	}
+	function showMistake() {
+		alert_alt("输入有误！");
+		//$(".img_result").attr("src", "pic/mistake.png");
+	}
+</script>

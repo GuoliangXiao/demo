@@ -52,6 +52,7 @@ class ArticleController extends Controller {
         $article=$a->where($wh)->order('created_at desc')->limit($start,$limit)->select();
         foreach ($article as $key => $value) {
             $article[$key]['content']=filter_content($article[$key]['content']);
+            $article[$key]['url']=U('Home/Article/index?id='.$article[$key]['id']);
         }
         $this->ajaxReturn($article,'JSON');
     }

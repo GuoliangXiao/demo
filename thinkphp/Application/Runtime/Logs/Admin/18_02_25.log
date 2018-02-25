@@ -1,0 +1,342 @@
+[ 2018-02-25T20:16:32+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/Table/index.html
+ERR: syntax error, unexpected '='
+
+[ 2018-02-25T20:25:31+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: syntax error, unexpected ')', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2018-02-25T20:25:43+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: syntax error, unexpected ')', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2018-02-25T20:26:18+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: syntax error, unexpected ')', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2018-02-25T20:26:25+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: syntax error, unexpected ')', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2018-02-25T20:26:32+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: syntax error, unexpected ')', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2018-02-25T20:26:40+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: syntax error, unexpected ')', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2018-02-25T20:26:45+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: syntax error, unexpected ')', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2018-02-25T20:27:29+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: syntax error, unexpected 'my_dir' (T_STRING), expecting variable (T_VARIABLE)
+
+[ 2018-02-25T20:27:48+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: syntax error, unexpected ')', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2018-02-25T20:29:55+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: Call to undefined function Admin\Controller\my_dir()
+
+[ 2018-02-25T20:30:06+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: Call to undefined function Admin\Controller\my_dir()
+
+[ 2018-02-25T21:14:35+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/index.html
+ERR: syntax error, unexpected '.2' (T_DNUMBER)
+
+[ 2018-02-25T21:58:59+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T21:59:01+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T21:59:09+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-02-25T21:59:10+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T21:59:50+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:19:47+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92805aeadf6.png,./Uploads/2018-02-25/5a92805aeadf6.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92805aeadf6.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+
+[ 2018-02-25T22:19:58+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png,./Uploads/2018-02-25/5a92801551cd0.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+
+[ 2018-02-25T22:20:03+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a929f26a3a08.png,./Uploads/2018-02-25/5a929f26a3a08.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a929f26a3a08.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+
+[ 2018-02-25T22:26:45+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png,./Uploads/2018-02-25/5a92801551cd0.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 20 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 20 行.
+
+[ 2018-02-25T22:27:04+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-02-25T22:27:09+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:27:32+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a928114359f2.png,./Uploads/2018-02-25/5a928114359f2.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 20 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a928114359f2.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 20 行.
+
+[ 2018-02-25T22:28:09+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(2018-02-25/5a92801551cd0.png,2018-02-25/5a92801551cd0.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 20 行.
+NOTIC: [2] opendir(2018-02-25/5a92801551cd0.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 20 行.
+
+[ 2018-02-25T22:28:46+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png,./Uploads/2018-02-25/5a92801551cd0.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 22 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 22 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:29:00+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png,./Uploads/2018-02-25/5a92801551cd0.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 22 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 22 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-25T22:29:49+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png,./Uploads/2018-02-25/5a92801551cd0.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 22 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 22 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:30:00+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a9280dc5ddb9.png,./Uploads/2018-02-25/5a9280dc5ddb9.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 22 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a9280dc5ddb9.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 22 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-02-25T22:30:02+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a9280e94e2b4.png,./Uploads/2018-02-25/5a9280e94e2b4.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 22 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a9280e94e2b4.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 22 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:30:10+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png,./Uploads/2018-02-25/5a92801551cd0.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92801551cd0.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+
+[ 2018-02-25T22:30:20+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:31:06+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92c89be4174.png,./Uploads/2018-02-25/5a92c89be4174.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92c89be4174.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+
+[ 2018-02-25T22:31:32+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92c89be4174.png,./Uploads/2018-02-25/5a92c89be4174.png): ϵͳ�Ҳ���ָ����·���� (code: 3) F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+NOTIC: [2] opendir(./Uploads/2018-02-25/5a92c89be4174.png): failed to open dir: No such file or directory F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Admin\Controller\EditFileController.class.php 第 21 行.
+
+[ 2018-02-25T22:32:18+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:32:40+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:33:01+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:34:09+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:34:12+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:34:15+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:34:18+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:34:54+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:34:56+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:35:26+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:35:28+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:35:34+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:35:36+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:36:51+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:36:53+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:36:54+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:36:58+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:37:07+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-02-25T22:37:09+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:37:13+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:37:35+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:37:42+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:40:39+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:40:41+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:40:44+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:40:46+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:44:21+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-02-25T22:44:23+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:44:25+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-25T22:44:26+08:00 ] ::1 /xhust/thinkphp/index.php/Admin/EditFile/deletefile.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+

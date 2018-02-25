@@ -5,7 +5,7 @@ use Think\Model;
 class AppWidget extends Controller {
     public function index($start,$limit){ 	
         $user=new Model('apps'); 
-        $apps=$user->where('status=1')->select();       
+        $apps=$user->where('status=1')->limit($start,$limit)->select();       
         $this->assign('apps',$apps);
         $count=$user->where('status=1')->count();
         $page=ceil($count/$limit);

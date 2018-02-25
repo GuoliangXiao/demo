@@ -113,8 +113,20 @@
                callback1(lobibox.getValue());
             }
           }
-        });
-      }
+      });
+  }
+  function confirm_alt(txt,callback1,callback2){
+      Lobibox.confirm({
+          msg: txt,
+          callback:function (lobibox, type){
+              if(type=='yes'){
+                  callback1();
+              }else if(type=='no'){
+                callback2();
+              }
+          }
+      });
+  }
 </script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/md5.js"></script>
 <style type="text/css">

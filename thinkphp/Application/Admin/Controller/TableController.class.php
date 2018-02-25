@@ -7,7 +7,6 @@ class TableController extends Controller{
 		check_admin();
 		$db_tables=D()->db()->getTables();
 		$this->assign('db_tables',$db_tables);
-		//var_dump($db_tables);
 		$this->display();
 	}
 }

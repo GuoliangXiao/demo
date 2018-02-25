@@ -10,7 +10,7 @@ return array(
 	//'TMPL_R_DELIM'=>'}>',
 	//'VIEW_PATH'=>'./Public/',
 	/*
-	'SHOW_PAGE_TRACE' =>false,
+	'SHOW_PAGE_TRACE' =>true,
 	'DB_TYPE'=>'mysql',
 	'DB_USER'=>'root',
 	'DB_PWD'=>'root',

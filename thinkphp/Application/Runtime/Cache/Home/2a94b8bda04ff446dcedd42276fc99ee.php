@@ -171,7 +171,7 @@
 			</div>
 			<div class="my-container-div">
 					<div id="my-app-position">
-						<?php echo W('App/index',array(0,10));?>
+						<?php echo W('App/index',array(0,8));?>
 					</div>
 					<div id="my-blog-position">
 						<?php echo W('Blog/index',array(0,4));?>

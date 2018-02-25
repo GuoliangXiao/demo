@@ -113,8 +113,20 @@
                callback1(lobibox.getValue());
             }
           }
-        });
-      }
+      });
+  }
+  function confirm_alt(txt,callback1,callback2){
+      Lobibox.confirm({
+          msg: txt,
+          callback:function (lobibox, type){
+              if(type=='yes'){
+                  callback1();
+              }else if(type=='no'){
+                callback2();
+              }
+          }
+      });
+  }
 </script>
 <style type="text/css">
 	.my-container{
@@ -141,10 +153,13 @@
 		text-decoration: none;
 		color: black;
 	}
+	.btn-edit{
+		width: 100%;
+	}
 </style>
 <div class="row">
 	<div class="col-md-12">
-		<h3>Sweat</h3>
+		<h3>数据库&nbsp;|&nbsp;Sweat</h3>
 		<table class="table table-striped">
 			<?php if(is_array($db_tables)): foreach($db_tables as $key=>$vo): ?><tr>
 					<td>
@@ -153,9 +168,15 @@
 					</td>
 				</tr><?php endforeach; endif; ?>
 		</table>
-	</div>
-	
+		<h3>缓存文件&nbsp;|&nbsp;Uploads</h3>
+		<a href="<?php echo U('Admin/EditFile/index');?>">
+			<button class="btn-edit btn btn-danger">删除缓存文件</button>
+		</a>
+	</div>	
 </div>
+<script type="text/javascript">
+	
+</script>
 		</div>
 	</div>
 </body>

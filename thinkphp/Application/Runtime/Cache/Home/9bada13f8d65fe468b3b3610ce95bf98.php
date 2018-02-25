@@ -250,7 +250,7 @@
 				<?php echo W('Comment/showComment',array(0,4,$app_id,$category));?>
 			</div>
 			<?php if(($page) > "0"): ?><div class="mybutton">
-					<?php $__FOR_START_2396__=0;$__FOR_END_2396__=$page;for($i=$__FOR_START_2396__;$i < $__FOR_END_2396__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
+					<?php $__FOR_START_25847__=0;$__FOR_END_25847__=$page;for($i=$__FOR_START_25847__;$i < $__FOR_END_25847__;$i+=1){ ?><button class="btn btn-default btn-page" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } ?>			
 				</div><?php endif; ?>
 		</div>
 		<div class="col-md-0">
