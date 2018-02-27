@@ -1,0 +1,25 @@
+[ 2018-02-27T20:40:43+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Index/addHeart.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_apps` [ RunTime:0.0050s ]
+SQL: SELECT `love_times` FROM `x_apps` WHERE `id` = 0 AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `x_apps` SET `love_times`='1' WHERE `id` = 0 AND `status` = 1 [ RunTime:0.1220s ]
+NOTIC: [8] Undefined variable: r F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Controller\IndexController.class.php 第 28 行.
+
+[ 2018-02-27T20:41:52+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Index/addHeart.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `x_apps` [ RunTime:0.0070s ]
+SQL: SELECT `love_times` FROM `x_apps` WHERE `id` = 8 AND `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `x_apps` SET `love_times`='1' WHERE `id` = 8 AND `status` = 1 [ RunTime:0.2360s ]
+
+[ 2018-02-27T21:03:41+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Index/addHeart.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `x_apps` [ RunTime:0.0050s ]
+SQL: SELECT `love_times` FROM `x_apps` WHERE `id` = 8 AND `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `x_apps` SET `love_times`='2' WHERE `id` = 8 AND `status` = 1 [ RunTime:0.0750s ]
+

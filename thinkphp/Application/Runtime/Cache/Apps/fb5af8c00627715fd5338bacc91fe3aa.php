@@ -119,306 +119,116 @@
       });
   }
 </script><body style="background: #eeeeee;"><style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href='<?php echo U("Home/Index/index");?>'><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='<?php echo U("Home/Index/index#my-app-position");?>'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;应用</a></li> <li role="presentation"><a href="<?php echo U('Home/Index/index#my-blog-position');?>" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav><div <?php echo choose_class();?>><div class="my-container">
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/colorpicker/css/bootstrap-colorpicker.min.css" />
+<script type="text/javascript" src="/xhust/thinkphp/Public/colorpicker/js/bootstrap-colorpicker.min.js"></script>
 <style type="text/css">
-	.my-table{
+	.input-interval{
+		margin:0.3em 0 0.3em 0;
 	}
-	td{
-		height: 4em;
-		text-align: center;
-		font-size: 1.1em;
+	.barcode-result{
+		max-height: 15em;
+		max-width: 100%;
 	}
-	.my-row{
-		
+	.btn-gen{
+		width: 100%;
+		margin-bottom: 0.5em;
 	}
-	.td-result{
-		font-weight: bold;
-	}
-	.cal-about{
-
-		font-size: 1.1em;
-		line-height: 2em;
+	ul,li{
+		margin: 0;
+		padding: 0;
 	}
 </style>
-<div class="app-container">
-	<div class="row">
-		<div class="col-md-6">
-			<h3 class="app-title"><i class="fa fa-calculator fa-1x"></i>&nbsp;进制转换&nbsp;|&nbsp;SysConvert</h3>
-		</div>
-		<div class="col-md-6">
-		</div>
-	</div>
-	<div class="row my-row">
-		<div class="col-md-6">
-			<?php  $speacial_sys=array(array(2,'2进制'),array( 8,'8进制'),array(10, '10进制'),array(16, '16进制'),array(32, '32进制'),array(0,'其他'),); ?>
-			
-			<form class="form-inline" >
-				<div class="form-group">
-					<?php $__FOR_START_9964__=0;$__FOR_END_9964__=6;for($i=$__FOR_START_9964__;$i < $__FOR_END_9964__;$i+=1){ ?><label class="radio-inline">
-						    <input type="radio" name="speacial_num" value="<?php echo ($speacial_sys[$i][0]); ?>"
-						    <?php if($i==2) echo 'checked'?>
-						    >
-						   	<?php echo ($speacial_sys[$i][1]); ?>
-						</label>
-						<?php if($i != 5): ?><span style="margin-left:0.8em;"></span>
-							<?php else: endif; } ?>
-				</div>
-		  		<div class="form-group" >
-            		<select name="normal_num" id="select-sys" class="form-control" disabled>
-						<?php $__FOR_START_10933__=2;$__FOR_END_10933__=65;for($i=$__FOR_START_10933__;$i < $__FOR_END_10933__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
-					</select>
-            	</div>
-			</form>
-		</div>
-		<div class="col-md-6">
-			<div class="form-inline">
-				<div class="form-group">
-                	<input class="form-control" value="" type="" name="input_num" placeholder="请输入待转换数字" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" onafterpaste="this.value=this.value.replace(/\D/g,'');">
-            	</div>
-				<div class="form-group">
-					<button class="btn btn-default btn-convert">&nbsp;&nbsp;转换&nbsp;&nbsp;</button>
-				</div>	
-			</div>
-		</div>
-	</div>
-	<div style="height: 1.5em;">
-		
-	</div>
-	<div class="row my-row" >
-		<div class="col-md-6 my-table">
-			<table class="table">
-				
-				<?php $__FOR_START_1354__=0;$__FOR_END_1354__=3;for($i=$__FOR_START_1354__;$i < $__FOR_END_1354__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
-					>
-						<td style="vertical-align: middle;" width="50%">
-							<?php echo ($speacial_sys[$i][1]); ?>
-						</td>
-						<td class="td-result" style="vertical-align: middle;" class="<?php echo ($speacial_sys[$i][0]); ?> td-result"></td>
-					</tr><?php } ?>
-			</table>
-		</div>
-		<div class="col-md-6 my-table">
-			<table class="table">
-				
-				<?php $__FOR_START_31931__=3;$__FOR_END_31931__=6;for($i=$__FOR_START_31931__;$i < $__FOR_END_31931__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
-					>
-						<td style="vertical-align: middle;" width="50%">
-							
-							<?php if($i == 5): ?><div class="form-group" style="margin: 0;">
-				            		<select name="normal_result" id="select-sys" class="form-control">
-										<?php $__FOR_START_17880__=2;$__FOR_END_17880__=65;for($i=$__FOR_START_17880__;$i < $__FOR_END_17880__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
-									</select>
-			            		</div>
-			            		<?php else: echo ($speacial_sys[$i][1]); endif; ?>
-						</td>
-						<td style="vertical-align: middle;" class="<?php echo ($speacial_sys[$i][0]); ?> td-result"></td>
-					</tr><?php } ?>
-			</table>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<p class="cal-about">
-				进制转换是将一个数据以不同形式展现出来,进制转换由一组数码符号和两个基本因素("基"与"权")构成,其中本工具中64进制中64个字符分别用
-				<strong style="color:red;">0-9,A-Z,a-z,&lt;,&gt;</strong>表示。大小写字母有着不同的权,所以转换前一定注意!
-			</p>
-		</div>
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="app-title"><i class="fa fa-barcode fa-1x"></i>&nbsp;条形码&nbsp;|&nbsp;Barcode</h3>
 	</div>
 </div>
-
+<div class="row">
+	<div class="col-md-6">
+		<div>
+			<div class="input-group input-interval">
+				<span class="input-group-addon" id="sizing-addon2">类型</span>
+				<select class="form-control type" aria-describedby="sizing-addon2">
+					<?php if(is_array($types)): foreach($types as $key=>$vo): ?><option><?php echo ($vo); ?></option><?php endforeach; endif; ?>
+				</select>
+			</div>
+			<div class="input-group input-interval">
+				<span class="input-group-addon" id="sizing-addon1">数据</span>
+			    <input type="text" class="form-control data" placeholder="请输入待编码数据" aria-describedby="sizing-addon1" value="">
+			</div>
+			<div class="input-group input-interval">
+				<span class="input-group-addon" id="sizing-addon3">大小</span>
+			    <input type="number" class="form-control scale" placeholder="大小" value="2" aria-describedby="sizing-addon3">
+			</div>
+			<div class="input-group input-interval">
+				<span class="input-group-addon" id="sizing-addon4">高度</span>
+			    <input type="number" class="form-control thickness" placeholder="高度" value="30" aria-describedby="sizing-addon4">
+			</div>
+			<div class="input-group colorpicker-component input-interval">
+				<span class="input-group-addon">颜色</span>
+			  	<input id="cp1" type="text" class="form-control black" value="#000000" readonly>
+			</div>
+			<div class="input-group colorpicker-component input-interval">
+				<span class="input-group-addon">背景</span>
+			  	<input id="cp2" type="text" class="form-control white" value="#FFFFFF" readonly>
+			</div>
+		</div>
+		<button class="btn btn-info btn-gen">生成条形码</button>
+	</div>
+	<div class="col-md-6">
+		<div style="padding: 0.5em;">
+			<label>条形码结果输出</label><br/>
+			<img class="barcode-result" src="" alt="请等待条码结果">
+		</div>
+		<ul style="display: block;" class="list-group">
+			<li class="list-group-item"></li>
+		</ul>
+	</div>
+</div>
 <script type="text/javascript">
-	function showResult(r){
-		$(".td-result").each(function(index) {
-			$(this).text(r[index]);
-		});
-	}
-
-	function ten2m(from, kto) {
-		var error = -1;
-		var numm=new Array();
-		var r="";
-		if (kto < 2 || kto > 64) {
-			error = 20;
-		} else {
-			while(from){
-				var m=from%kto;
-				numm.push(m);
-				from=parseInt(from/kto);
-			}
-			for(var i=numm.length-1;i>=0;i--){
-				if(numm[i]>=0&&numm[i]<10){
-					r+=""+numm[i];
-				}else if(numm[i]>=10&&numm[i]<36){
-					r+=""+String.fromCharCode(55+numm[i]);
-				}else if(numm[i]>=36&&numm[i]<62){
-					r+=""+String.fromCharCode(61+numm[i]);
-				}else if(numm[i]==62){
-					r+=mark2[0];
-				}else if(numm[i]==63){
-					r+=mark2[1];
-				}else {
-					error=10;
-				}
-			}
-		}
-		//alert(r);
-		return {"error":error,"result":r};
-	}
-
-	function m2ten(from, kfrom) {
-		var num10 = 0;
-		var error = -1;
-		if (kfrom < 2 || kfrom > 64) {
-			error = 20;
-		} else {
-			for (var i = 0; i < from.length; i++) {
-				var m = from.charCodeAt(i);
-				if (m >= 48 && m <= 57) {
-					if (m - 48 >= kfrom) {
-						error = 1;
-						break;
-					}
-					num10 += (m - 48) * Math.pow(kfrom, from.length - i - 1);
-				} else if (m >= 65 && m <= 90) {
-					if (m - 55 >= kfrom) {
-						error = 2;
-						break;
-					}
-					num10 += (m - 55) * Math.pow(kfrom, from.length - i - 1);
-				} else if (m >= 97 && m <= 122) {
-					var t = m - 97 + 36;
-					if (t >= kfrom) {
-						error = 3;
-						break;
-					}
-					num10 += (t) * Math.pow(kfrom, from.length - i - 1);
-				} else if (m == mark1[0]) {
-					if (kfrom <= 62) {
-						error = 4;
-						break;
-					}
-					num10 += 62 * Math.pow(kfrom, from.length - i - 1);
-				} else if (m == mark1[1]) {
-					if (kfrom <= 63) {
-						error = 5;
-						break;
-					}
-					num10 += 63 * Math.pow(kfrom, from.length - i - 1);
-				} else {
-					error = 10;
-				}
-			}
-		}
-		return {
-			"error" : error,
-			"result" : num10
-		};
-	}
-	function transform(from, kfrom, kto) {
-		var t=from;
-		if(from<0){
-			t=0-from;
-		}
-		var r = m2ten(t+"", kfrom);
-		var r2 = 0;
-		var result=0;
-		var error=-1;
-		//alert(r.result);
-		if (r.error < 0) {
-			r2 = ten2m(r.result+"", kto);
-			if(r2.error<0){
-				result=r2.result;
-			}else{
-				error=2;
-			}
-		}else {
-			error=1;
-		}
-		if(from<0){
-			result=0-result;
-		}
-		//alert(result+"error:"+error);
-		return {"error":error,"result":result};
-	}
-	function getResult(kind, num) {
-		var tk = $("select[name='normal_result'] option:selected").val();
-		tk=tk.substring(0,tk.length-2);
-		var s=[2,8,10,16,32,tk];
-		var r=[];
-		for(var i=0;i<s.length;i++){
-			var t=transform(num,kind,s[i]);
-			if(t.error<0){
-				r[i]=t.result;
-
-			}else{
-				r[i]="convert failed!";
-			}
-		}
-		return r;
-	}
-
-	function getKind() {
-		var kind = $("input[name='speacial_num']:checked").val();
-		if (kind == 0) {
-			kind = $("select[name='normal_num']").val();
-			kind=kind.substring(0,kind.length-2);
-		}
-		return kind;
-	}
-	function changeInputRule() {
-		$("input[name='input_num']").val('');
-		var k = getKind();
-		//alert(k);
-		var reg = "";
-		if (k > 1 && k <= 10) {
-			reg = "/[^0-" + (k - 1) + "]/g";
-		} else if (k <= 36) {
-			var m = k - 10;
-			m += 64;
-			var s = String.fromCharCode(m);
-			reg = "/[^0-9A-" + s + "]/g";
-		} else if (k <= 62) {
-			var m = k - 36;
-			m += 97;
-			var s = String.fromCharCode(m);
-			//alert(s);
-			reg = "/[^0-9A-Za-" + s + "]/g";
-		} else if (k == 63) {
-			reg = "/[^0-9A-Za-z<]/g";
-		} else if (k == 64) {
-			reg = "/[^0-9A-Za-z<>]/g";
-		}
-		var js = "this.value=this.value.replace(" + reg + ",'');";
-		$("input[name='input_num']").attr("onkeyup", js);
-		$("input[name='input_num']").attr("onafterpaste", js);
-	}
+	/*var barcode="http://localhost/hbh/barcodegen/build.php";*/
+	var barcode="http://hbh-hbh.7e14.starter-us-west-2.openshiftapps.com/barcodegen/build.php?text=Hello";
+	$(".barcode-result").attr("src",barcode);
 	jQuery(document).ready(function($) {
-		$("input[name='speacial_num']").change(function(event) {
-			/* Act on the event */
-			var v=$("input[name='speacial_num']:checked").val();
-			if(v==0){
-				$("select[name='normal_num']").attr('disabled',false);
-			}else{
-				$("select[name='normal_num']").attr('disabled',true);
-			}
-			changeInputRule();
+		$('#cp1,#cp2').colorpicker();
+		$(".btn-gen").click(function(event) {
+			gencode();
 		});
-		$(".btn-convert").click(function(event) {
-			/* Act on the event */
-			var v=$("input[name='input_num']").val();
-			if(v!=""){
-				var kind = getKind();
-				//alert(kind);
-				var result = getResult(kind, v);
-				showResult(result);
-			}else{
-				alert_alt('请输入待转换数字转换');
-			}
+		$(".type").change(function(event) {
+			getinfo();
+			gencode();
 		});
-		$("select[name='normal_result']").change(function(event) {
-			/* Act on the event */
-			$(".btn-convert").click();
-		});
+		getinfo();
 	});
+	function getinfo(){
+		var name=$(".type option:selected").val();
+		var url="<?php echo U('getinfo');?>";
+		$.post(url, {name: name}, function(data, textStatus, xhr) {
+			$(".list-group-item").text(data);
+		});
+	}
+	function gencode(){
+		var text=$(".data").val();
+		if(text==null||text==""){
+			alert_alt('数据为空，请输入后生产条码');
+			return;
+		}
+		var type=$(".type option:selected").val();
+		var scale=$(".scale").val();
+		var thickness=$(".thickness").val();
+		var black=$(".black").val();
+		black=black.substring(1);
+		var white=$(".white").val();
+		white=white.substring(1);
+		var url=barcode+"?type="+type;
+		url+="&&text="+text;
+		url+="&&scale="+scale;
+		url+="&&thickness="+thickness;
+		url+="&&black="+black;
+		url+="&&white="+white;
+		//alert(url);
+		$(".barcode-result").attr("src",url);
+	}
 </script><?php if(($app_id) != "0"): ?><div><button class="btn btn-success thumb-up"> &nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;</button></div><?php endif; ?><div class="comment"><?php echo W('Comment/index',array($app_id));?></div><style type="text/css">li,ul,ol{list-style: none;display: inline-block;}.my-footer{background: #eeeeee;}.copyright{font-size: 1.1em;margin-top: 0.5em;}.copyright-donation{padding:0;padding-left: 0.5em;}.copyright-donation img{height: 8em;}.copyright-donation h5{width: 100%;text-align: center;padding-bottom: 0;margin-bottom: 0;}.contact span{font-size: 1em;display: inline-block;padding: 0.5em;}.contact a{text-decoration: none;}.about{height: 12em;}.about div{padding-left:0.5em;line-height: 2em;}/*.copyright-toast {position: absolute;bottom: 0;}*/</style><div class="my-footer"><div class="row copyright"><div class="col-md-8"><div class="row"><div class="col-md-5"><h4><i class="fa fa-credit-card fa-1x"></i>&nbsp;小额捐赠&nbsp;|&nbsp;Donation</h4><ul class="copyright-donation"><li><img src="/xhust/thinkphp/Public/Apps/alipay.gif"/><h5>支付宝</h5></li>&nbsp;&nbsp;&nbsp;&nbsp;<li><img src="/xhust/thinkphp/Public/Apps/wechat.gif"/><h5>微信支付</h5></li></ul></div><div class="col-md-7 contact"><h4><i class="fa fa-address-book fa-1x"></i>&nbsp;联系我&nbsp;|&nbsp;Contact me</h4><span><i class="fa fa-envelope fa-1x"></i>&nbsp;电子邮件:</span><a href="mailto:<?php echo ($contact["email"]); ?>"><?php echo (C("contact.email")); ?></a><br/><span><i class="fa fa-weibo fa-1x"></i>&nbsp;新浪微博:</span><a href="<?php echo (C("contact.weibo")); ?>" target="_blank"><?php echo (C("contact.weibo")); ?></a><br/><span><i class="fa fa-rss-square fa-1x"></i>&nbsp;博客园:</span><a href="<?php echo (C("contact.cnblog")); ?>" target="_blank"><?php echo (C("contact.cnblog")); ?></a><br/><span><i class="fa fa-github fa-1x"></i>&nbsp;Github:</span><a href="<?php echo (C("contact.github")); ?>" target="_blank"><?php echo (C("contact.github")); ?></a><br/></div></div></div><div class="col-md-4 about"><h4><i class="fa fa-info-circle fa-1x"></i>&nbsp;关于&nbsp;|&nbsp;About</h4><div><?php echo (C("contact.about")); ?></div><div>Gratitude for Thinkphp, Github, Bootstarp, Fontawesome, jQuery.</div><div>Designed for a girl@magua</div><div class="copyright-toast"><?php echo (C("contact.copyright")); ?></div></div></div></div><script type="text/javascript">jQuery(document).ready(function($) {});</script></div></div><style type="text/css">
 	.anchor{
 		position: fixed;

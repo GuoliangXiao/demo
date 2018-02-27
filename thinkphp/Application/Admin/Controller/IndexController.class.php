@@ -8,19 +8,17 @@ class IndexController extends Controller{
 			case 0:redirect(U('Admin/Table/index'),0,'');break;
 			case -1;$this->display('index');break;
 		}
-		
 		/*$user=M('user');
 		$data['name']='xhust';
 		$data['password']=md5('5201314magua');
 		$data['group']=0;
 		$user->add($data);*/		
 	}
-
 	public function login(){
 		$user=I('post.user');
 		$password=I('post.password');
 		$verifycode=I('post.verifycode');
-	/*	$v = new \Think\Verify();
+		$v = new \Think\Verify();
 		if(!$v->check($verifycode)){
 			$this->error('验证码错误');
 		}
@@ -32,7 +30,7 @@ class IndexController extends Controller{
 		}
 		if($info[0]['password']!=$password){
 			$this->error('用户密码错误');
-		}*/
+		}
 		$info = array('group' => 0, 'status'=>true);
 		session('login',$info);
 		$this->success('登陆成功',U('index'));
