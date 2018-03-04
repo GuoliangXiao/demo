@@ -1,0 +1,140 @@
+<layout name="Public/template"/>
+<style type="text/css">
+	.game-chess{
+		position: relative;
+		margin-bottom: 0.5em;
+	}
+	.game-bg{
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.div_game{
+		position: relative;
+		margin: 0;
+		padding: 0;
+		z-index: 1;
+	}
+	.div_button{
+	}
+	.checkbox{
+		border-radius: 3px;
+		background: #C1D8F0;
+		padding: 0.5em;
+	}
+	.div-about{
+		line-height: 1.6em;
+		background: white;
+		padding: 1em;
+		border-radius: 5px;
+		margin-bottom: 0.5em;
+	}
+</style>
+<div class="row">
+	<div class="col-md-6">
+		<h3 class="app-title"><i class="fa fa-delicious fa-1x"></i>&nbsp;五子棋&nbsp;|&nbsp;Gobang</h3>
+	</div>
+	<div class="col-md-6"></div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+		<div class="game-chess">
+			<img class="game-bg" src="http://pictureofxgl.qiniudn.com/online/gobang/resource/chessboard.jpg">
+			<div class="div_game">
+				
+			</div>
+		</div>
+		<div class="div_button">
+			<button class="start_game btn btn-success">
+				开始
+			</button>
+			<button class="undo btn btn-warning">
+				悔棋
+			</button>
+			<div class="checkbox" style="display: inline-block;">
+			    <label>
+			      <input class="computer_first" type="checkbox">电脑先手
+			    </label>
+			</div>
+			<div class="checkbox" style="display: inline-block;">
+			    <label>
+			      <input class="bg_music" type="checkbox">背景音乐
+			    </label>
+			</div>
+			<div class="checkbox" style="display: inline-block;">
+			    <label>
+			      <input class="game_music" type="checkbox">游戏音效
+			    </label>
+			</div>
+			<button class="btn btn-info">计时:<span style="font-weight: bold;" class="time">0</span></button>
+			<button class="btn btn-info">步数:<span style="font-weight: bold;" class="step">0</span></button>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="div-about">
+			<p>
+				&nbsp;&nbsp;&nbsp;五子棋是一种两人对弈的纯策略型汉族棋类益智游戏，棋具与围棋通用，由中国古代汉族人发明，起源于中国上古时代的传统黑白棋种之一。主要流行于华人和汉字文化圈的国家以及欧美一些地区。
+			</p>
+			<p>
+				&nbsp;&nbsp;&nbsp;容易上手，老少皆宜，而且趣味横生，引人入胜；不仅能增强思维能力，提高智力，而且富含哲理，有助于修身养性。
+			</p>
+			<p>
+				(1)对局双方各执一色棋子。
+			</p>
+			<p>
+				(2)空棋盘开局。
+			</p>
+			<p>
+				(3)交替下子，每次只能下一子。
+			</p>
+			<p>
+				(4)棋子下在棋盘的空白点上。
+			</p>
+			<p>
+				(5)棋子下定后，不得向其它点移动。
+			</p>
+			<p>
+				(6)开局第一枚棋子可下在棋盘任意交叉点上。
+			</p>
+		</div>
+		<div>
+			<audio id="music0">
+				<source src="__PUBLIC__/Apps/Gobang/audio/ogg/click.ogg" type="audio/ogg" />
+				<source src="__PUBLIC__/Apps/Gobang/audio/mp3/click.mp3" type="audio/mpeg" />
+			</audio>
+			<audio id="music1">
+				<source src="__PUBLIC__/Apps/Gobang/audio/ogg/loss.ogg" type="audio/ogg" />
+				<source src="__PUBLIC__/Apps/Gobang/audio/mp3/loss.mp3" type="audio/mpeg" />
+			</audio>
+			<audio id="music2">
+				<source src="__PUBLIC__/Apps/Gobang/audio/ogg/win.ogg" type="audio/ogg" />
+				<source src="__PUBLIC__/Apps/Gobang/audio/mp3/win.mp3" type="audio/mpeg" />
+			</audio>
+			<audio id="music3">
+				<source src="__PUBLIC__/Apps/Gobang/audio/ogg/draw.ogg" type="audio/ogg" />
+				<source src="__PUBLIC__/Apps/Gobang/audio/mp3/draw.mp3" type="audio/mpeg" />
+			</audio>
+			<audio id="music5">
+				<source src="__PUBLIC__/Apps/Gobang/audio/ogg/undo.ogg" type="audio/ogg" />
+				<source src="__PUBLIC__/Apps/Gobang/audio/mp3/undo.mp3" type="audio/mpeg" />
+			</audio>
+			<audio id="music6">
+				<source src="__PUBLIC__/Apps/Gobang/audio/ogg/illegal.ogg" type="audio/ogg" />
+				<source src="__PUBLIC__/Apps/Gobang/audio/mp3/illegal.mp3" type="audio/mpeg" />
+			</audio>
+			<audio id="bgmusic" loop="loop">
+				<source src="__PUBLIC__/Apps/Gobang/audio/ogg/bgyy.ogg" type="audio/ogg" />
+				<source src="__PUBLIC__/Apps/Gobang/audio/mp3/bgyy.mp3" type="audio/mpeg" />
+			</audio>
+		</div>
+	</div>
+</div>
+<js href="__PUBLIC__/Apps/Gobang/js/constant.js"/>
+<js href="__PUBLIC__/Apps/Gobang/js/chess.class.js"/>
+<js href="__PUBLIC__/Apps/Gobang/js/chessgame.js"/>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		onCreate();
+	});
+	
+</script>

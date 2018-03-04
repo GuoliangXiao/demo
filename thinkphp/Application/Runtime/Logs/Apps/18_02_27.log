@@ -339,3 +339,6 @@ INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 
+[ 2018-02-27T21:16:34+08:00 ] ::1 /xhust/thinkphp/index.php/Apps/Gobang/index/id/7.html
+ERR: 无法加载控制器:Gobang
+
