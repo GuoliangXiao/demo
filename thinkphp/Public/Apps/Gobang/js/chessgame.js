@@ -119,7 +119,7 @@ function backChess() {
 function playerChess(x, y) {
     if (state == 2) {
         state = 1;
-        //alert(x+"  pp"+y);
+        //alert(x+"=="+y);
         var m = Math.round((x - BOARDER) / WIDTH);
         var n = Math.round((y - BOARDER) / WIDTH);
         //alert(m+"=="+n);
@@ -170,7 +170,7 @@ function showWinner() {
 
 function bindFunctions() {
 
-    $(".div_game").click(function(event) {
+    $(".div_game_1").click(function(event) {
         if(state==0){
             startChess();
         }
@@ -245,8 +245,8 @@ function ajustsize(){
     var w=535;
     cw=w>gw?gw:w;
     $(".game-chess").height(cw);
-    $(".div_game").width(cw);
-    $(".div_game").height(cw);
+    $(".div_game,.div_game_1").width(cw);
+    $(".div_game,.div_game_1").height(cw);
     $(".game-bg").width(cw);
   
     var r=cw/535;

@@ -20,7 +20,7 @@ class QRcodeController extends XController {
     	$this->display();
     }
     public function getLogo(){
-         $data['status'] = 0;
+        $data['status'] = 0;
         if($_FILES['file']['error']){
            
         }else{
