@@ -13,7 +13,8 @@ class BlogWidget extends Controller {
         $this->assign('article',$article);
 
         $read=$a->where($wh)->field('id,title,author,created_at,read_times,love_times')->order("read_times desc")->limit(5)->select();
-        $this->assign('read',$read);
+        $this->assign('read',$read); 
+        $this->assign('blog_limit',$limit);
     	$this->display(T('Home@Blog/index'));
     }
     public function blogrank(){

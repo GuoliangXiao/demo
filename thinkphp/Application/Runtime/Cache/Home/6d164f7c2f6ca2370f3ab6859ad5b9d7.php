@@ -77,7 +77,7 @@
 				</div><?php endforeach; endif; else: echo "" ;endif; ?>
 		</div>
 		<div class="blog-page">
-			<?php if(($blogpage) > "1"): $__FOR_START_21013__=0;$__FOR_END_21013__=$blogpage;for($i=$__FOR_START_21013__;$i < $__FOR_END_21013__;$i+=1){ ?><button class="btn btn-default btn-blogpage" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } endif; ?>
+			<?php if(($blogpage) > "1"): $__FOR_START_26321__=0;$__FOR_END_26321__=$blogpage;for($i=$__FOR_START_26321__;$i < $__FOR_END_26321__;$i+=1){ ?><button class="btn btn-default btn-blogpage" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } endif; ?>
 		</div>
 	</div>
 	<div class="col-md-4">
@@ -86,7 +86,7 @@
 </div>
 <script type="text/javascript">
 	var blogpagenum='<?php echo ($blogpage); ?>';
-	var bloglimit=4;
+	var bloglimit="<?php echo ($blog_limit); ?>";
 	if(blogpagenum>1){
 		$(".btn-blogpage").first().addClass('disabled');
 	}

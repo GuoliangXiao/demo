@@ -12,6 +12,7 @@ class AppWidget extends Controller {
         $this->assign('apppage',$page); 
         $loves=$user->where('status=1')->order('love_times desc')->limit(5)->select();
         $this->assign('loves',$loves);
+        $this->assign('app_limit',$limit);
     	$this->display(T('Home@App/index'));
     }
   

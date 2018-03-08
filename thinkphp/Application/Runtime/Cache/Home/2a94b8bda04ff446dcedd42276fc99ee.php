@@ -171,10 +171,10 @@
 			</div>
 			<div class="my-container-div">
 					<div id="my-app-position">
-						<?php echo W('App/index',array(0,8));?>
+						<?php echo W('App/index',array(0,$app_limit));?>
 					</div>
 					<div id="my-blog-position">
-						<?php echo W('Blog/index',array(0,4));?>
+						<?php echo W('Blog/index',array(0,$blog_limit));?>
 					</div>					
 				<div class="comment">
 					<?php echo W('Comment/index',array(0));?>

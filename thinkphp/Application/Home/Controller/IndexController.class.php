@@ -8,6 +8,10 @@ class IndexController extends Controller {
     
         //$dbFields=$user->getDbFields();
         //$this->assign('dbFields',$dbFields);
+        $app_limit=16;
+        $blog_limit=4;
+        $this->assign('app_limit',$app_limit);
+        $this->assign('blog_limit',$blog_limit);
     	$this->display();
     	//$d = $_SERVER['DOCUMENT_ROOT'];echo $d;
     }
