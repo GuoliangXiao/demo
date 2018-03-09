@@ -19,6 +19,30 @@
 
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
+<script>
+  function getShareText(){
+    alert($(document).attr("title"));
+    if($(".app-title").text()==""){
+      return $(document).attr("title");
+    }else{
+      return $(".app-title").text();
+    }
+  }
+  window._bd_share_config={
+    common:{
+      bdText:"1",
+      bdDesc:"2",
+    },
+    share:[{
+      "tag":"share_home",
+      "bdSize":24,
+    },{
+      "tag":"share_app",
+      "bdSize":16,
+    }]
+  }
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 <!-- 
 
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/bootstrap/css/bootstrap-responsive.min.css" />
@@ -150,7 +174,6 @@
 	}
 	
 </style>
-
 <body style="background: #eeeeee;padding: 0;margin: 0;">	
 	<style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href='<?php echo U("Home/Index/index");?>'><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='<?php echo U("Home/Index/index#my-app-position");?>'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;应用</a></li> <li role="presentation"><a href="<?php echo U('Home/Index/index#my-blog-position');?>" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav>
 	<div <?php echo choose_class();?>>
@@ -183,6 +206,7 @@
 			</div>
 		</div>	
 	</div>
+
 	<style type="text/css">
 	.anchor{
 		position: fixed;
