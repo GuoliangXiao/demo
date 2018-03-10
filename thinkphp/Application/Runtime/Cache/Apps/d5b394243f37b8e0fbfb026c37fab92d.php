@@ -159,6 +159,23 @@
 	}
 	.qr-menu{
 	}
+	.nav-select{
+		text-align: center;
+		margin-bottom: 0.5em;
+	}
+	.selected{
+		background: white;
+	}
+	.nav-select>a{
+		display: inline-block;
+		width: 100%;
+		height: 2.5em;
+		line-height: 2.5em;
+		
+	}
+	.nav-select>a:focus,.nav-select>a:hover{
+		text-decoration: none;
+	}
 	.qr-content{
 		margin-bottom: 0.5em;
 	}
@@ -185,6 +202,7 @@
 	}
 	.qr-img{
 		max-height: 25em;
+		max-width: 100%;
 	}
 	.temp-img>ul,.temp-img>ul>li{
 		padding: 0;
@@ -224,12 +242,20 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6 qr-div">
-			<ul class="nav nav-tabs nav-justified qr-menu">
-				<li id="1" role="presentation" class="active"><a href="#">网址</a></li>
-				<li id="2" role="presentation"><a href="#">名片</a></li>
-				<li id="3" role="presentation"><a href="#">短信</a></li>
-				<li id="4" role="presentation"><a href="#">位置</a></li>				
-			</ul>
+			<div class="row">
+				<div class="col-md-3 col-sm-3 col-xs-3 nav-div">
+					<div class="nav-select"><a class="nav-a selected" id="1" href="#">网址</a></div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-3 nav-div">
+					<div class="nav-select"><a class="nav-a" id="2" href="#">名片</a></div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-3 nav-div">
+					<div class="nav-select"><a class="nav-a" id="3" href="#">短信</a></div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-3 nav-div">
+					<div class="nav-select"><a class="nav-a" id="4" href="#">位置</a></div>
+				</div>
+			</div>
 			<div class="qr-content">
 				<div class="qr-net" style="display: block;">
 					<div class="form-group">
@@ -264,10 +290,11 @@
 			</div>
 			<button class="btn btn-info btn-gen">生成二维码</button>
 		</div>
-		<div class="col-md-2">
-			<ul class="nav nav-tabs nav-justified">
-				<li role="presentation" class="active"><a href="#">添加图片</a></li>			
-			</ul>
+		<div class="col-md-3">
+			<div class="nav-select selected"><a href="#">网址</a></div>
+			<div class="form-group nqr-logo-upload">
+				<input class="form-control" id="fileupload" type="file" name="file">
+			</div>
 			<div class="temp-img">
 				<ul>
 					<?php if(is_array($imglist)): foreach($imglist as $key=>$vo): ?><li>
@@ -280,16 +307,18 @@
 			<div style="text-align: center;">
 				<img src="" class="logo-img qr-logo">
 			</div>
-			<div class="form-group nqr-logo-upload">
-				<input class="form-control" id="fileupload" type="file" name="file">
-			</div>
+		
 			
 		</div>
-		<div class="col-md-4">
-			<ul class="nav nav-tabs nav-justified">
-				<li role="presentation" class="active"><a href="#">二维码图像</a></li>
-				<li role="presentation"><a href="#" class="qr-download">下载</a></li>			
-			</ul>
+		<div class="col-md-3">
+			<div class="row">
+				<div class="col-md-6 col-sm-6 col-xs-6">
+					<div class="nav-select"><a class="selected" id="1" href="#">二维码图像</a></div>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-6">
+					<div class="nav-select"><a class="qr-download" id="1" href="#">下载</a></div>
+				</div>
+			</div>
 			<div class="qr-result">
 				<div id="img_result">
 					<img class="qr-img" src="" alt="QRcode">
@@ -307,9 +336,9 @@
 <script type="text/javascript">
 	var position=null;
 	jQuery(document).ready(function($) {
-		$(".qr-menu>li").click(function(event) {
-			$(".qr-menu>li").removeClass('active');
-			$(this).addClass('active');
+		$(".nav-a").click(function(event) {
+			$(".nav-a").removeClass('selected');
+			$(this).addClass('selected');
 			var id=$(this).attr('id');
 			$(".qr-content>div").css('display','none');
 			$('.qr-content>div').eq(id-1).css('display','block');			
@@ -500,12 +529,12 @@
 	}
 </script>
 			<?php if(($app_id) != "0"): ?><div class="row">
-					<div class="col-md-6">
+					<div class="col-md-4 col-sm-5 col-xs-8">
 						<button class="btn btn-success thumb-up"> 
 							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
 						</button>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-2 col-sm-3 col-xs-5">
 						<div class="bdsharebuttonbox" data-tag="share_app">
 	<a class="bds_tsina" data-cmd="tsina"></a>
 	<a class="bds_weixin" data-cmd="weixin"></a>

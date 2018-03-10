@@ -188,7 +188,7 @@
 			
 			<form class="form-inline" >
 				<div class="form-group">
-					<?php $__FOR_START_11509__=0;$__FOR_END_11509__=6;for($i=$__FOR_START_11509__;$i < $__FOR_END_11509__;$i+=1){ ?><label class="radio-inline">
+					<?php $__FOR_START_17056__=0;$__FOR_END_17056__=6;for($i=$__FOR_START_17056__;$i < $__FOR_END_17056__;$i+=1){ ?><label class="radio-inline">
 						    <input type="radio" name="speacial_num" value="<?php echo ($speacial_sys[$i][0]); ?>"
 						    <?php if($i==2) echo 'checked'?>
 						    >
@@ -199,7 +199,7 @@
 				</div>
 		  		<div class="form-group" >
             		<select name="normal_num" id="select-sys" class="form-control" disabled>
-						<?php $__FOR_START_31370__=2;$__FOR_END_31370__=65;for($i=$__FOR_START_31370__;$i < $__FOR_END_31370__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+						<?php $__FOR_START_20057__=2;$__FOR_END_20057__=65;for($i=$__FOR_START_20057__;$i < $__FOR_END_20057__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 					</select>
             	</div>
 			</form>
@@ -222,7 +222,7 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_26875__=0;$__FOR_END_26875__=3;for($i=$__FOR_START_26875__;$i < $__FOR_END_26875__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_10782__=0;$__FOR_END_10782__=3;for($i=$__FOR_START_10782__;$i < $__FOR_END_10782__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
 						<td style="vertical-align: middle;" width="50%">
 							<?php echo ($speacial_sys[$i][1]); ?>
@@ -234,13 +234,13 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_23832__=3;$__FOR_END_23832__=6;for($i=$__FOR_START_23832__;$i < $__FOR_END_23832__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_17151__=3;$__FOR_END_17151__=6;for($i=$__FOR_START_17151__;$i < $__FOR_END_17151__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
 						<td style="vertical-align: middle;" width="50%">
 							
 							<?php if($i == 5): ?><div class="form-group" style="margin: 0;">
 				            		<select name="normal_result" id="select-sys" class="form-control">
-										<?php $__FOR_START_9073__=2;$__FOR_END_9073__=65;for($i=$__FOR_START_9073__;$i < $__FOR_END_9073__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+										<?php $__FOR_START_26828__=2;$__FOR_END_26828__=65;for($i=$__FOR_START_26828__;$i < $__FOR_END_26828__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 									</select>
 			            		</div>
 			            		<?php else: echo ($speacial_sys[$i][1]); endif; ?>
@@ -456,12 +456,12 @@
 	});
 </script>
 			<?php if(($app_id) != "0"): ?><div class="row">
-					<div class="col-md-6">
+					<div class="col-md-4 col-sm-5 col-xs-8">
 						<button class="btn btn-success thumb-up"> 
 							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
 						</button>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-2 col-sm-3 col-xs-5">
 						<div class="bdsharebuttonbox" data-tag="share_app">
 	<a class="bds_tsina" data-cmd="tsina"></a>
 	<a class="bds_weixin" data-cmd="weixin"></a>

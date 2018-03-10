@@ -78,7 +78,9 @@
 		});
 		$(".type").change(function(event) {
 			getinfo();
-			gencode();
+			if($(".data").val()!=""){
+				gencode();
+			}
 		});
 		getinfo();
 	});

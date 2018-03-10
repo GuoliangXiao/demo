@@ -154,320 +154,80 @@
 		<div class="my-container">
 			
 			
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/datepicker/css/bootstrap-datetimepicker.min.css" />
-<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/citypicker/css/city-picker.css" />
 <style type="text/css">
-	.form-p{
-		margin-bottom: 0.5em;
+	.loader{
+		display: none;
 	}
-	.div-about{
-		line-height: 1.7em;
-	}
-	.gender{
-	
-	}
-	.photo-img{
-		max-height: 4em;
-	}
-	.id-result{
-		background: transparent;
+	.base64-img{
 		max-width: 100%;
+		max-height: 100%;
 	}
 </style>
 <div class="row">
 	<div class="col-md-12">
-		<h3 class="app-title"><i class="fa fa-id-card fa-1x"></i>&nbsp;身份证&nbsp;|&nbsp;ID Card</h3>
+		<h3 class="app-title"><i class="fa fa-file-code-o fa-1x"></i>&nbsp;图片转Base64&nbsp;|&nbsp;Base64 Image</h3>
 	</div>
 </div>
 <div class="row">
-	<div class="col-md-8">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="form-horizontal">
-					<div class="form-group">
-						<label for="name" class="col-md-4 control-label">姓名</label>         
-						<div class="col-md-8">
-							<input  id="name" class="form-control" type="text" value="张三"/>
-						</div>
-					</div>
-					<div class="form-group">
-			        	<label for="gender" class="col-md-4 control-label">性别</label>
-					    <div class="col-md-8">
-					      	<select class="form-control gender">
-					      		<option>男</option>
-					      		<option>女</option>
-					      	</select>
-					    </div>
-			        </div>
-			        <div class="form-group">
-						<label for="nation" class="col-md-4 control-label">民族</label>         
-						<div class="col-md-8">
-							<select class="form-control nation">
-								
-							</select>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="form-horizontal">
-					<div class="form-group">
-			            <label for="birthday" class="col-md-4 control-label">出生日期</label>         
-						<div class="col-md-8">
-							<input type="text" class="form-control" id="birthday" data-date-format="yyyy-mm-dd" value="2018-03-07" readonly>
-						</div>
-			        </div>
-			        <div class="form-group">
-			            <label for="date-from" class="col-md-4 control-label">办证日期</label>         
-						<div class="col-md-8">
-							<input type="text" class="form-control" id="date-from" data-date-format="yyyy-mm-dd" value="2018-03-07" readonly>
-						</div>					
-			        </div>
-			        <div class="form-group">
-			            <label for="date-len" class="col-md-4 control-label">有效期</label>         					
-						<div class="col-md-8">
-							<select class="form-control date-len">
-								<option>5</option>
-								<option>10</option>
-								<option>15</option>
-								<option>20</option>
-							</select>
-						</div>
-			        </div>
-				</div>		        
-			</div>
-		</div>
-		<div class="form-horizontal">
+	<div class="col-md-6">
+		<div class="trans-div">
 			<div class="form-group">
-				<label for="city-picker" class="col-md-2 control-label">户籍地</label>         
-				<div class="col-md-10">
-					<input  id="city-picker" class="form-control" readonly type="text" value="湖北省/武汉市/洪山区" data-toggle="city-picker"/>
-				</div>
+				<label for="">上传图片转换</label>
+				<input class="form-control" id="fileupload" type="file" name="file">		
+			</div>
+			<div class="form-group">
+				<label>转换结果<span class="loader">
+					<span style="color: green;font-weight: normal;">
+	<span>加载中...&nbsp;&nbsp;</span><i class="fa fa-spinner fa-spin fa-1x"></i>
+</span>
+
+				</span>
+				</label>
+				<textarea class="form-control base64-out" rows="4" placeholder="Base64码结果将在这里显示" readonly></textarea>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-6">
-				<div class="form-horizontal">		
-			        <div class="form-group">
-			        	<label for="photo" class="col-md-4 control-label">上传照片(1M)</label>
-						<div class="col-md-8">
-							<input class="form-control" id="photo" type="file" name="file">
-						</div>					
-					</div>		        
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="form-horizontal">
-					<div class="form-group">
-						<label for="photo-img" class="col-md-4 control-label">当前照片</label>	
-					    <div class="col-md-4">
-					    	<img class="photo-img" src="/xhust/thinkphp/Public/Apps/IDcard/img/photo_low.png">
-					    </div>	
-					    <div class="col-md-4">
-					    	<button class="btn btn-success btn-gen">生成身份证</button>
-					    </div>				 
-			        </div>
-			    </div>
-			</div>
-		</div>
-		<div class="form-horizontal">
-			<img class="id-result" src="">
-		</div>
+	</div>
+	<div class="col-md-2">
+		<img class="base64-img">
 	</div>
 	<div class="col-md-4">
-		<div class="form">
-			<div class="input-group" style="margin-bottom: 0.5em;">
-			    <input type="text" class="form-control id-number" placeholder="请输入第二代(18位)身份证号码" value="">
-			    <span class="input-group-btn">
-			        <button class="btn-s btn btn-default" type="button">
-			        	&nbsp;&nbsp;<i class="fa fa-search fa-1x"></i>&nbsp;&nbsp;
-			        </button>
-			    </span>
-		    </div>
-			
-			<div>
-				<table class="table table-bordered table-striped">
-					<tr>
-						<td style="text-align: center;" colspan="2">
-							<strong>身份证信息</strong>
-						</td>
-					</tr>
-					<tr>
-						<td>身份证号:</td>
-						<td class="identity_num"></td>
-					</tr>
-					<tr>
-						<td>归属地:</td>
-						<td class="identity_place"></td>
-					</tr>
-					<tr>
-						<td>性别:</td>
-						<td class="identity_sex"></td>
-					</tr>
-					<tr>
-						<td>生日:</td>
-						<td class="identity_birthday"></td>
-					</tr>
-				</table>
-			</div>
-			<div class="div-about">
-	            <p>
-	                &nbsp;&nbsp;&nbsp;<strong>公民身份证</strong>号码是由17位数字码和1位校验码组成。排列顺序从左至右分别为：6位地址码，8位出生日期码，3位顺序码和1位校验码。
-	            </p>
-	            <p>
-	                &nbsp;&nbsp;&nbsp;地址码和出生日期码很好理解，顺序码表示在同一地址码所标识的区域范围内，对同年同月同日出生的人编定的顺序号，顺序码的奇数分配给男性，偶数分配给女性。
-	            </p>
-	            <p>
-	                身份证最后一位校验码算法如下：
-	                <span> 1. 将身份证号码前17位数分别乘以不同的系数，从第1位到第17位的系数分别为：7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2。</span>
-	                <span>2. 将得到的17个乘积相加。</span>
-	                <span>3. 将相加后的和除以11并得到余数。</span>
-	                <span>4. 余数可能为0 1 2 3 4 5 6 7 8 9 10这些个数字，其对应的身份证最后一位校验码为
-	                	<strong>1 0 X 9 8 7 6 5 4 3 2</strong>。</span>
-	            </p>
-	        </div>
-		</div>
+		<img style="max-width: 100%;" src="/xhust/thinkphp/Public/Apps/Base64img/img/bg.gif">
+		<p style="line-height: 1.6em;">
+			&nbsp;&nbsp;&nbsp;&nbsp;我们在做js插件的时候，偶尔会用到一些小图标需要嵌入代码中，如果我们使用url定位图片固然可以，但是可移植性受到影响。因此，我们需要将小图片经过编码成字符串，
+			然后直接引入到插件中，非常方便，当然缺点就是浏览器不会缓存。我们通过PHP将图片以字符串形式读取，然后将字符串编码成base64码，过程非常简单，但是非常实用。
+		</p>
 	</div>
 </div>
-<script type="text/javascript" src="/xhust/thinkphp/Public/datepicker/js/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/datepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.data.min.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.min.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-File-Upload-8.8.5/js/vendor/jquery.ui.widget.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-File-Upload-8.8.5/js/jquery.iframe-transport.js"></script>
 <script type="text/javascript" src="/xhust/thinkphp/Public/jQuery-File-Upload-8.8.5/js/jquery.fileupload.js"></script>
-<script type="text/javascript" src="/xhust/thinkphp/Public/china/js/nations.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/loader/js/spin.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/loader/jquery.loader.js"></script>
 <script type="text/javascript">
-	jQuery(document).ready(function($) {		
-		$('#birthday,#date-from').datetimepicker({
-	        language:  'zh-CN',
-	        initialDate:new Date(),
-	        weekStart: 1,
-	        todayBtn:  1,
-			autoclose: 1,
-			todayHighlight: 1,
-			startView: 2,
-			minView: 2,
-			forceParse: 0,
-			endDate:new Date(),
-	    });
-	    $(".nation").setNation();
-		$('#photo').fileupload({
+	jQuery(document).ready(function($) {
+		$('#fileupload').fileupload({
 	        dataType: 'json',
-	        url:"<?php echo U('uploadPhoto');?>",
+	        url:"<?php echo U('uploadImg');?>",
 	        done: function (e, data) {
 	           /*alert(JSON.stringify(data));*/
-	            if(data.result.status==1){
-	            	var url="/xhust/thinkphp"+data.result.pic_url;
-	            	$(".photo-img").attr('id',data.result.pic_url);
-	            	$(".photo-img").attr({src:url});
-	            }else{
-	           	    alert_alt(data.result.error);	
-	            }
+	           if(data.result.status==1){	           	  
+				   /*alert(data.result.code);*/
+				   $(".base64-out").val(data.result.code);
+				   var url="data:"+data.result.filetype+";base64,"+data.result.code;
+				   var h=$(".trans-div").height();
+				   $(".base64-img").css("max-height",h+"px");
+				   $(".base64-img").attr("src",url);
+
+	           }else{
+	           	   alert_alt(data.result.error);	
+	           }
+	           $(".loader").css('display','none');
+	        },
+	        change:function(){
+	        	$(".loader").css('display','inline-block');
 	        }
    		});
-
-	    $(".btn-gen").click(function(event) {
-	    	var name=$("#name").val();
-	    	var nation=$(".nation option:selected").val();
-	    	var place=$("#city-picker").val();
-	    	var birthday=$("#birthday").val();
-	    	var gender=$(".gender option:selected").val();
-	    	var date=$("#date-from").val();
-	    	var photo=$(".photo-img").attr("id");
-	    	var len=$(".date-len option:selected").val();
-	    	/*alert(name+place+birthday+gender);*/
-	    	var url="<?php echo U('generateID');?>";
-	    	url+=("?name="+name);
-	    	url+=("&&nation="+nation);
-	    	url+=("&&place="+place);
-	    	url+=("&&birthday="+birthday);
-	    	url+=("&&date="+date);
-	    	url+=("&&gender="+gender);
-	    	url+=("&&len="+len);
-	    	if(photo!=null&&photo!=""){
-	    		url+=("&&photo="+photo);
-	    	}
-	    	url=encodeURI(url);
-	    	$(".id-result").attr("src",url);
-	    	//$(".test").text(url);
-	    	//alert(url);
-
-	    });
-		$(".btn-s").click(function(event) {
-			postInfo();
-		});
-		var legal2 = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2);
-		var legal2Verify = "10X98765432";
-		function postInfo(){
-			var idNum=$(".id-number").val().toUpperCase();
-			if(idNum==null||idNum==""){
-				alert_alt('请输入第二代身份证号码！')
-			}else if (idCheck(idNum)) {
-		        if (idLegal(idNum)) {
-		            postID(idNum);
-		        } else {
-		            alert_alt("身份证号码不存在");
-		        }
-		    } else {
-		        alert_alt("身份证号码输入错误");
-		    }
-		}
-		$(".btn-gen").click();
-		function postID(idNum) {
-			var url="<?php echo U('getID');?>";
-		    $.post(url, {
-		        "id" : idNum
-		    }, function(data) {
-		        showResult(data);
-		    });
-		}
-
-		function showResult(obj) {
-		    if (obj.status == "OK") {
-		        $(".identity_num").text(obj.data.id);
-		        $(".identity_place").text(obj.data.place);
-		        $(".identity_sex").text(obj.data.sex);
-		        $(".identity_birthday").text(obj.data.birthday);
-		        $(".div_result").css("color", "white");
-		    } else {
-		        alert_alt(obj.status);
-		    }
-		}
-		function idLegal(idNum) {
-		    if (idNum.length == 18) {
-		        var total = 0;
-		        for (var i = 0; i < legal2.length; i++) {
-		            total += parseInt(idNum.charAt(i)) * legal2[i];
-		        }
-		        //alert(total);
-		        var left = total % 11;
-		        var tail = idNum.charAt(17);
-		        if (legal2Verify.charAt(left) == tail) {
-		            return true;
-		        }
-		        return false;
-		    }
-		}
-
-		function idCheck(idNum) {
-		    if (idNum.length == 18) {
-		        var head = idNum.substring(0, 17);
-		        //alert(head);
-		        if (!$.isNumeric(head)) {
-		            return false;
-		        }
-		        var tail = idNum.charCodeAt(17);
-		        if (tail >= 48 && tail <= 57) {
-		            return true;
-		        } else if (tail == 88) {
-		            return true;
-		        }
-		        return false;
-		    }
-		}
 	});
-	
 </script>
 			<?php if(($app_id) != "0"): ?><div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">

@@ -3040,3 +3040,473 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
 
+[ 2018-03-09T20:36:54+08:00 ] ::1 /xhust/thinkphp/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\ThinkPHP\Common\functions.php 第 1456 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.633093s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `x_apps` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `x_apps` WHERE ( status=1 ) LIMIT 0,16   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_apps` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_apps` WHERE ( status=1 ) ORDER BY love_times desc LIMIT 5   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.685096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.047003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.061004s ]
+SQL: SHOW COLUMNS FROM `x_article` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_article` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_article` WHERE `status` = 1 ORDER BY created_at desc LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`author`,`created_at`,`read_times`,`love_times` FROM `x_article` WHERE `status` = 1 ORDER BY read_times desc LIMIT 5   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.712098s ]
+SQL: SELECT `id`,`title`,`author`,`created_at`,`read_times`,`love_times` FROM `x_article` WHERE `status` = 1 ORDER BY read_times desc LIMIT 5   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.720098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.083005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.087005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.083005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.087005s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 AND `category` = 0 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.734099s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0100s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Widget\CommentWidget.class.php 第 20 行.
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 AND `category` = 0 LIMIT 0,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 65 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 66 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 72 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 73 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-5.303303s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-3.659209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-3.673210s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-3.659209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-3.674210s ]
+NOTIC: [8] Undefined variable: contact F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-3.659209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-3.675210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003001s ]
+
+[ 2018-03-09T21:44:22+08:00 ] ::1 /xhust/thinkphp/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\ThinkPHP\Common\functions.php 第 1456 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.980056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `x_apps` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `x_apps` WHERE ( status=1 ) LIMIT 0,16   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_apps` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_apps` WHERE ( status=1 ) ORDER BY love_times desc LIMIT 5   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.071062s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.088006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.095005s ]
+SQL: SHOW COLUMNS FROM `x_article` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_article` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_article` WHERE `status` = 1 ORDER BY created_at desc LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`author`,`created_at`,`read_times`,`love_times` FROM `x_article` WHERE `status` = 1 ORDER BY read_times desc LIMIT 5   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.090063s ]
+SQL: SELECT `id`,`title`,`author`,`created_at`,`read_times`,`love_times` FROM `x_article` WHERE `status` = 1 ORDER BY read_times desc LIMIT 5   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.098063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.115007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.117006s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.115007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.118006s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 AND `category` = 0 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.109064s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0070s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Widget\CommentWidget.class.php 第 20 行.
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 AND `category` = 0 LIMIT 0,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 65 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 66 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 72 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 73 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.812104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.830048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.832047s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.830048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.832047s ]
+NOTIC: [8] Undefined variable: contact F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.830048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.832047s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-09T21:47:16+08:00 ] ::1 /xhust/thinkphp/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\ThinkPHP\Common\functions.php 第 1456 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.842049s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `x_apps` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `x_apps` WHERE ( status=1 ) LIMIT 0,16   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_apps` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_apps` WHERE ( status=1 ) ORDER BY love_times desc LIMIT 5   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.872050s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.033002s ]
+SQL: SHOW COLUMNS FROM `x_article` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_article` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_article` WHERE `status` = 1 ORDER BY created_at desc LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`author`,`created_at`,`read_times`,`love_times` FROM `x_article` WHERE `status` = 1 ORDER BY read_times desc LIMIT 5   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.888051s ]
+SQL: SELECT `id`,`title`,`author`,`created_at`,`read_times`,`love_times` FROM `x_article` WHERE `status` = 1 ORDER BY read_times desc LIMIT 5   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.895052s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.050003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.053003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.050003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.054003s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 AND `category` = 0 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.907052s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0060s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Widget\CommentWidget.class.php 第 20 行.
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 AND `category` = 0 LIMIT 0,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 65 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 66 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 72 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 73 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-2.219127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-1.372078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-1.378078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-1.372078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-1.379079s ]
+NOTIC: [8] Undefined variable: contact F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-1.372078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-1.379079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-09T21:47:55+08:00 ] ::1 /xhust/thinkphp/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\ThinkPHP\Common\functions.php 第 1456 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.454026s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_apps` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `x_apps` WHERE ( status=1 ) LIMIT 0,16   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_apps` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_apps` WHERE ( status=1 ) ORDER BY love_times desc LIMIT 5   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.552031s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.094005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.099005s ]
+SQL: SHOW COLUMNS FROM `x_article` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_article` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_article` WHERE `status` = 1 ORDER BY created_at desc LIMIT 0,4   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`author`,`created_at`,`read_times`,`love_times` FROM `x_article` WHERE `status` = 1 ORDER BY read_times desc LIMIT 5   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.573032s ]
+SQL: SELECT `id`,`title`,`author`,`created_at`,`read_times`,`love_times` FROM `x_article` WHERE `status` = 1 ORDER BY read_times desc LIMIT 5   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.579033s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.122007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.124007s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.122007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.124007s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 AND `category` = 0 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.594034s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Widget\CommentWidget.class.php 第 20 行.
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 AND `category` = 0 LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 65 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 66 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 72 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 73 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.896051s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.438025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.441025s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.438025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.442025s ]
+NOTIC: [8] Undefined variable: contact F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.438025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.442025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-09T21:48:28+08:00 ] ::1 /xhust/thinkphp/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: HTTP_X_REAL_IP F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\ThinkPHP\Common\functions.php 第 1456 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.882108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `x_apps` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `x_apps` WHERE ( status=1 ) LIMIT 0,16   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_apps` WHERE ( status=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_apps` WHERE ( status=1 ) ORDER BY love_times desc LIMIT 5   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.996115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.110006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.119007s ]
+SQL: SHOW COLUMNS FROM `x_article` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_article` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `x_article` WHERE `status` = 1 ORDER BY created_at desc LIMIT 0,4   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`author`,`created_at`,`read_times`,`love_times` FROM `x_article` WHERE `status` = 1 ORDER BY read_times desc LIMIT 5   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-2.018116s ]
+SQL: SELECT `id`,`title`,`author`,`created_at`,`read_times`,`love_times` FROM `x_article` WHERE `status` = 1 ORDER BY read_times desc LIMIT 5   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-2.026116s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.142008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.144008s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.142008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.144008s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 AND `category` = 0 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-2.042117s ]
+SQL: SHOW COLUMNS FROM `x_comment` [ RunTime:0.0080s ]
+NOTIC: [8] Only variables should be passed by reference F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Home\Widget\CommentWidget.class.php 第 20 行.
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 0 AND `status` = 1 AND `app_id` = 0 AND `category` = 0 LIMIT 0,4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 65 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 66 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 72 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `x_comment` WHERE `pid` = 73 AND `status` = 1 AND `app_id` = 0 AND `category` = 0  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-2.393137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.503029s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.514030s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.503029s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.514030s ]
+NOTIC: [8] Undefined variable: contact F:\web\httpd-2.4\Apache24\htdocs\xhust\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.503029s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.515030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+

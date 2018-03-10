@@ -19,30 +19,6 @@
 
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
-<script>
-  function getShareText(){
-    alert($(document).attr("title"));
-    if($(".app-title").text()==""){
-      return $(document).attr("title");
-    }else{
-      return $(".app-title").text();
-    }
-  }
-  window._bd_share_config={
-    common:{
-      bdText:"1",
-      bdDesc:"2",
-    },
-    share:[{
-      "tag":"share_home",
-      "bdSize":24,
-    },{
-      "tag":"share_app",
-      "bdSize":16,
-    }]
-  }
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
 <!-- 
 
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/bootstrap/css/bootstrap-responsive.min.css" />

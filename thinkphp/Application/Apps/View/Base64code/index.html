@@ -1,0 +1,86 @@
+<layout name="Public/template"/>
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="app-title"><i class="fa fa-code fa-1x"></i>&nbsp;Base64编码&nbsp;|&nbsp;Base64 Code</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="form">
+			<div class="form-group">
+				<textarea class="form-control base64-in" rows="3" placeholder="请输入待加密/解密内容">113</textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label class="col-md-4 control-label">字符编码</label>
+						<div class="col-md-8">
+							<select class="form-control kind">
+								<option>UTF-8</option>
+								<option>UTF-16</option>
+							</select>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div>
+					<ul>
+						<li>
+							<button class="btn btn-success btn-encode">Base64编码</button>
+						</li>
+						<li>
+							<button class="btn btn-warning btn-decode">Base64解码</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="form">
+			<div class="form-group">
+				<textarea class="form-control base64-out" rows="3" placeholder="编码/结果将在这里显示" readonly></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<img style="max-width: 100%;" src="__PUBLIC__/Apps/Base64code/img/bg.gif">
+		<p style="line-height: 1.6em;">
+			&nbsp;&nbsp;&nbsp;<strong>BASE64编码</strong>是采用64个基本的ASCII码对数据序列进行重新编码,其编码思想是
+			将原来24bit(3字节)分成4组,每组6bit,再在前面补2个0凑齐一个字节。这样的话原来3个字节表示的数据现在
+			需要四个字节表示,当分组的最后一组不够3个字节,这时在最后一组填充1到2个0字节。并在最后编码完成后在结尾添加1到2个 "="。
+		</p>
+	</div>
+</div>
+<js href="__PUBLIC__/Apps/Base64code/js/base64.js"/>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".btn-encode,.btn-decode").click(function(event) {
+			var s=$(".base64-in").val();
+			if(s==null||s==""){
+				alert_alt("请输入待加密/解密内容");
+				return;
+			}
+			var kind=$(".kind option:selected").val();
+			if(kind=="UTF-8"){
+				kind=1;
+			}else{
+				kind=2;
+			}
+			var r=null;
+			if($(this).hasClass("btn-encode")){
+				r=encodebase64(s,kind);
+			}else{
+				r=decodebase64(s,kind);
+			}
+			if(r!=null){
+				$(".base64-out").val(r);
+			}else{
+				alert_alt("输入解码内容格式不对！");
+			}
+		});		
+	});
+</script>
