@@ -9,11 +9,6 @@
 	}
 </style>
 <div class="row">
-	<div class="col-md-12">
-		<h3 class="app-title"><i class="fa fa-file-code-o fa-1x"></i>&nbsp;图片转Base64&nbsp;|&nbsp;Base64 Image</h3>
-	</div>
-</div>
-<div class="row">
 	<div class="col-md-6">
 		<div class="trans-div">
 			<div class="form-group">
@@ -21,9 +16,10 @@
 				<input class="form-control" id="fileupload" type="file" name="file">		
 			</div>
 			<div class="form-group">
-				<label>转换结果<span class="loader">
-					<include file="./Public/loader/spin.html"/>
-				</span>
+				<label>转换结果
+					<span class="loader">
+						<include file="./Public/loader/spin.html"/>
+					</span>
 				</label>
 				<textarea class="form-control base64-out" rows="4" placeholder="Base64码结果将在这里显示" readonly></textarea>
 			</div>

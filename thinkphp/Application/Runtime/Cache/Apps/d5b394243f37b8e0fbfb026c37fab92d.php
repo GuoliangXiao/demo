@@ -152,7 +152,17 @@
 	<style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href='<?php echo U("Home/Index/index");?>'><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='<?php echo U("Home/Index/index#my-app-position");?>'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;应用</a></li> <li role="presentation"><a href="<?php echo U('Home/Index/index#my-blog-position');?>" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav>	
 	<div <?php echo choose_class();?>>
 		<div class="my-container">
-			
+			<?php if(($app_id) != "0"): ?><div class="row">
+					<div class="col-md-12">
+						<h3 class="app-title">
+							<i class="fa fa-<?php echo ($app_data[$app_id]['icon_font']); ?> fa-1x"></i>
+							
+							<?php echo ($app_data[$app_id]['name']); ?>
+							|
+							<?php echo ($app_data[$app_id]['name_en']); ?>
+						</h3>
+					</div>
+				</div><?php endif; ?>
 			
 <style type="text/css">
 	.qr-div{
@@ -235,12 +245,6 @@
 </style>
 <div class="app-container">
 	<div class="row">
-		<div class="col-md-6">
-			<h3 class="app-title"><i class="fa fa-qrcode fa-1x"></i>&nbsp;二维码&nbsp;|&nbsp;QRCode</h3>
-		</div>
-		<div class="col-md-6"></div>
-	</div>
-	<div class="row">
 		<div class="col-md-6 qr-div">
 			<div class="row">
 				<div class="col-md-3 col-sm-3 col-xs-3 nav-div">
@@ -305,6 +309,7 @@
 				</ul>
 			</div>
 			<div style="text-align: center;">
+				
 				<img src="" class="logo-img qr-logo">
 			</div>
 		
@@ -321,6 +326,12 @@
 			</div>
 			<div class="qr-result">
 				<div id="img_result">
+					<span class="loader" style="display: none;">
+						<span style="color: green;font-weight: normal;">
+	<span>加载中...&nbsp;&nbsp;</span><i class="fa fa-spinner fa-spin fa-1x"></i>
+</span>
+
+					</span>
 					<img class="qr-img" src="" alt="QRcode">
 				</div>
 			</div>
@@ -393,8 +404,8 @@
 	});
 	function generateQRCode(){
 		var type=1;
-		$(".qr-menu>li").each(function(index, el) {
-			if($(this).hasClass('active')){
+		$(".nav-a").each(function(index, el) {
+			if($(this).hasClass('selected')){
 				type=$(this).attr('id');
 			}
 		});
@@ -513,14 +524,11 @@
 			url+='&&img='+1;
 		}
 		$(".qr-img").attr('src',url);
+		$(".loader").css("display","block");
+		$(".qr-img").css("display","none");
 		$(".qr-img").load(function() {
-			/*var h=$('.qr-div').height();
-			var mh=$("#img_result").height();
-			if(h>mh){
-				$("#img_result").css('margin-top',(h-mh)/2+'px');
-			}else{
-				$("#img_result").css('margin-top',"0");
-			}*/
+			$(".loader").css("display","none");
+			$(".qr-img").css("display","block");
 		});
 	}
 	function showMistake() {
@@ -531,7 +539,7 @@
 			<?php if(($app_id) != "0"): ?><div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">
 						<button class="btn btn-success thumb-up"> 
-							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
+							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($app_data[$app_id]['love_times']); ?></span>&nbsp;
 						</button>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-5">

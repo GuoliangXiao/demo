@@ -152,12 +152,103 @@
 	<style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href='<?php echo U("Home/Index/index");?>'><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='<?php echo U("Home/Index/index#my-app-position");?>'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;应用</a></li> <li role="presentation"><a href="<?php echo U('Home/Index/index#my-blog-position');?>" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav>	
 	<div <?php echo choose_class();?>>
 		<div class="my-container">
+			<?php if(($app_id) != "0"): ?><div class="row">
+					<div class="col-md-12">
+						<h3 class="app-title">
+							<i class="fa fa-<?php echo ($app_data[$app_id]['icon_font']); ?> fa-1x"></i>
+							
+							<?php echo ($app_data[$app_id]['name']); ?>
+							|
+							<?php echo ($app_data[$app_id]['name_en']); ?>
+						</h3>
+					</div>
+				</div><?php endif; ?>
 			
-			<style type="text/css">.my-weather{padding-bottom: 1em;margin: 0 0.5em 0 0.5em;}.app-title{}.search-weather{padding: 0.5em;}.search-s{float: right;}#city-picker{word-break:keep-all;display: block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}#city-picker>div{}</style><script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.data.min.js"></script><script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.min.js"></script><link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/citypicker/css/city-picker.css" /><div class="app-container"><div class="row"><div class="col-md-6"><h3 class="app-title"><i class="fa fa-snowflake-o fa-1x"></i>&nbsp;天气预报&nbsp;|&nbsp;Weather Forecast</h3></div><div class="col-md-6"><div class="form-inline search-weather"><div class="form-group"> <div> <input id="city-picker" class="form-control" readonly type="text" value="湖北省/武汉市/洪山区" data-toggle="city-picker"/> </div> </div><div class="form-group"><button class="btn-s btn btn-default">&nbsp;&nbsp;<i class="fa fa-search fa-1x"></i>&nbsp;&nbsp;</button></div></div></div></div><div class="row my-weather"></div></div><script src="https://cdn.bootcss.com/flot/0.8.3/jquery.flot.js"></script><script type="text/javascript">jQuery(document).ready(function($) {$(".btn-s").click(function(event) {var city=$("#city-picker").val();if(city!=""){postCity(city);}else{alert("请输入城市名称查询");}});$(".btn-s").click();});function postCity(city){var url='<?php echo U("Apps/Weather/getWeather");?>';$.post(url, {city: city}, function(data, textStatus, xhr) {if(data['status']==1){$('.my-weather').html(data['info']);}else{alert("请输入正确的城市名称再次查询");}});}</script>
+<style type="text/css">
+	.my-weather{
+		padding-bottom: 1em;
+		margin: 0 0.5em 0 0.5em;
+	}
+	.app-title{
+		
+	}
+	.search-s{
+		float: right;
+	}
+	#city-picker{
+		word-break:keep-all;
+		display: block;
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+	}
+	#city-picker>div{
+
+	}
+</style>
+<script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.data.min.js"></script>
+<script type="text/javascript" src="/xhust/thinkphp/Public/citypicker/js/city-picker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/citypicker/css/city-picker.css" />
+<div  class="app-container">
+	<div class="row">
+		<div class="col-md-6">
+			<div  class="row">
+				<div class="col-md-8">
+					<div class="form-group">
+	                	<div>
+	                    	<input  id="city-picker" class="form-control" readonly type="text" value="湖北省/武汉市/洪山区" data-toggle="city-picker"/>
+	                	</div>
+	            	</div>
+				</div>
+				<div class="col-md-4">					
+					<button class="btn-s btn btn-default">&nbsp;&nbsp;<i class="fa fa-search fa-1x"></i>&nbsp;&nbsp;</button>
+					<span class="loader" style="display:none;">
+						<span style="color: green;font-weight: normal;">
+	<span>加载中...&nbsp;&nbsp;</span><i class="fa fa-spinner fa-spin fa-1x"></i>
+</span>
+
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row my-weather">
+		
+	</div>
+	
+</div>
+<script src="https://cdn.bootcss.com/flot/0.8.3/jquery.flot.js"></script>
+
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".btn-s").click(function(event) {
+			var city=$("#city-picker").val();
+			if(city!=""){
+				postCity(city);
+			}else{
+				alert("请输入城市名称查询");
+			}
+		});
+		$(".btn-s").click();
+	});
+	function postCity(city){
+		$(".loader").css("display","inline-block");
+		var url='<?php echo U("Apps/Weather/getWeather");?>';	
+		$.post(url, {city: city}, function(data, textStatus, xhr) {
+			if(data['status']==1){
+				$('.my-weather').html(data['info']);
+			}else{
+				alert("请输入正确的城市名称再次查询");
+			}
+			$(".loader").css("display","none");
+		});	
+	}
+</script>
 			<?php if(($app_id) != "0"): ?><div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">
 						<button class="btn btn-success thumb-up"> 
-							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
+							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($app_data[$app_id]['love_times']); ?></span>&nbsp;
 						</button>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-5">

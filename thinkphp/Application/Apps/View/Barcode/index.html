@@ -19,11 +19,6 @@
 	}
 </style>
 <div class="row">
-	<div class="col-md-12">
-		<h3 class="app-title"><i class="fa fa-barcode fa-1x"></i>&nbsp;条形码&nbsp;|&nbsp;Barcode</h3>
-	</div>
-</div>
-<div class="row">
 	<div class="col-md-6">
 		<div>
 			<div class="input-group input-interval">
@@ -59,7 +54,12 @@
 	</div>
 	<div class="col-md-6">
 		<div style="padding: 0.5em;">
-			<label>条形码结果输出</label><br/>
+			<label style="display: block;">
+				条形码结果输出:
+				<span class="loader" style="display: none;">
+					<include file="./Public/loader/spin.html"/>
+				</span>
+				</label>
 			<img class="barcode-result" src="" alt="请等待条码结果">
 		</div>
 		<ul style="display: block;" class="list-group">
@@ -112,5 +112,9 @@
 		url+="&&white="+white;
 		//alert(url);
 		$(".barcode-result").attr("src",url);
+		$(".loader").css("display","inline-block");
+		$(".barcode-result").load(function() {
+			$(".loader").css("display","none");
+		});
 	}
 </script>

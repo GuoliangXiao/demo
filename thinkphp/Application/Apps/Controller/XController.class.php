@@ -10,7 +10,7 @@ class XController extends Controller {
     	$app=M('apps');
     	$wh['id']=$id;
         $wh['status']=1;
-    	$love_times=$app->where($wh)->getField('love_times');
-    	$this->assign('love_times',$love_times);  	   	
+        $app_data=$app->where($wh)->getField("id,name,name_en,icon_font,love_times");
+    	$this->assign('app_data',$app_data);  	   	
     }
 }

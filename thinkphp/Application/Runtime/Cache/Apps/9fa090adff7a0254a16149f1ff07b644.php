@@ -152,13 +152,23 @@
 	<style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href='<?php echo U("Home/Index/index");?>'><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='<?php echo U("Home/Index/index#my-app-position");?>'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;应用</a></li> <li role="presentation"><a href="<?php echo U('Home/Index/index#my-blog-position');?>" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav>	
 	<div <?php echo choose_class();?>>
 		<div class="my-container">
-			
+			<?php if(($app_id) != "0"): ?><div class="row">
+					<div class="col-md-12">
+						<h3 class="app-title">
+							<i class="fa fa-<?php echo ($app_data[$app_id]['icon_font']); ?> fa-1x"></i>
+							
+							<?php echo ($app_data[$app_id]['name']); ?>
+							|
+							<?php echo ($app_data[$app_id]['name_en']); ?>
+						</h3>
+					</div>
+				</div><?php endif; ?>
 			
 <?php $seal_fonts=array('隶书','方正姚体','仿宋','黑体','华文仿宋 ','华文宋体','华文细黑','华文中宋 ','楷体','微软雅黑','微软雅黑(粗)','幼圆','华康少女 ','华文楷体','华文琥珀','华文彩云','华文行楷','华文隶书','华文新魏','方正小篆体','金文大篆体','方正启体简体','方正水柱_GBK','汉仪篆书繁','迷你简娃娃篆 ','经典繁方篆','方正剪紙繁體 ','方正细珊瑚繁体','方正准圆繁体','方正行楷繁体'); ?>
 
 <style type="text/css">
 	.seal-generate{
-		padding-top:0.5em;
+		text-align: center;
 	}
 	ul{
 		margin: 0;
@@ -167,10 +177,10 @@
 	}
 	.seal-img{
 		height: 9em;
-		margin-top:1.5em;
+		margin-top:1em;
 	}
 	.seal-img>div{
-		margin: 0 1em 0 1em;
+		margin: 0 0.5em 0 0.5em;
 	}
 	.seal-img img{
 		
@@ -180,7 +190,7 @@
 	}
 	.seal-img>span{
 		display: inline-block;
-		width: 9em;
+		width: 8em;
 		line-height: 2em;
 		text-align: center;
 		font-weight: bold;
@@ -188,10 +198,7 @@
 </style>
 <div class="app-container">
 	<div class="row">
-		<div class="col-md-6">
-			<h3 class="app-title"><i class="fa fa-fonticons fa-1x"></i>&nbsp;方形印章&nbsp;|&nbsp;Seal</h3>
-		</div>
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<div class="form-inline seal-generate">
 				<div class="form-group">
                 	<input placeholder="请输入2-4个汉字" type="text" name="input_text" class="form-control">
@@ -209,17 +216,22 @@
 			</div>
 		</div>
 	</div>
-	<div class="seal-content">
-		<ul>
-			<?php $__FOR_START_24469__=0;$__FOR_END_24469__=30;for($i=$__FOR_START_24469__;$i < $__FOR_END_24469__;$i+=1){ ?><li>
-					<div class="seal-img">
-						<div><img class="img-result" src="http://hbh-hbh.7e14.starter-us-west-2.openshiftapps.com/Seal/php/get_img.php?font=<?php echo ($i); ?>"></div>
-						<span><?php echo ($seal_fonts[$i]); ?></span>
-					</div>
-				</li><?php } ?>
-		</ul>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="seal-content">
+				<ul>
+					<?php $__FOR_START_831__=0;$__FOR_END_831__=30;for($i=$__FOR_START_831__;$i < $__FOR_END_831__;$i+=1){ ?><li>
+							<div class="seal-img">
+								<div>
+									<img class="img-result" src="http://hbh-hbh.7e14.starter-us-west-2.openshiftapps.com/Seal/php/get_img.php?font=<?php echo ($i); ?>">
+								</div>
+								<span><?php echo ($seal_fonts[$i]); ?></span>
+							</div>
+						</li><?php } ?>
+				</ul>
+			</div>
+		</div>
 	</div>
-	<div style="margin-top:1em;"></div>
 </div>
 <script type="text/javascript">
 	function getKind() {
@@ -274,7 +286,7 @@
 			<?php if(($app_id) != "0"): ?><div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">
 						<button class="btn btn-success thumb-up"> 
-							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
+							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($app_data[$app_id]['love_times']); ?></span>&nbsp;
 						</button>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-5">

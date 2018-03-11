@@ -80,12 +80,6 @@
 </style>
 <div class="app-container">
 	<div class="row">
-		<div class="col-md-6">
-			<h3 class="app-title"><i class="fa fa-qrcode fa-1x"></i>&nbsp;二维码&nbsp;|&nbsp;QRCode</h3>
-		</div>
-		<div class="col-md-6"></div>
-	</div>
-	<div class="row">
 		<div class="col-md-6 qr-div">
 			<div class="row">
 				<div class="col-md-3 col-sm-3 col-xs-3 nav-div">
@@ -156,6 +150,7 @@
 				</ul>
 			</div>
 			<div style="text-align: center;">
+				
 				<img src="" class="logo-img qr-logo">
 			</div>
 		
@@ -172,6 +167,9 @@
 			</div>
 			<div class="qr-result">
 				<div id="img_result">
+					<span class="loader" style="display: none;">
+						<include file="./Public/loader/spin.html"/>
+					</span>
 					<img class="qr-img" src="" alt="QRcode">
 				</div>
 			</div>
@@ -244,8 +242,8 @@
 	});
 	function generateQRCode(){
 		var type=1;
-		$(".qr-menu>li").each(function(index, el) {
-			if($(this).hasClass('active')){
+		$(".nav-a").each(function(index, el) {
+			if($(this).hasClass('selected')){
 				type=$(this).attr('id');
 			}
 		});
@@ -364,14 +362,11 @@
 			url+='&&img='+1;
 		}
 		$(".qr-img").attr('src',url);
+		$(".loader").css("display","block");
+		$(".qr-img").css("display","none");
 		$(".qr-img").load(function() {
-			/*var h=$('.qr-div').height();
-			var mh=$("#img_result").height();
-			if(h>mh){
-				$("#img_result").css('margin-top',(h-mh)/2+'px');
-			}else{
-				$("#img_result").css('margin-top',"0");
-			}*/
+			$(".loader").css("display","none");
+			$(".qr-img").css("display","block");
 		});
 	}
 	function showMistake() {

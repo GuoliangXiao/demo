@@ -152,7 +152,17 @@
 	<style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href='<?php echo U("Home/Index/index");?>'><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='<?php echo U("Home/Index/index#my-app-position");?>'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;应用</a></li> <li role="presentation"><a href="<?php echo U('Home/Index/index#my-blog-position');?>" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav>	
 	<div <?php echo choose_class();?>>
 		<div class="my-container">
-			
+			<?php if(($app_id) != "0"): ?><div class="row">
+					<div class="col-md-12">
+						<h3 class="app-title">
+							<i class="fa fa-<?php echo ($app_data[$app_id]['icon_font']); ?> fa-1x"></i>
+							
+							<?php echo ($app_data[$app_id]['name']); ?>
+							|
+							<?php echo ($app_data[$app_id]['name_en']); ?>
+						</h3>
+					</div>
+				</div><?php endif; ?>
 			
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/datepicker/css/bootstrap-datetimepicker.min.css" />
 <link rel="stylesheet" type="text/css" href="/xhust/thinkphp/Public/citypicker/css/city-picker.css" />
@@ -173,12 +183,10 @@
 		background: transparent;
 		max-width: 100%;
 	}
+	.loader,.loader-photo{
+		display: none;
+	}
 </style>
-<div class="row">
-	<div class="col-md-12">
-		<h3 class="app-title"><i class="fa fa-id-card fa-1x"></i>&nbsp;身份证&nbsp;|&nbsp;ID Card</h3>
-	</div>
-</div>
 <div class="row">
 	<div class="col-md-8">
 		<div class="row">
@@ -259,12 +267,27 @@
 			<div class="col-md-6">
 				<div class="form-horizontal">
 					<div class="form-group">
-						<label for="photo-img" class="col-md-4 control-label">当前照片</label>	
+						<label for="photo-img" class="col-md-4 control-label">当前照片
+						<span class="loader-photo">
+								<span style="color: green;font-weight: normal;">
+	<span>加载中...&nbsp;&nbsp;</span><i class="fa fa-spinner fa-spin fa-1x"></i>
+</span>
+
+							</span>
+						</label>	
 					    <div class="col-md-4">
 					    	<img class="photo-img" src="/xhust/thinkphp/Public/Apps/IDcard/img/photo_low.png">
 					    </div>	
 					    <div class="col-md-4">
-					    	<button class="btn btn-success btn-gen">生成身份证</button>
+					    	<div style="text-align: center;">
+						    	<button class="btn btn-success btn-gen">生成身份证</button>
+						    	<span class="loader">
+									<span style="color: green;font-weight: normal;">
+	<span>加载中...&nbsp;&nbsp;</span><i class="fa fa-spinner fa-spin fa-1x"></i>
+</span>
+
+								</span>
+					    	</div>
 					    </div>				 
 			        </div>
 			    </div>
@@ -364,6 +387,10 @@
 	            }else{
 	           	    alert_alt(data.result.error);	
 	            }
+	            $(".loader-photo").css("display","none");
+	        },
+	        change:function(){
+	        	$(".loader-photo").css("display","inline-block");
 	        }
    		});
 
@@ -389,7 +416,14 @@
 	    		url+=("&&photo="+photo);
 	    	}
 	    	url=encodeURI(url);
+	    	
+	    	$(".loader").css("display","inline-block");
 	    	$(".id-result").attr("src",url);
+	    	$(".id-result").css("visibility","hidden");
+	    	$(".id-result").load(function() {
+	    		$(".id-result").css("visibility","visible");
+	    		$(".loader").css("display","none");
+	    	});
 	    	//$(".test").text(url);
 	    	//alert(url);
 
@@ -472,7 +506,7 @@
 			<?php if(($app_id) != "0"): ?><div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">
 						<button class="btn btn-success thumb-up"> 
-							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
+							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($app_data[$app_id]['love_times']); ?></span>&nbsp;
 						</button>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-5">

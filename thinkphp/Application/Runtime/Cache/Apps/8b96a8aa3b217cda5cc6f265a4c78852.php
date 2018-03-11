@@ -152,18 +152,23 @@
 	<style type="text/css">.mynavdiv{padding: 0;margin: 0;}.mynav{background: #2A2730;margin-top:0em;padding:0.3em;width: 100%;}.mynav>li{width: 7em;padding: 0;margin: 0;}.mynav>li:hover{background:rgba(255,255,255,0.5);}.mynav>li>a{font-size: 1.2em;color: white;width: 100%;height: 100%;}.mynav>li>a>span{font-size: 0.9em;}.mynav>li>a:hover{color:black;font-weight: bold;background: transparent;border:0px;}.mynav>li>a:focus{background:transparent;color: white;}#li-x{width: 4em;}#li-x:hover{background: transparent;}#li-x a img{height: 1.2em;}</style><nav class="navbar navbar-fixed-top mynavdiv"><div <?php echo choose_class();?>><ul class="nav nav-tabs mynav"> <li role="presentation" id="li-x"><a href='<?php echo U("Home/Index/index");?>'><img src="/xhust/thinkphp/Public/Apps/xhust.ico"/></a></li> <li role="presentation"><a href='<?php echo U("Home/Index/index#my-app-position");?>'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;应用</a></li> <li role="presentation"><a href="<?php echo U('Home/Index/index#my-blog-position');?>" target="_self"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;博客</a></li></ul></div></nav>	
 	<div <?php echo choose_class();?>>
 		<div class="my-container">
+			<?php if(($app_id) != "0"): ?><div class="row">
+					<div class="col-md-12">
+						<h3 class="app-title">
+							<i class="fa fa-<?php echo ($app_data[$app_id]['icon_font']); ?> fa-1x"></i>
+							
+							<?php echo ($app_data[$app_id]['name']); ?>
+							|
+							<?php echo ($app_data[$app_id]['name_en']); ?>
+						</h3>
+					</div>
+				</div><?php endif; ?>
 			
-			
-<div class="row">
-	<div class="col-md-12">
-		<h3 class="app-title"><i class="fa fa-code fa-1x"></i>&nbsp;Base64编码&nbsp;|&nbsp;Base64 Code</h3>
-	</div>
-</div>
 <div class="row">
 	<div class="col-md-6">
 		<div class="form">
 			<div class="form-group">
-				<textarea class="form-control base64-in" rows="3" placeholder="请输入待加密/解密内容">113</textarea>
+				<textarea class="form-control base64-in" rows="3" placeholder="请输入待加密/解密内容"></textarea>
 			</div>
 		</div>
 		<div class="row">
@@ -197,7 +202,7 @@
 
 		<div class="form">
 			<div class="form-group">
-				<textarea class="form-control base64-out" rows="3" placeholder="编码/结果将在这里显示" readonly></textarea>
+				<textarea class="form-control base64-out" rows="3" placeholder="编码/解码结果将在这里显示" readonly></textarea>
 			</div>
 		</div>
 	</div>
@@ -242,7 +247,7 @@
 			<?php if(($app_id) != "0"): ?><div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">
 						<button class="btn btn-success thumb-up"> 
-							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($love_times); ?></span>&nbsp;
+							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times"><?php echo ($app_data[$app_id]['love_times']); ?></span>&nbsp;
 						</button>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-5">

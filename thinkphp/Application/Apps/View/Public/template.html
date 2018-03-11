@@ -32,13 +32,25 @@
 	<include file="./Public/Html/header.html"/>	
 	<div {:choose_class()}>
 		<div class="my-container">
-			
+			<neq name="app_id" value="0">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="app-title">
+							<i class="fa fa-{$app_data[$app_id]['icon_font']} fa-1x"></i>
+							
+							{$app_data[$app_id]['name']}
+							|
+							{$app_data[$app_id]['name_en']}
+						</h3>
+					</div>
+				</div>
+			</neq>
 			{__CONTENT__}
 			<neq name="app_id" value="0">
 				<div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">
 						<button class="btn btn-success thumb-up"> 
-							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times">{$love_times}</span>&nbsp;
+							&nbsp;我觉得这个应用不错，我要点赞&nbsp;<i class="fa fa-thumbs-up fa-lg"></i><span class="love_times">{$app_data[$app_id]['love_times']}</span>&nbsp;
 						</button>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-5">

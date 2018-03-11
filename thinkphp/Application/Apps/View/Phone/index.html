@@ -19,12 +19,10 @@
 	.left-message li{
 		width: 100%;
 	}
+	.loader{
+		display: none;
+	}
 </style>
-<div class="row">
-	<div class="col-md-6">
-		<h3 class="app-title"><i class="fa fa-phone fa-1x"></i>&nbsp;号码归属地&nbsp;|&nbsp;Phone Attribution</h3></div>
-	<div class="col-md-6"></div>
-</div>
 <div class="row">
 	<div class="col-md-6">
 		<div  >
@@ -42,11 +40,21 @@
 				
 				<tr class="info">
 					<td>电话号码：</td>
-					<td class="tel"></td>
+					<td>					
+						<span class="loader">
+							<include file="./Public/loader/spin.html"/>
+						</span>
+						<span class="tel">请输入电话号码查询</span>
+					</td>
 				</tr>
 				<tr class="success">
 					<td>号码归属地：</td>
-					<td><strong class="place"></strong></td>
+					<td>
+						<span class="loader">
+							<include file="./Public/loader/spin.html"/>
+						</span>
+						<strong class="place">归属地结果将出现在这里</strong>
+					</td>
 				</tr>
 			</table>
 		</div>
@@ -102,6 +110,9 @@
 			});
 		}
 		function postPhone(num){
+			$(".loader").css("display","inline-block");
+			$(".place").text("");
+			$(".tel").text("");
 			var url="{:U('getPlace')}";
 			$.post(url, {num: num}, function(data, textStatus, xhr) {
 				tel=num;
@@ -109,6 +120,7 @@
 				showLeftMessage(tel);
 				$(".message-div").css('visibility','visible');
 				$(".left-info").val(tel);
+				$(".loader").css("display","none");
 			});
 		}
 		function show_result(obj){
