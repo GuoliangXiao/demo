@@ -77,7 +77,7 @@
 				</div><?php endforeach; endif; else: echo "" ;endif; ?>
 		</div>
 		<div class="blog-page">
-			<?php if(($blogpage) > "1"): $__FOR_START_20646__=0;$__FOR_END_20646__=$blogpage;for($i=$__FOR_START_20646__;$i < $__FOR_END_20646__;$i+=1){ ?><button class="btn btn-default btn-blogpage" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } endif; ?>
+			<?php if(($blogpage) > "1"): $__FOR_START_21642__=0;$__FOR_END_21642__=$blogpage;for($i=$__FOR_START_21642__;$i < $__FOR_END_21642__;$i+=1){ ?><button class="btn btn-default btn-blogpage" id=<?php echo ($i); ?>><?php echo ($i+1); ?></button><?php } endif; ?>
 		</div>
 	</div>
 	<div class="col-md-4">
