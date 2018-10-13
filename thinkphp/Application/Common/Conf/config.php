@@ -9,14 +9,14 @@ return array(
 	//'TMPL_L_DELIM'=>'<{',
 	//'TMPL_R_DELIM'=>'}>',
 	//'VIEW_PATH'=>'./Public/',
-	/*
-	'SHOW_PAGE_TRACE' =>false,
+	
+/*	'SHOW_PAGE_TRACE' =>false,
 	'DB_TYPE'=>'mysql',
 	'DB_USER'=>'root',
 	'DB_PWD'=>'root',
 	'DB_PREFIX'=>'x_',
-	'DB_DSN'=>'mysql:host=localhost;dbname=sweat;charset=utf8mb4',
-	*/
+	'DB_DSN'=>'mysql:host=localhost;dbname=sweat;charset=utf8mb4',*/
+	
 	'SHOW_PAGE_TRACE' =>false,
 	'DB_TYPE'=>'mysql',
 	'DB_USER'=>'admin',

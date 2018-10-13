@@ -191,7 +191,7 @@
 			
 			<form class="form-inline" >
 				<div class="form-group">
-					<?php $__FOR_START_17763__=0;$__FOR_END_17763__=6;for($i=$__FOR_START_17763__;$i < $__FOR_END_17763__;$i+=1){ ?><label class="radio-inline">
+					<?php $__FOR_START_21643__=0;$__FOR_END_21643__=6;for($i=$__FOR_START_21643__;$i < $__FOR_END_21643__;$i+=1){ ?><label class="radio-inline">
 						    <input type="radio" name="speacial_num" value="<?php echo ($speacial_sys[$i][0]); ?>"
 						    <?php if($i==2) echo 'checked'?>
 						    >
@@ -202,7 +202,7 @@
 				</div>
 		  		<div class="form-group" >
             		<select name="normal_num" id="select-sys" class="form-control" disabled>
-						<?php $__FOR_START_25952__=2;$__FOR_END_25952__=65;for($i=$__FOR_START_25952__;$i < $__FOR_END_25952__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+						<?php $__FOR_START_2408__=2;$__FOR_END_2408__=65;for($i=$__FOR_START_2408__;$i < $__FOR_END_2408__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 					</select>
             	</div>
 			</form>
@@ -225,7 +225,7 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_6681__=0;$__FOR_END_6681__=3;for($i=$__FOR_START_6681__;$i < $__FOR_END_6681__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_24961__=0;$__FOR_END_24961__=3;for($i=$__FOR_START_24961__;$i < $__FOR_END_24961__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
 						<td style="vertical-align: middle;" width="50%">
 							<?php echo ($speacial_sys[$i][1]); ?>
@@ -237,13 +237,13 @@
 		<div class="col-md-6 my-table">
 			<table class="table">
 				
-				<?php $__FOR_START_27358__=3;$__FOR_END_27358__=6;for($i=$__FOR_START_27358__;$i < $__FOR_END_27358__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
+				<?php $__FOR_START_550__=3;$__FOR_END_550__=6;for($i=$__FOR_START_550__;$i < $__FOR_END_550__;$i+=1){ ?><tr class=<?php if($i%2) echo 'info';else echo 'warning';?>
 					>
 						<td style="vertical-align: middle;" width="50%">
 							
 							<?php if($i == 5): ?><div class="form-group" style="margin: 0;">
 				            		<select name="normal_result" id="select-sys" class="form-control">
-										<?php $__FOR_START_21695__=2;$__FOR_END_21695__=65;for($i=$__FOR_START_21695__;$i < $__FOR_END_21695__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
+										<?php $__FOR_START_11879__=2;$__FOR_END_11879__=65;for($i=$__FOR_START_11879__;$i < $__FOR_END_11879__;$i+=1){ if($i!=2&&$i!=8&&$i!=10&&$i!=16){ echo '<option>'; echo $i.'进制'; echo '</option>'; } } ?>
 									</select>
 			            		</div>
 			            		<?php else: echo ($speacial_sys[$i][1]); endif; ?>

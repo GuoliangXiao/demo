@@ -220,7 +220,7 @@
 		<div class="col-md-12">
 			<div class="seal-content">
 				<ul>
-					<?php $__FOR_START_831__=0;$__FOR_END_831__=30;for($i=$__FOR_START_831__;$i < $__FOR_END_831__;$i+=1){ ?><li>
+					<?php $__FOR_START_30569__=0;$__FOR_END_30569__=30;for($i=$__FOR_START_30569__;$i < $__FOR_END_30569__;$i+=1){ ?><li>
 							<div class="seal-img">
 								<div>
 									<img class="img-result" src="http://hbh-hbh.7e14.starter-us-west-2.openshiftapps.com/Seal/php/get_img.php?font=<?php echo ($i); ?>">
